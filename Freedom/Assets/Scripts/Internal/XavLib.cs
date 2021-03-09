@@ -26,10 +26,18 @@ namespace XavHelpTo
         public static class Get {
 
 
-        /// <summary>
-        /// Gets all the types of the objects
-        /// </summary>
-        public static S.Type[] Types(params object[] objs) {
+            /// <summary>
+            /// FIXME NO ES MIO
+            /// </summary>
+            public static object GetPropValue(object src, string propName)
+            {
+                return src.GetType().GetProperty(propName).GetValue(src, null);
+            }
+
+            /// <summary>
+            /// Gets all the types of the objects
+            /// </summary>
+            public static S.Type[] Types(params object[] objs) {
             int length = objs.Length;
             S.Type[] types = new S.Type[length];
             for (int x = 0; x < length; x++)

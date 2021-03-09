@@ -6,6 +6,8 @@ using System.Runtime.Serialization.Formatters.Binary;
 using Environment;
 using XavHelpTo.Set;
 using XavHelpTo.Get;
+using XavHelpTo.Know;
+using System.Reflection;
 #endregion
 #region ### DataPass
 /// <summary>
@@ -27,7 +29,9 @@ public class DataPass : MonoBehaviour
     private SavedData savedData = new SavedData();
 
 
-    private Type[] s;
+    public BoxCollider col;
+    public SphereCollider sph;
+
     #endregion
     #region ###### EVENTS
     private void Awake() => this.Singletone(ref _);
@@ -40,11 +44,38 @@ public class DataPass : MonoBehaviour
     /// </summary>
     private void DataInit()
     {
+        //Obtienes los tipos
+        Type[] types = Get.Types(col, sph);
 
+        this.Component(out col);
+
+        //Recorres los tipos
+        foreach (Type t in types)
+        {
+            Type myTypeA = t.GetType();
+            FieldInfo myFieldInfo = myTypeA.GetField(nameof(col));
+
+            print(myTypeA.Attributes.ToString());
+            //var O = myFieldInfo.  (myTypeA);
+            object o_ = myFieldInfo;
+
+            Debug.Log($"{myTypeA} {myTypeA.GetFields()[0]} {Know.IsNull(myFieldInfo)} {Know.IsNull(o_)} ");
+            //var O = OOO(o_);
+            //O = this.GetComponent(t);
+
+            //Declaras a cada uno
+            //this.Component(out O);
+        }
 
         isReady = false;
         SaveLoadFile(!File.Exists(Application.persistentDataPath + Data.data.savedPath));
         isReady = true;
+    }
+
+    private void OOO<C>(C c)
+        where C: Component
+    {
+        c.GetComponent<C>();
     }
 
     /// <summary>

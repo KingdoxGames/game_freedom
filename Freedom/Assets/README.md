@@ -1,5 +1,4 @@
-﻿Cosas principales por hacer:
-
+﻿# Cosas principales por hacer
 
 - Ventana para mostrar el modal de opciones de menú (Hacer un componente con esa posibilidad y que sea general)
 
@@ -14,15 +13,6 @@
 - Hacer Los mapas y sus respectivas conexiones
 
 - Para cada mapa separar objetos padre que tendrán el nombre de la respectiva escena, (de esa manera se tiene un control de toda la escena para cada uno he incluso hacer grandes animaciones llamandola desde esta)
-
-
-
-
-
-
-
-
-
 
 - Hacer la pantalla de menú
 

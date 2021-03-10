@@ -65,7 +65,7 @@ namespace XavHelpTo
             /// </summary>
             public static void Component<C,T>(this C gameobj, out T t)
                 where C: Component
-                where T : Component
+                where T : C
             {
                 t = gameobj.GetComponent<T>();
                 if (Know.Know.IsNull(t))

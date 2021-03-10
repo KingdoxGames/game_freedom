@@ -33,7 +33,7 @@ namespace Environment
     /// </summary>
     public enum KeyPlayer
     {
-      
+      //Deas='¢'
     }
     #endregion
 }

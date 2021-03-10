@@ -206,15 +206,33 @@ namespace XavHelpTo
                 public static float ZeroMax(this float max) => Random.Range(0, max);
             public static int ZeroMax<T>(this T[] arr) => arr.Length.ZeroMax();
 
+            public static float Max(this float value, float max) => value > max ? max : value;
+            public static Vector3 Max(this Vector3 value, float max) => new Vector3(value.x.Max(max), value.y.Max(max), value.z.Max(max));
+
             /// <returns>A value with the minimal or else the value</returns>
             public static float Min(this float value, float min) => min > value ? min : value;
             public static int Min(this int value, int min) => min > value ? min : value;
             public static Vector2 Min(this Vector2 value, float min) => new Vector2(value.x.Min(min), value.y.Min(min));
+            public static Vector3 Min(this Vector3 value, float min) => new Vector3(value.x.Min(min), value.y.Min(min), value.z.Min(min));
+
+            public static int[] Min(this int[] value, int min)
+            {
+                for (int m = 0; m < value.Length; m++){
+                    value[m] = value[m].Min(min);
+                }
+                return value;
+            }
+
+            /// <summary>
+            /// Shows the limit of the value
+            /// <para>set a range <see cref="Min"/> <see cref="Max"/>, the max can be the <paramref name="range"/> or the <paramref name="limit"/> in case to be declared</para>
+            /// </summary>
+            public static float Limit(this float value, float range, float limit = default) => value.Min(-range).Max( limit == default ? range : limit );
 
             /// <summary>
             /// Coloca el valor puesto en caso de que sea null
             /// </summary>
-            public static void Default<T>(this T value, T defaultVal) => value = Know.Know.IsNull(value) ? defaultVal : value;
+            public static T Default<T>(this T value, T defaultVal) => value = Know.Know.IsNull(value) ? defaultVal : value;
 
             /// <summary>
             /// Sumamos los valores de un arreglo
@@ -243,6 +261,12 @@ namespace XavHelpTo
         /// </summary>
         public static class Set
         {
+
+            public static T[] ToArray<T>(params T[] t)
+            {
+                return t;
+            }
+
             /// <summary>
             /// Añade un string a un arreglo de strings.
             /// </summary>
@@ -530,17 +554,26 @@ namespace XavHelpTo
         }
         namespace Know
         {
-            #region Know
-            /// <summary>
-            /// Herramienta que devuelve valores booleanas o de indexación (hay excepciones..)
-            /// </summary>
-            public static class Know
-            {
+        #region Know
+        /// <summary>
+        /// Herramienta que devuelve valores booleanas o de indexación (hay excepciones..)
+        /// </summary>
+        public static class Know
+        {
 
-                /// <summary>
-                /// Preguntamos si es nulo el valor indicado
-                /// </summary>
-                public static bool IsNull<T>(T t = default) => t == null || t.ToString() == "null" ;//== null || t == default
+            /// <summary>
+            /// Preguntamos si es nulo el valor indicado
+            /// </summary>
+            public static bool IsNull<T>(T t = default) => t == null || t.ToString() == "null";
+            public static bool IsNull<T>(params T[] t)
+                where T: struct
+            {
+                foreach (T item in t) 
+                {
+                    if (IsNull(item)) return true;
+                }
+                return false;
+            }
 
             /// <summary>
             /// Check if the value is an Enumerator
@@ -695,9 +728,9 @@ namespace XavHelpTo
                 /// </summary>
                 public static string Debugging() =>  InColor("DEBUG: ", RandomColor());
                 /// <summary>
-                /// Debugs a thing 
+                /// Debugs a thing, but you still using the chain to know things...
                 /// </summary>
-                public static void Print<T>(this T s ) => Debug.Log($"{Debugging()} {s}");
+                public static T Print<T>(this T s, string color = "red") { Debug.Log($"{Debugging()} {s}"); return s;}
                 /// <summary>
                 /// Selector aleatorio de color, pretenden para debug, no para manejos de otras cosas..
                 /// </summary>

@@ -6,7 +6,7 @@
 
 - Hacer un sistema que levante dialogos y que muestre los textos (en el debe tambien poseer una opción para saltar dialogos)
 
-- Hacer un sistema que permita mover la camara a los puntos indicados en la escena, pudiendo manejar la rotación y la posición de la camara
+- [LISTO] Hacer un sistema que permita mover la camara a los puntos indicados en la escena, pudiendo manejar la rotación y la posición de la camara
 
 - Hacer un controlador del personaje para moverse, interactuar con objetos/Elementos/Personas cercanos
 
@@ -17,3 +17,7 @@
 - Hacer la pantalla de menú
 
 -[EXTRA] Hacer un manejo de mostrar los caracteres de texto (Y que conozca cuando puede ocupar en el ancho del dialogo en el que se encuentra)
+
+# Notas a tomar en cuenta
+
+- La movilidad del personaje se ve influida por la dirección forward de la camara, por lo que se rigen por estas.

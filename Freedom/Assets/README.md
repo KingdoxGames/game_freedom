@@ -21,3 +21,11 @@
 # Notas a tomar en cuenta
 
 - La movilidad del personaje se ve influida por la dirección forward de la camara, por lo que se rigen por estas.
+
+
+
+/**
+# Por ver
+
+[VER TODO]()
+transform.position = transform.position + Camera.main.transform.forward * (-1 | 0 | 1) * speed + Camera.transform.right; lo mismo apra camera Z

@@ -517,8 +517,24 @@ namespace XavHelpTo
                 /// Cambia los valores del vector a un arreglo con estos
                 /// </summary>
                 public static float[] ToArray(Vector3 v) => new float[] {v[0], v[1], v[2] };
+                public static float[] ToArray(this Vector2 v) => new float[] {v[0], v[1]};
 
 
+                /// <summary>
+                /// Returns a <see cref="Vector3"/> with the axis
+                /// </summary>
+                public static Vector3 ToAxis(this float value, int axis=0){
+                    Vector3 newAxist = new Vector3();
+                    newAxist[axis] = 1 * value;
+                    return newAxist;
+                }
+                /// <summary>
+                /// Adjust the axis of a <see cref="Vector3"/>
+                /// </summary>
+                public static Vector3 Axis(this Vector3 vector, int axis=0, float newValue=0){
+                    vector[axis] = newValue;
+                return vector;
+                }
                 //public static int ToFloat(this int val) => Mathf.Round(val /2);
                 /// <summary>
                 /// Cambia  a int su valor
@@ -599,6 +615,18 @@ namespace XavHelpTo
             /// Check if one of the values from the array are equal
             /// </summary>
             public static bool IsEqualOf<T>(this T value, params T[] vals) { foreach (T val in vals) if (value.Equals(val)) return true; return false; }
+            public static bool IsEqualOf<T>(this T[] values, params T[] vals)
+            {
+                bool finded = false;
+                foreach (T v in values){
+                    if (!finded)
+                    {
+                        finded = v.IsEqualOf(vals);
+                    }
+                }
+
+                return finded;
+            }
 
             /// <summary>
             /// Detecta el primer caracter de los buscados en el arreglo
@@ -726,11 +754,13 @@ namespace XavHelpTo
                 /// <summary>
                 /// Indicador decorativo de que andas debugeando algo, solo apoyo visual
                 /// </summary>
-                public static string Debugging() =>  InColor("DEBUG: ", RandomColor());
+                public static string Debugging(string color="null") =>  InColor("DEBUG: ", Get.Get.Default(color,RandomColor()));
                 /// <summary>
                 /// Debugs a thing, but you still using the chain to know things...
                 /// </summary>
-                public static T Print<T>(this T s, string color = "red") { Debug.Log($"{Debugging()} {s}"); return s;}
+                public static T Print<T>(this T s, string color = "null") {
+                    Debug.Log($"{Debugging(color)} {s}"); return s;
+                }
                 /// <summary>
                 /// Selector aleatorio de color, pretenden para debug, no para manejos de otras cosas..
                 /// </summary>

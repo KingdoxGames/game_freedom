@@ -49,6 +49,7 @@ public partial class DragRotation{
         SetPosition();
     }
 
+#if false
     private void OnDrawGizmos()
     {
         if (Know.IsNull(target)) return;
@@ -57,6 +58,7 @@ public partial class DragRotation{
         //Puntos entre la dirección de la camara y la dirección que debería observar
         Debug.DrawLine(transform.position, target.position, Color.red);
     }
+#endif
 }
 
 #endregion
@@ -84,7 +86,11 @@ public partial class DragRotation{
         if (Input.GetMouseButton(DRAG_MOUSE_INPUT))
         {
             axis_Y += (Input.GetAxis(DRAG_MOUSE_X) * magnitude).Limit(axis_limit);
-            //axis_Y = axis_Y.Min(-90).Max(90);
+            axis_Y = axis_Y.Limit(360);
+            if (axis_Y.IsEqualOf(360, -360))
+            {
+                axis_Y = 0;
+            }
         }
     }
 

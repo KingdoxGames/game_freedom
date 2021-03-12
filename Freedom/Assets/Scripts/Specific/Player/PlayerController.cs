@@ -1,14 +1,13 @@
 ﻿#region Access
 using UnityEngine;
 using XavHelpTo.Know;
-using XavHelpTo.Change;
 #endregion
 public partial class PlayerController : MonoBehaviour
 {
     #region Variables
-    private const int Y = 1;
     private const string AXIS_X = "Horizontal";
     private const string AXIS_Z = "Vertical";
+    private Vector3 axis_XY;
     private Camera cam = null;
 
     #endregion
@@ -17,9 +16,12 @@ public partial class PlayerController : MonoBehaviour
     {
         if (Know.IsNull(cam)) cam = Camera.main;
     }
-    private void Update()
-    {
+    private void Update(){
+        axis_XY.Set(Input.GetAxis(AXIS_X), 0, Input.GetAxis(AXIS_Z));
         CheckOrientation();
+    }
+    private void FixedUpdate()
+    {
         CheckMovements();
     }
 #if false

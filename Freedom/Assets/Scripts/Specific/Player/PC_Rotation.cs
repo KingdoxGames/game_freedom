@@ -1,11 +1,9 @@
 ﻿#region Access
 using UnityEngine;
-using XavHelpTo.Change;
 #endregion
 public partial class PlayerController
 {
     #region Variables
-    private Vector3 orientation;
     [Header("_Rotation")]
     public bool canRotate = true;
     #endregion
@@ -15,17 +13,15 @@ public partial class PlayerController
     /// Check te rotation of the player
     /// </summary>
     partial void CheckOrientation(){
-        orientation = transform.position.Axis(Y, transform.position.y)+ cam.transform.forward.Axis(Y).normalized;
+        //orientation = transform.position.Axis(Y, transform.position.y)+ cam.transform.forward.Axis(Y).normalized;
         if (canRotate)
         {
-            if (!axis_XY.Equals(Vector3.zero))
-            {   
+            if (!axis_XY.Equals(Vector3.zero)){   
                 Rotate();
             }
         }
 
     }
-
     /// <summary>
     /// Player rotates based on the camera forward the movements in axis
     /// </summary>

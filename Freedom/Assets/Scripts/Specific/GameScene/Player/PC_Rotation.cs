@@ -13,7 +13,6 @@ public partial class PlayerController
     /// Check te rotation of the player
     /// </summary>
     partial void CheckOrientation(){
-        //orientation = transform.position.Axis(Y, transform.position.y)+ cam.transform.forward.Axis(Y).normalized;
         if (canRotate)
         {
             if (!axis_XY.Equals(Vector3.zero)){   
@@ -28,7 +27,8 @@ public partial class PlayerController
     void Rotate()
     {
         Quaternion toRotate = Quaternion.LookRotation(
-            cam.transform.TransformDirection(axis_XY));
+            GameManager.cam.transform.TransformDirection(axis_XY)
+        );
         toRotate.x = 0;
         toRotate.z = 0;
         transform.rotation = toRotate;

@@ -16,7 +16,9 @@ using S = System;
 /// </summary>
 namespace XavHelpTo
     {
-    
+
+   
+
         namespace Get
         {
         #region Get
@@ -25,14 +27,6 @@ namespace XavHelpTo
         /// </summary>
         public static class Get {
 
-
-            /// <summary>
-            /// FIXME NO ES MIO
-            /// </summary>
-            public static object GetPropValue(object src, string propName)
-            {
-                return src.GetType().GetProperty(propName).GetValue(src, null);
-            }
 
             /// <summary>
             /// Gets all the types of the objects
@@ -63,12 +57,12 @@ namespace XavHelpTo
             /// <summary>
             /// Get the type of the gameobject selected
             /// </summary>
-            public static void Component<C,T>(this C gameobj, out T t)
+            public static void Component<C,T>(this C gameobj, out T t, bool canAdd = true)
                 where C: Component
-                where T : C
+                where T : Component
             {
                 t = gameobj.GetComponent<T>();
-                if (Know.Know.IsNull(t))
+                if (canAdd && Know.Know.IsNull(t))
                 {
                     t = gameobj.gameObject.AddComponent<T>();
                 }
@@ -775,6 +769,20 @@ namespace XavHelpTo
             #endregion
         }
 }
+
+/// <summary>
+/// Identificador de los colores
+/// es solo un facilitador...
+/// </summary>
+public enum ColorType
+{
+    r,
+    g,
+    b,
+    a,
+    RGB = -1
+}
+
 #region Committed
 //TEST
 //public readonly struct Operate

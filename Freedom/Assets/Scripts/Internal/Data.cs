@@ -13,9 +13,10 @@ namespace Environment
         [HideInInspector]
         public static Data data = new Data();
 
-        public readonly string savedPath = "saved.txt";
-        public readonly string version = "v0.0.0";
-
+        public const string savedPath = "saved.txt";
+        public const string version = "v0.1.1";
+        public const string TAG_PLAYER = "Player";
+       
     }
     #endregion
     #region Enums
@@ -36,17 +37,4 @@ namespace Environment
       //Deas='¢'
     }
     #endregion
-}
-
-/// <summary>
-/// Identificador de los colores
-/// es solo un facilitador...
-/// </summary>
-public enum ColorType
-{
-    r,
-    g,
-    b,
-    a,
-    RGB = -1
 }

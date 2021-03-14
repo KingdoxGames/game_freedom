@@ -1,13 +1,16 @@
 ﻿#region Access
 using UnityEngine;
+using XavHelpTo.Change;
 #endregion
 public partial class PlayerController
 {
     #region Variables
     [Header("_Movement")]
     public bool canMove = true;
-    [Range(1,20f)]
+    [Range(1,200f)]
     public float speed = 5;
+    [Range(1, 10f)]
+    public float magnitude = 1;
     #endregion
     #region Methods
     /// <summary>
@@ -16,25 +19,16 @@ public partial class PlayerController
     partial void CheckMovements(){
         if (canMove)
         {
-            if (!axis_XY.Equals(Vector3.zero)){
-                Move();
-            }
-
+            Move();
         }
-        else axis_XY.Set(0,0,0);
     }
     /// <summary>
     /// Moves the player based on the <see cref="cam"/> and<see cref="axis_XY"/>
     /// </summary>
     void Move(){
-
-        Vector3 direction = transform.forward;
-        direction.y = 0;
-        transform.position = Vector3.Lerp(
-            transform.position,
-            transform.position + direction,
-            Time.deltaTime * speed
-        );
+        body.velocity = !axis_XY.Equals(Vector3.zero)
+            ? transform.forward.Axis(1, 0) * Time.deltaTime * speed * magnitude
+            : Vector3.zero;
     }
     #endregion
 }

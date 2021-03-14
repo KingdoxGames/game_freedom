@@ -1,28 +1,35 @@
 ﻿#region Access
 using UnityEngine;
+using Environment;
 using XavHelpTo.Know;
+using XavHelpTo.Get;
 #endregion
+[RequireComponent(typeof(Rigidbody))]
 public partial class PlayerController : MonoBehaviour
 {
     #region Variables
-    private const string AXIS_X = "Horizontal";
-    private const string AXIS_Z = "Vertical";
+    public const string TAG_AXIS_X = "Horizontal";
+    public const string TAG_AXIS_Z = "Vertical";
     private Vector3 axis_XY;
-    private Camera cam = null;
+    private Rigidbody body;
+    public static Transform tr_player;
+
+    [Header("Player Controller")]
+    public bool CanCheckAxis = true;
 
     #endregion
     #region Events
     private void Awake()
     {
-        if (Know.IsNull(cam)) cam = Camera.main;
-    }
-    private void Update(){
-        axis_XY.Set(Input.GetAxis(AXIS_X), 0, Input.GetAxis(AXIS_Z));
-        CheckOrientation();
+        this.Component(out tr_player);
+        this.Component(out body);
     }
     private void FixedUpdate()
     {
+        if (CanCheckAxis) axis_XY.Set(Input.GetAxis(TAG_AXIS_X), 0, Input.GetAxis(TAG_AXIS_Z));
+        else axis_XY.Set(0, 0, 0);
         CheckMovements();
+        CheckOrientation();
     }
 #if false
     private void OnDrawGizmos()

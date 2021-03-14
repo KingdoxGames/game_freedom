@@ -37,7 +37,7 @@ public class DataPass : MonoBehaviour
     private void DataInit()
     {
         isReady = false;
-        SaveLoadFile(!File.Exists(Application.persistentDataPath + Data.data.savedPath));
+        SaveLoadFile(!File.Exists(GetPath()));
         isReady = true;
     }
 
@@ -50,9 +50,8 @@ public class DataPass : MonoBehaviour
     /// <param name="wantSave"></param>
     public static void  SaveLoadFile(bool wantSave = false)
     {
-        string _path = Application.persistentDataPath + Data.data.savedPath;
         BinaryFormatter _formatter = new BinaryFormatter();
-        FileStream _stream = new FileStream(_path, wantSave ? FileMode.Create : FileMode.Open);
+        FileStream _stream = new FileStream(GetPath(), wantSave ? FileMode.Create : FileMode.Open);
         DataStorage _dataStorage;
        
         //Dependiendo de si va a cargar o guardar hará algo o no
@@ -62,8 +61,6 @@ public class DataPass : MonoBehaviour
             _dataStorage = new DataStorage(GetSavedData());
             _formatter.Serialize(_stream, _dataStorage);
             _stream.Close();
-
-           // Debug.Log($"Archivo {Data.data.savedPath} Guardado {GetSavedData().debug_savedTimes} veces !");
         }
         else
         {
@@ -86,6 +83,8 @@ public class DataPass : MonoBehaviour
     /// <param name="newSavedData"></param>
     public static void SetData(SavedData newSavedData) => _.savedData = newSavedData;
 
+    /// <returns>The path of the saved data</returns>
+    private static string GetPath() => Application.persistentDataPath + Data.savedPath;
     #endregion
 }
 #endregion

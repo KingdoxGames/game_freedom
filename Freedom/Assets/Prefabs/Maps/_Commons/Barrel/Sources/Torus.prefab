@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4470377294444556262}
   - component: {fileID: 6144796692449528697}
   - component: {fileID: 8595271112873566553}
-  - component: {fileID: 8576939794409557014}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -149,20 +148,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &8576939794409557014
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586940402072882791}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &5662012745710355988
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +160,6 @@ GameObject:
   - component: {fileID: 7202730281212230411}
   - component: {fileID: 4168045497874266782}
   - component: {fileID: 5053358820924230206}
-  - component: {fileID: 7236163880361353324}
   m_Layer: 0
   m_Name: Torus
   m_TagString: Untagged
@@ -1190,17 +1174,3 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &7236163880361353324
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5662012745710355988}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}

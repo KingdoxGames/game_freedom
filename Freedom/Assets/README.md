@@ -4,11 +4,11 @@
 
 - Hacer un manejo de puntos guardado dependiendod e la ruta tomada (string o cadena de int?, o enum?)
 
-- Hacer un sistema que levante dialogos y que muestre los textos (en el debe tambien poseer una opción para saltar dialogos)
+"[Hacer un sistema que levante dialogos y que muestre los textos (en el debe tambien poseer una opción para saltar dialogos)]()"
 
 #[Hacer un sistema que permita mover la camara a los puntos indicados en la escena, pudiendo manejar la rotación y la posición de la camara]
 
-- Hacer un controlador del personaje para moverse, interactuar con objetos/Elementos/Personas cercanos
+#Hacer un controlador del personaje para moverse, interactuar con objetos/Elementos/Personas cercanos]
 
 #[Hacer Los mapas y sus respectivas conexiones]
 
@@ -16,4 +16,4 @@
 
 - Hacer la pantalla de menú
 
--[EXTRA] Hacer un manejo de mostrar los caracteres de texto (Y que conozca cuando puede ocupar en el ancho del dialogo en el que se encuentra)
+-[EXTRA] Hacer un manejo de mostrar los caracteres de texto  (Y que conozca cuando puede ocupar en el ancho del dialogo en el que se encuentra)

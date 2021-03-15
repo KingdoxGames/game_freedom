@@ -491,13 +491,13 @@ namespace XavHelpTo
                 /// Dependiendo de la condición determinamos si iniciar o apagar la animación
                 /// <para>Dependencia con <seealso cref="ParticleSystem"/> </para>
                 /// </summary>
-                public static void ActiveParticle(ParticleSystem particle, bool condition)
+                public static void ActiveParticle(this ParticleSystem particle, bool condition)
                 {
                     if (condition && particle.isStopped) particle.Play();
                     else if (!condition && particle.isPlaying) particle.Stop();
                 }
 
-                public static void ActiveAudioSource(AudioSource audio,bool condition)
+                public static void ActiveAudioSource(this AudioSource audio,bool condition)
                 {
                     //si está sonando y se quiera desactivar
                     if (audio.isPlaying && !condition) audio.Stop();
@@ -510,7 +510,7 @@ namespace XavHelpTo
                 /// <summary>
                 /// Cambia los valores del vector a un arreglo con estos
                 /// </summary>
-                public static float[] ToArray(Vector3 v) => new float[] {v[0], v[1], v[2] };
+                public static float[] ToArray(this Vector3 v) => new float[] {v[0], v[1], v[2] };
                 public static float[] ToArray(this Vector2 v) => new float[] {v[0], v[1]};
 
 

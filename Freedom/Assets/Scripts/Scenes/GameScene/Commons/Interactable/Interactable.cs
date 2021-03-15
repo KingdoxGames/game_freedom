@@ -31,14 +31,7 @@ public partial class Interactable : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        //TODO hacer un corroborador de si el el juego no está en un estado que no sea libre
-
-        if (isNear)
-        {
-            "___Entró___".Print("red");
-            openDialog(interactions.ZeroMax());
-
-        }
+        DialogAction();
     }
 #if DEBUG
 
@@ -52,7 +45,7 @@ public partial class Interactable : MonoBehaviour
     #region MEthods
 
 
-  
+
 
     #endregion
 }

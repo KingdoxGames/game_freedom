@@ -16,9 +16,18 @@ public partial class Interactable
     #region Methods
 
 
-    public void openDialog(int index){
-        interactions[index].text.Print("blue");
+    private void DialogAction()
+    {
+        if (isNear)
+        {
+            DialogManager.LoadModal();
 
+            "___Entró___".Print("red");
+            //openDialog(interactions.ZeroMax());
+            //interactions[index].text.Print("blue");
+
+
+        }
     }
 
     #endregion

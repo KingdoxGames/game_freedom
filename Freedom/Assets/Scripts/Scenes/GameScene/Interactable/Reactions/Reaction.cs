@@ -9,9 +9,13 @@ using XavHelpTo.Look;
 public class Reaction : MonoBehaviour
 {
     #region Variables
+        [HideInInspector]
+        public Interactable interactable;
+
         [Header("Reaction Settings")]
         public string debug_information;
-        public Interactable interactable;
+        
+
     #endregion
     #region Methods
 
@@ -28,8 +32,26 @@ public class Reaction : MonoBehaviour
     {
         React();
 
-
+        StartCoroutine(WaitReact());
+        
         //....
+    }
+
+
+    /// <summary>
+    /// Waits until an external thing advise to continue the reaction
+    /// </summary>
+    /// <returns></returns>
+    protected virtual IEnumerator WaitReact()
+    {
+        while (!interactable.debug_continueReaction)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+        "CONTINUAMOS LA REACCION".Print();
+        interactable.debug_continueReaction = false;
+        interactable.NextReaction();
+
     }
 
 

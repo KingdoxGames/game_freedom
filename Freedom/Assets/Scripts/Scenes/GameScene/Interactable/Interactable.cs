@@ -19,6 +19,8 @@ public partial class Interactable : MonoBehaviour
     public Transform parent_reaction;
     [Space]
     public Color color;
+    [Space]
+    public bool debug_continueReaction = false;
 
     #endregion
     #region Events

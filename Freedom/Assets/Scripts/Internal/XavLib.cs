@@ -23,6 +23,9 @@ namespace XavHelpTo
     /// </summary>
    public static class Parse
     {
+
+        //public static T Assign<T>(this T t, T t2) => t = t2;
+
         /// <summary>
         /// Get the type of the gameobject selected
         /// </summary>
@@ -600,7 +603,7 @@ namespace XavHelpTo
             /// <summary>
             /// Preguntamos si es nulo el valor indicado
             /// </summary>
-            public static bool IsNull<T>(T t = default) => t == null || t.ToString() == "null";
+            public static bool IsNull<T>(this T t) => t == null || t.ToString() == "null";
             public static bool IsNull<T>(params T[] t)
                 where T: struct
             {

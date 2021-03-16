@@ -12,6 +12,7 @@ public partial class PlayerController : MonoBehaviour
     public const string TAG_AXIS_Z = "Vertical";
     private Vector3 axis_XY;
     private Rigidbody body;
+    [Space]
     public static Transform tr_player;
 
     [Header("Player Controller")]
@@ -31,19 +32,20 @@ public partial class PlayerController : MonoBehaviour
         CheckMovements();
         CheckOrientation();
     }
-#if false
+#if DEBUG
     private void OnDrawGizmos()
     {
+        if (tr_player.IsNull()) this.Component(out tr_player);
 
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, transform.position + transform.forward * 5);
+        //Gizmos.color = Color.blue;
+        //Gizmos.DrawLine(transform.position, transform.position + transform.forward * 5);
 
-        Gizmos.color = Color.white;
-        Gizmos.DrawLine(transform.position, orientation);
+        //Gizmos.color = Color.white;
+        //Gizmos.DrawLine(transform.position, orientation);
 
-        float distance = 2f;
-        Gizmos.DrawLine(transform.position - distance.ToAxis(), transform.position + distance.ToAxis());
-        Gizmos.DrawLine(transform.position - distance.ToAxis(2), transform.position + distance.ToAxis(2));
+        //float distance = 2f;
+        //Gizmos.DrawLine(transform.position - distance.ToAxis(), transform.position + distance.ToAxis());
+        //Gizmos.DrawLine(transform.position - distance.ToAxis(2), transform.position + distance.ToAxis(2));
     }
 #endif
     #endregion

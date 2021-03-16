@@ -17,7 +17,33 @@ using S = System;
 namespace XavHelpTo
     {
 
-   
+    /// <summary>
+    /// Herramienta general de herramientas frecuentes
+    /// TODO -Nombres por ver, Solve, assing, parse
+    /// </summary>
+   public static class Parse
+    {
+        /// <summary>
+        /// Get the type of the gameobject selected
+        /// </summary>
+        public static void Component<C, T>(this C gameobj, out T t, bool canAdd = true)
+            where C : Component
+            where T : Component
+        {
+            Get.Get.Component(gameobj,out t, canAdd);
+        }
+
+        /// <summary>
+        /// TODO mover para acá el singleton de <seealso cref="Set.Set.Singletone{T}(T, ref T, bool)"/>
+        /// </summary>
+        public static void Singleton<T>(this T @this, ref T @_, bool isMultiScene = true)
+                where T : Object
+        {
+            Set.Set.Singletone(@this,ref @_, isMultiScene);
+        }
+
+
+        }
 
         namespace Get
         {

@@ -33,13 +33,16 @@ public partial class Interactable
     #endregion
 }
 
+/// <summary>
+/// Estructura que se
+/// </summary>
 [System.Serializable]
 public struct Interaction
 {
     /// <summary>
     /// Descripción de la interacción
     /// </summary>
-    public string title;
+    public string UserName;
     /// <summary>
     /// Tipo de Interacción
     /// </summary>
@@ -49,14 +52,6 @@ public struct Interaction
     /// </summary>
     [TextArea(3,10)]
     public string text;
-
-    /// <summary>
-    /// Hace que la interacción continue con otras acciones,
-    /// el indice te indicará la correspondiente
-    /// </summary>
-    [Tooltip("si escribes -1 significa que no continua, -2 tomará cualquiera")]
-    public int continueIn;
-   
 }
 
 

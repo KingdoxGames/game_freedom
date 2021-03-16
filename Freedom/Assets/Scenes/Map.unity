@@ -989,6 +989,49 @@ Transform:
   m_Father: {fileID: 1826358700}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 115, y: 0, z: 0}
+--- !u!1 &739561877
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 739561878}
+  - component: {fileID: 739561879}
+  m_Layer: 0
+  m_Name: '*EventManager'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &739561878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739561877}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1245794616}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &739561879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739561877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3cb140695a334517920929037cdcc47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &903351353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,21 +1418,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1161582200}
   eff_near: {fileID: 1983701978}
-  distanceRequired: 2.41
+  distanceRequired: 3
   actualInteraction: -1
   interactions:
-  - title: Dialogo 1-1
+  - UserName: 
     type: 0
     text: "Hola, aqui se coloca la informaci\xF3n correspondiente a su tipo"
-    continueIn: 0
-  - title: Dialogo 1-2
+  - UserName: 
     type: 0
     text: Segundo mensaje :)
-    continueIn: 0
-  - title: Dialogo 1-3 Especial
+  - UserName: 
     type: 0
     text: Mensaje especial que se muestra cuando haces unos requerimientos?
-    continueIn: -1
 --- !u!65 &1039110462
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1588,6 +1628,7 @@ Transform:
   - {fileID: 514656937}
   - {fileID: 652411206}
   - {fileID: 1335344838}
+  - {fileID: 739561878}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

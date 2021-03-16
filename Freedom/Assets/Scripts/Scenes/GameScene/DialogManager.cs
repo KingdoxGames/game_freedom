@@ -27,7 +27,7 @@ public class DialogManager : MonoBehaviour
     {
         Message msg = new Message(
             "Xavier Arpa",
-            "Esto es solo una prueba, en teoria deberia pintar loq eue stoy escribiendo",
+            "Esto es solo una prueba, en teoria deberia pintar lo que stoy escribiendo",
             Color.white
         );
 

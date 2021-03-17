@@ -12,15 +12,14 @@ public partial class Interactable : MonoBehaviour
     #region Variables
     private bool isNear = false;
     private Collider col;
-    private Queue<Reaction> reactions = new Queue<Reaction>();
 
     [Header("Interactable Settigns")]
     public ParticleSystem eff_near;
     public Transform parent_reaction;
-    [Space]
-    public Color color;
-    [Space]
-    public bool debug_continueReaction = false;
+
+    //[Space(20)]
+    //public Color color;
+    //public bool debug_continueReaction = false;
 
     #endregion
     #region Events
@@ -42,7 +41,7 @@ public partial class Interactable : MonoBehaviour
             Interact();
         }
     }
-#if DEBUG
+#if false
 
     private void OnDrawGizmos(){
 

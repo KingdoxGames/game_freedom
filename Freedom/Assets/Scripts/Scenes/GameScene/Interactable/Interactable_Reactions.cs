@@ -7,7 +7,8 @@ using XavHelpTo.Know;
 public partial class Interactable
 {
     #region Variable
-    //TODO revisar script
+    public Queue<Reaction> reactions = new Queue<Reaction>();
+
 
     #endregion
     #region Method
@@ -45,6 +46,7 @@ public partial class Interactable
     /// <summary>
     /// Starts the next interaction of the queue and dequeues it.
     /// </summary>
+    [ContextMenu("SIguiente Reacción")]
     public void NextReaction()
     {
         //🛡

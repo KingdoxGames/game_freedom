@@ -20,7 +20,8 @@ public class Reaction : MonoBehaviour
         [Range(-1,20)]
         [Tooltip("Nos permitirá modificar el evento para saber cuanto tiempo debe esperar hasta la siguiente, -1 significa que no usa tiempo")]
         public float waitSystem = -1;
-        
+    [Space]
+    public bool isReacting;
 
     #endregion
     #region Methods
@@ -52,17 +53,16 @@ public class Reaction : MonoBehaviour
     {
         float _countTime = 0 ;
 
-        while (
-            ( !interactable.debug_continueReaction && waitSystem.Equals(-1) )
+        /*
+         ( !interactable.debug_continueReaction && waitSystem.Equals(-1) )
             || (!interactable.debug_continueReaction && !waitSystem.Equals(-1) && !waitSystem.TimerIn(ref _countTime))
-
-            )
+         */
+        while (isReacting && waitSystem.Equals(-1) || !waitSystem.TimerIn(ref _countTime))
         {
-            
             yield return new WaitForEndOfFrame();
         }
         "CONTINUAMOS LA REACCION".Print();
-        interactable.debug_continueReaction = false;
+        //interactable.debug_continueReaction = false;
         interactable.NextReaction();
 
     }

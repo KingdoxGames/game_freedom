@@ -64,11 +64,21 @@ public partial class Modal : MonoBehaviour
             {
                 //siguiente
 
+                //&& 
+                //if (!dialog.interactable.reactions.Count.Equals(0))
+                //{   
+                //    if (dialog.closeLater ){
+                //        DisplayModal(false);
+                //    }
+                //}
             }
+
         }
         //permite hacer Skip con espacio
         if (Input.GetKey(KeyCode.Space))
         {
+            DisplayModal(false);
+
             //TODO Carga la siguiente reacción
         }
     }

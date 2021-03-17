@@ -12,11 +12,11 @@ public partial class Interactable
     [Range(0, 5f)]
     public float distanceRequired = 0f;
 
-    [Tooltip("Para saber en qué parte del acto estará disponible")]
-    public int requiredInPart = 0;
+    //[Tooltip("Para saber en qué parte del acto estará disponible")]
+    //public int requiredInPart = 0;
 
     //TODO pasar esto a un Enum con sus objetos
-    public string[] requiredObject;
+    //public string[] requiredObject;
     #endregion
     #region Methods
 

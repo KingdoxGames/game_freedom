@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using XavHelpTo.Look;
 #endregion
+/// <summary>
+/// Reacciones que van a hacer interacción con el <seealso cref="Modal"/>
+/// </summary>
 public class ReactionDialog : Reaction
 {
     #region Variables
@@ -24,7 +27,7 @@ public class ReactionDialog : Reaction
         base.React();
 
 
-        Modal.AssignMessage(message);
+        Modal._AssignMessage(this);
 
 
     }

@@ -19,7 +19,7 @@ public partial class Interactable
 
         // ponemos en cola todas las reacciones
         //lo estamos haciendo en el start
-        //AssignReactions(); 
+        AssignReactions();
 
         // iniciamos la secuencia de reacciones
         NextReaction();

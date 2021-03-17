@@ -24,14 +24,14 @@ public partial class Modal
     public void LoadMessage()
     {
         //🛡
-        if (messageActual.IsNull()) return;
+        if (dialog.IsNull()) return;
         //🛡
 
         if (!isLoading || !ratioTimer.TimerIn(ref ratioCount)) return;
 
-        txt_dialog.text += messageActual.dialog[index++];
+        txt_dialog.text += dialog.message.dialog[index++];
 
-        if (txt_dialog.text.Length == messageActual.dialog.Length)
+        if (txt_dialog.text.Length == dialog.message.dialog.Length)
         {
             "Terminado el dialogo".Print("green");
             isLoading = false;

@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XavHelpTo.Look;
+using XavHelpTo.Know;
+using XavHelpTo.Set;
 #endregion
 [DisallowMultipleComponent]
 //[ExcludeFromPreset]
@@ -14,6 +16,10 @@ public class Reaction : MonoBehaviour
 
         [Header("Reaction Settings")]
         public string debug_information;
+        [Space]
+        [Range(-1,20)]
+        [Tooltip("Nos permitirá modificar el evento para saber cuanto tiempo debe esperar hasta la siguiente, -1 significa que no usa tiempo")]
+        public float waitSystem = -1;
         
 
     #endregion
@@ -44,8 +50,15 @@ public class Reaction : MonoBehaviour
     /// <returns></returns>
     protected virtual IEnumerator WaitReact()
     {
-        while (!interactable.debug_continueReaction)
+        float _countTime = 0 ;
+
+        while (
+            ( !interactable.debug_continueReaction && waitSystem.Equals(-1) )
+            || (!interactable.debug_continueReaction && !waitSystem.Equals(-1) && !waitSystem.TimerIn(ref _countTime))
+
+            )
         {
+            
             yield return new WaitForEndOfFrame();
         }
         "CONTINUAMOS LA REACCION".Print();

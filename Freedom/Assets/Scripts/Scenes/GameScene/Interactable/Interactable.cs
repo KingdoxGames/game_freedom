@@ -28,18 +28,12 @@ public partial class Interactable : MonoBehaviour
     {
         this.Component(out col);
     }
-    private void Start()
-    {
-        AssignReactions();
-    }
     private void Update()
     {
         CheckRequirements();
 
         if (!eff_near.IsNull()) eff_near.ActiveParticle(isNear);
         if (!col.IsNull()) col.enabled = isNear;
-
-
     }
     private void OnMouseDown()
     {

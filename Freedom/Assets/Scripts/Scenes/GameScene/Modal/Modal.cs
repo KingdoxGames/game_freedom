@@ -15,9 +15,10 @@ public partial class Modal : MonoBehaviour
     #region Variable
   
     private static Modal _;
-    private Message messageActual;
+    private ReactionDialog dialog;
     private bool isLoading = false;
     private Animator anim;
+
 
     [Header("Modal settings ")]
     public Image img_name;
@@ -56,10 +57,12 @@ public partial class Modal : MonoBehaviour
             //Carga el siguiente mensajé ó llena el texto
             if (isLoading)
             {
-
+                isLoading = false;
+                txt_dialog.text = dialog.message.dialog;
             }
             else
             {
+                //siguiente
 
             }
         }
@@ -70,18 +73,22 @@ public partial class Modal : MonoBehaviour
         }
     }
 
+
+
+
     /// <summary>
     /// Assign a new message and replace another existent
     /// </summary>
-    public static void AssignMessage(Message msg)
+    public static void _AssignMessage(in ReactionDialog dialog) => _.AssignMessage(in dialog);
+    private void AssignMessage(in ReactionDialog _dialog)
     {
-        _.ClearMessage();
+        ClearMessage();
 
-        _.txt_name.text = msg.name;
-        _.messageActual = msg;
+        dialog = _dialog;
+        txt_name.text = _dialog.message.name;
 
-        _.isLoading = true;
-        _.DisplayModal();
+        isLoading = true;
+        DisplayModal();
     }
 
 

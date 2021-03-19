@@ -619,11 +619,6 @@ namespace XavHelpTo
             /// </summary>
             public static bool IsEnum<T>(this T t) => typeof(T).IsEnum;
                 /// <summary>
-                /// Devuelve el nombre de la escena activa
-                /// <para>Dependencia con <seealso cref="Scenes"/> </para>
-                /// </summary>
-                public static Scenes ActiveScene() => (Scenes)SceneManager.GetActiveScene().buildIndex;
-                /// <summary>
                 /// Revisa si el objeto está seleccionado
                 /// </summary>
                 public static bool Focus(GameObject obj) => obj.Equals(EventSystem.current.currentSelectedGameObject);

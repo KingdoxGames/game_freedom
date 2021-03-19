@@ -19,7 +19,6 @@ public partial class Interactable : MonoBehaviour
 
     //[Space(20)]
     //public Color color;
-    //public bool debug_continueReaction = false;
 
     #endregion
     #region Events

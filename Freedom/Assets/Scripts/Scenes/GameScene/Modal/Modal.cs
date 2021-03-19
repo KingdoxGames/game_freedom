@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using XavHelpTo;
+using XavHelpTo.Look;
 using XavHelpTo.Set;
 using XavHelpTo.Know;
 using XavHelpTo.Change;
+using Environment;
 #endregion
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Animator))]
@@ -46,14 +48,30 @@ public partial class Modal : MonoBehaviour
     }
     #endregion
     #region Method
+    /// <summary>
+    /// Assign a new message and replace another existent
+    /// </summary>
+    public static void _AssignMessage(in ReactionDialog dialog) => _.AssignMessage(in dialog);
+    private void AssignMessage(in ReactionDialog _dialog)
+    {
+        ClearMessage();
 
+        dialog = _dialog;
+        txt_name.text = _dialog.message.name;
+
+        isLoading = true;
+        DisplayModal();
+    }
+
+
+    /// <summary>
+    /// Check if the modal have new text or if will be closed 
+    /// </summary>
     private void CheckInputs()
     {
         //si el jugador prsiona click izquierdo
-        if (Input.GetMouseButtonDown(0))
+        if (Control.PressAccept)
         {
-            //TODO
-
             //Carga el siguiente mensajé ó llena el texto
             if (isLoading)
             {
@@ -74,32 +92,19 @@ public partial class Modal : MonoBehaviour
             }
 
         }
-        //permite hacer Skip con espacio
-        if (Input.GetKey(KeyCode.Space))
-        {
-            DisplayModal(false);
 
-            //TODO Carga la siguiente reacción
-        }
+        //if (Control.PressSkip)
+        //{
+        //    DisplayModal(false);
+
+        //    //TODO Carga la siguiente reacción
+        //}
     }
 
 
 
 
-    /// <summary>
-    /// Assign a new message and replace another existent
-    /// </summary>
-    public static void _AssignMessage(in ReactionDialog dialog) => _.AssignMessage(in dialog);
-    private void AssignMessage(in ReactionDialog _dialog)
-    {
-        ClearMessage();
-
-        dialog = _dialog;
-        txt_name.text = _dialog.message.name;
-
-        isLoading = true;
-        DisplayModal();
-    }
+   
 
 
 

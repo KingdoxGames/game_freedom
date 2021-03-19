@@ -3,13 +3,13 @@ using UnityEngine;
 using Environment;
 using XavHelpTo.Know;
 using XavHelpTo.Get;
+using XavHelpTo.Set;
 #endregion
 [RequireComponent(typeof(Rigidbody))]
 public partial class PlayerController : MonoBehaviour
 {
     #region Variables
-    public const string TAG_AXIS_X = "Horizontal";
-    public const string TAG_AXIS_Z = "Vertical";
+    
     private Vector3 axis_XY;
     private Rigidbody body;
     [Space]
@@ -27,7 +27,7 @@ public partial class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (CanCheckAxis) axis_XY.Set(Input.GetAxis(TAG_AXIS_X), 0, Input.GetAxis(TAG_AXIS_Z));
+        if (CanCheckAxis) axis_XY.Set(Control.Axis_X, 0, Control.Axis_Z);
         else axis_XY.Set(0, 0, 0);
         CheckMovements();
         CheckOrientation();

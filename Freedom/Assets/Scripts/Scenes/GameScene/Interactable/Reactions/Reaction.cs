@@ -5,6 +5,7 @@ using UnityEngine;
 using XavHelpTo.Look;
 using XavHelpTo.Know;
 using XavHelpTo.Set;
+using Environment;
 #endregion
 [DisallowMultipleComponent]
 //[ExcludeFromPreset]
@@ -20,17 +21,9 @@ public class Reaction : MonoBehaviour
         [Range(-1,20)]
         [Tooltip("Nos permitirá modificar el evento para saber cuanto tiempo debe esperar hasta la siguiente, -1 significa que no usa tiempo")]
         public float waitSystem = -1;
-    [Space]
-    public bool isReacting;
 
     #endregion
     #region Methods
-
-    /// <summary>
-    /// React with the interactable in case to be 
-    /// </summary>
-    protected virtual void React() => $"Reacción".Print("white");
-
 
     /// <summary>
     /// Reaccionamos con la que estaba presente a la siguiente
@@ -40,10 +33,14 @@ public class Reaction : MonoBehaviour
         React();
 
         StartCoroutine(WaitReact());
-        
+
         //....
     }
 
+    /// <summary>
+    /// React with the interactable in case to be 
+    /// </summary>
+    protected virtual void React() => $"Reacción".Print("white");
 
     /// <summary>
     /// Waits until an external thing advise to continue the reaction
@@ -52,21 +49,19 @@ public class Reaction : MonoBehaviour
     protected virtual IEnumerator WaitReact()
     {
         float _countTime = 0 ;
+        
+        while (
 
-        /*
-         ( !interactable.debug_continueReaction && waitSystem.Equals(-1) )
-            || (!interactable.debug_continueReaction && !waitSystem.Equals(-1) && !waitSystem.TimerIn(ref _countTime))
-         TODO
-         */
-        while (isReacting && waitSystem.Equals(-1) || !waitSystem.TimerIn(ref _countTime))
+            !Control.PressAccept && waitSystem.Equals(-1)
+            || !waitSystem.TimerIn(ref _countTime))
         {
             yield return new WaitForEndOfFrame();
         }
         "CONTINUAMOS LA REACCION".Print();
         //interactable.debug_continueReaction = false;
         interactable.NextReaction();
-
     }
+
 
 
     #endregion

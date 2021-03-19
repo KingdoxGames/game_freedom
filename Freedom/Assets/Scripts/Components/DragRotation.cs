@@ -10,8 +10,6 @@ using XavHelpTo.Know;
 /// </summary>
 public partial class DragRotation : MonoBehaviour
 {
-    private const int DRAG_MOUSE_INPUT = 1;
-    private const string DRAG_MOUSE_X = "Mouse X";
     private const float ROTATION_X = 45f;
 
     [Header("Visual Axis")]
@@ -83,9 +81,9 @@ public partial class DragRotation{
     /// </summary>
     private void SetDrag()
     {
-        if (Input.GetMouseButton(DRAG_MOUSE_INPUT))
+        if (Control.HoldDrag)
         {
-            axis_Y += (Input.GetAxis(DRAG_MOUSE_X) * magnitude).Limit(axis_limit);
+            axis_Y += (Control.Axis_Y * magnitude).Limit(axis_limit);
             axis_Y = axis_Y.Limit(360);
             if (axis_Y.IsEqualOf(360, -360))
             {

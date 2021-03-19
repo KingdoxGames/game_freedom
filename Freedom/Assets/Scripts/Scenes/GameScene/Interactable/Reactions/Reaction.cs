@@ -1,11 +1,8 @@
 ﻿#region Access
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using XavHelpTo.Look;
 using XavHelpTo.Know;
-using XavHelpTo.Set;
-using Environment;
 #endregion
 [DisallowMultipleComponent]
 //[ExcludeFromPreset]
@@ -18,11 +15,10 @@ public class Reaction : MonoBehaviour
         [Header("⚡️Reaction Settings")]
         public string debug_information;
         [Space]
-        [Range(-1,20)]
+        [Range(0,20)]
         [Tooltip(
-        "Nos permitirá modificar el evento para saber cuanto tiempo debe esperar hasta la siguiente,"
-        + ". -1 significa que no usa tiempo")]
-        public float waitSystem = -1;
+        "Nos permitirá modificar el evento para saber cuanto tiempo debe esperar hasta la siguiente,")]
+        public float waiTime = 0;
 
     #endregion
     #region Methods
@@ -50,23 +46,8 @@ public class Reaction : MonoBehaviour
     /// <returns></returns>
     protected virtual IEnumerator WaitReact()
     {
-        //yield return new WaitForEndOfFrame();
-
-        //if ( false)//waitSystem < 0 &&
-        //{
-        //    bool _continue = false;
-        //    while (!_continue)
-        //    {
-        //        yield return new WaitForEndOfFrame();
-        //        _continue = !Control.PressAccept;
-        //    }
-        //}
-        //else
-        //{
-        //}
         float _countTime = 0;
-        while (!waitSystem.TimerIn(ref _countTime)) yield return new WaitForEndOfFrame();
-        
+        while (!waiTime.TimerIn(ref _countTime)) yield return new WaitForEndOfFrame();
         interactable.NextReaction();
     }
 

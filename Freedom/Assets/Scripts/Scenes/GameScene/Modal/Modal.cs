@@ -1,14 +1,7 @@
 ﻿#region Access
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using XavHelpTo;
-using XavHelpTo.Look;
-using XavHelpTo.Set;
-using XavHelpTo.Know;
-using XavHelpTo.Change;
-using Environment;
 #endregion
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Animator))]
@@ -37,14 +30,11 @@ public partial class Modal : MonoBehaviour
     {
         this.Singleton(ref _, false);
         this.Component(out anim);
+        isLoading = false;
     }
     private void Update()
     {
-
-        //CheckInputs();
-
         LoadMessage();
-
     }
     #endregion
     #region Method
@@ -63,67 +53,14 @@ public partial class Modal : MonoBehaviour
         DisplayModal();
     }
 
-
-    /// <summary>
-    /// Check if the modal have new text or if will be closed 
-    /// </summary>
-    private void CheckInputs(){
-        if (dialog.IsNull()) return;
-
-        //si el jugador prsiona click izquierdo
-        if (Control.PressAccept)
-        {
-
-            //Carga el siguiente mensajé ó llena el texto
-            if (isLoading)
-            {
-                isLoading = false;
-                txt_dialog.text = dialog.message.dialog;
-            }
-            else
-            {
-
-                if (dialog.closeLater)
-                {
-                    DisplayModal(false);
-                }
-
-                //siguiente
-
-                //&& 
-                //if (!dialog.interactable.reactions.Count.Equals(0))
-                //{   
-                //    if (dialog.closeLater ){
-                //        DisplayModal(false);
-                //    }
-                //}
-            }
-
-        }
-
-        //if (Control.PressSkip)
-        //{
-        //    DisplayModal(false);
-
-        //    //TODO Carga la siguiente reacción
-        //}
-    }
-
-
-
-
-   
-
-
-
     /// <summary>
     /// Show or hide the modal in Scene
     /// </summary>
-    private void DisplayModal(bool showModal = true) => anim.SetTrigger(showModal ? "Show" : "Hide");
+    public static void DisplayModal(in bool showModal) => _.DisplayModal(showModal);
+    private void DisplayModal( bool showModal = true) => anim.SetTrigger(showModal ? "Show" : "Hide");
 
-
-
-
+    ///<returns>Is Text Loading</returns>
+    public static bool IsLoading => _.isLoading;
     #endregion
 }
 

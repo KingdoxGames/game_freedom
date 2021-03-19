@@ -759,7 +759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6942764399612278469, guid: 68390568cc10541c68be794c2635ce05, type: 3}
       propertyPath: message.dialog
-      value: Hola soy xavier, este es el primer mensaje! interesante no?
+      value: Hola soy xavier, este es el primer mensaje! interesante no?0
       objectReference: {fileID: 0}
     - target: {fileID: 6942764399612278469, guid: 68390568cc10541c68be794c2635ce05, type: 3}
       propertyPath: message.name
@@ -772,6 +772,14 @@ PrefabInstance:
     - target: {fileID: 6942764399612278469, guid: 68390568cc10541c68be794c2635ce05, type: 3}
       propertyPath: waitSystem
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942764399612278469, guid: 68390568cc10541c68be794c2635ce05, type: 3}
+      propertyPath: waiTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942764399612278469, guid: 68390568cc10541c68be794c2635ce05, type: 3}
+      propertyPath: canFillText
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68390568cc10541c68be794c2635ce05, type: 3}
@@ -1176,7 +1184,7 @@ MonoBehaviour:
   - {fileID: 3344606911669476008, guid: d26de74292e5e45359e077b630392bc4, type: 3}
   - {fileID: 6826799482099102737, guid: e425969068eca47998697b34a7910074, type: 3}
   - {fileID: 5465124078585134539, guid: 26c7d9ee5255a461c8a7fb1d8b2b10b2, type: 3}
-  selectedMap: 6
+  selectedMap: 9
   _debug_change: 0
 --- !u!1 &525512278
 GameObject:

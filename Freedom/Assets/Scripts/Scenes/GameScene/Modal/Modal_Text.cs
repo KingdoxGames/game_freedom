@@ -1,10 +1,7 @@
 ﻿#region Access
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using XavHelpTo.Look;
+using XavHelpTo.Get;
 using XavHelpTo.Know;
-
 #endregion
 public partial class Modal
 {
@@ -21,23 +18,21 @@ public partial class Modal
     /// <summary>
     /// Counts the time and adds a letter in the txt if <see cref="isLoading"/> is <see cref="true"/>
     /// </summary>
-    public void LoadMessage()
-    {
-        //🛡
-        if (dialog.IsNull()) return;
-        //🛡
+    public void LoadMessage(){
+        if (dialog.IsNull() || !isLoading || !ratioTimer.TimerIn(ref ratioCount)) return;//🛡
 
-        if (!isLoading || !ratioTimer.TimerIn(ref ratioCount)) return;
-
-        txt_dialog.text += dialog.message.dialog[index++];
-
-        if (txt_dialog.text.Length == dialog.message.dialog.Length)
-        {
-            "Terminado el dialogo".Print("green");
-            isLoading = false;
-        }
+        int _length = dialog.message.dialog.Length;
+        txt_dialog.text += dialog.message.dialog[index++.Max(_length - 1)];
+        isLoading = !txt_dialog.text.Length.Equals(_length);
     }
-
+    /// <summary>
+    /// Fullyfill the <see cref="UnityEngine.UI.Text"/> of <see cref="txt_dialog"/>
+    /// </summary>
+    public static void _FullLoadMessage() => _.FullLoadMessage();
+    private void FullLoadMessage(){
+        isLoading = false;
+        txt_dialog.text = dialog.message.dialog;
+    }
     /// <summary>
     /// Clear the modal
     /// </summary>

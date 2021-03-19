@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Environment;
 using UnityEngine.EventSystems;
 using S = System;
 #endregion
@@ -230,6 +229,7 @@ namespace XavHelpTo
             public static int ZeroMax<T>(this T[] arr) => arr.Length.ZeroMax();
 
             public static float Max(this float value, float max) => value > max ? max : value;
+            public static int Max(this int value, int max) => value > max ? max : value;
             public static Vector3 Max(this Vector3 value, float max) => new Vector3(value.x.Max(max), value.y.Max(max), value.z.Max(max));
 
             /// <returns>A value with the minimal or else the value</returns>

@@ -29,11 +29,11 @@ public class Reaction : MonoBehaviour
     /// <summary>
     /// React with the interactable in case to be 
     /// </summary>
-    protected virtual void React() => $"Reacción".Print("magenta");
+    protected virtual void React() => $"Reacción".Print("white");
 
 
     /// <summary>
-    /// TODO
+    /// Reaccionamos con la que estaba presente a la siguiente
     /// </summary>
     public virtual void ExecuteReaction()
     {
@@ -56,6 +56,7 @@ public class Reaction : MonoBehaviour
         /*
          ( !interactable.debug_continueReaction && waitSystem.Equals(-1) )
             || (!interactable.debug_continueReaction && !waitSystem.Equals(-1) && !waitSystem.TimerIn(ref _countTime))
+         TODO
          */
         while (isReacting && waitSystem.Equals(-1) || !waitSystem.TimerIn(ref _countTime))
         {

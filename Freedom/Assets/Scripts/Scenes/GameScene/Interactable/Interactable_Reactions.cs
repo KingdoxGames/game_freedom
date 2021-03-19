@@ -34,7 +34,6 @@ public partial class Interactable
     {
         //🛡
         if (parent_reaction.IsNull()) return;
-        //🛡
         reactions.Clear();
         foreach (Reaction r in parent_reaction.GetComponentsInChildren<Reaction>())
         {
@@ -51,7 +50,6 @@ public partial class Interactable
     {
         //🛡
         if (reactions.Count == 0) return;
-        //🛡
 
         reactions.Dequeue().ExecuteReaction();
     }

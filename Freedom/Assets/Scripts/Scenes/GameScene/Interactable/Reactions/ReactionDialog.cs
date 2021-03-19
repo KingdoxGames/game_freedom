@@ -26,7 +26,7 @@ public class ReactionDialog : Reaction
     {
         base.React();
 
-
+        //Contactas con el modal para mostrar los dialogos de los mensajes
         Modal._AssignMessage(this);
 
 

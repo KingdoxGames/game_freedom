@@ -15,11 +15,13 @@ public class Reaction : MonoBehaviour
         [HideInInspector]
         public Interactable interactable;
 
-        [Header("Reaction Settings")]
+        [Header("⚡️Reaction Settings")]
         public string debug_information;
         [Space]
         [Range(-1,20)]
-        [Tooltip("Nos permitirá modificar el evento para saber cuanto tiempo debe esperar hasta la siguiente, -1 significa que no usa tiempo")]
+        [Tooltip(
+        "Nos permitirá modificar el evento para saber cuanto tiempo debe esperar hasta la siguiente,"
+        + ". -1 significa que no usa tiempo")]
         public float waitSystem = -1;
 
     #endregion
@@ -48,17 +50,23 @@ public class Reaction : MonoBehaviour
     /// <returns></returns>
     protected virtual IEnumerator WaitReact()
     {
-        float _countTime = 0 ;
-        
-        while (
+        //yield return new WaitForEndOfFrame();
 
-            !Control.PressAccept && waitSystem.Equals(-1)
-            || !waitSystem.TimerIn(ref _countTime))
-        {
-            yield return new WaitForEndOfFrame();
-        }
-        "CONTINUAMOS LA REACCION".Print();
-        //interactable.debug_continueReaction = false;
+        //if ( false)//waitSystem < 0 &&
+        //{
+        //    bool _continue = false;
+        //    while (!_continue)
+        //    {
+        //        yield return new WaitForEndOfFrame();
+        //        _continue = !Control.PressAccept;
+        //    }
+        //}
+        //else
+        //{
+        //}
+        float _countTime = 0;
+        while (!waitSystem.TimerIn(ref _countTime)) yield return new WaitForEndOfFrame();
+        
         interactable.NextReaction();
     }
 

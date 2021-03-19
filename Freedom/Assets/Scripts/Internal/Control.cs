@@ -42,8 +42,6 @@ public static class Control
     /// <returns>Returns the axis of the key</returns>
     private static float Axis(in string key) => Input.GetAxis(key);
     #endregion
-
-
     /*
      * Notas: https://forum.unity.com/threads/difference-between-getbutton-getkey-and-getmousebutton.167567/
      * 

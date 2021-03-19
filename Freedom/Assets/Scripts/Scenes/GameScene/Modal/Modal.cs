@@ -41,7 +41,7 @@ public partial class Modal : MonoBehaviour
     private void Update()
     {
 
-        CheckInputs();
+        //CheckInputs();
 
         LoadMessage();
 
@@ -67,11 +67,13 @@ public partial class Modal : MonoBehaviour
     /// <summary>
     /// Check if the modal have new text or if will be closed 
     /// </summary>
-    private void CheckInputs()
-    {
+    private void CheckInputs(){
+        if (dialog.IsNull()) return;
+
         //si el jugador prsiona click izquierdo
         if (Control.PressAccept)
         {
+
             //Carga el siguiente mensajé ó llena el texto
             if (isLoading)
             {
@@ -80,6 +82,12 @@ public partial class Modal : MonoBehaviour
             }
             else
             {
+
+                if (dialog.closeLater)
+                {
+                    DisplayModal(false);
+                }
+
                 //siguiente
 
                 //&& 

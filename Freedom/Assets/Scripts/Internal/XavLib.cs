@@ -603,7 +603,8 @@ namespace XavHelpTo
             /// <summary>
             /// Preguntamos si es nulo el valor indicado
             /// </summary>
-            public static bool IsNull<T>(this T t) => t == null || t.ToString() == "null";
+            public static bool IsNull<T>(this T t ) => t == null || t.ToString() == "null";
+            //,bool equal = true TODO a futuro podrás decir si el nulo es cierto o no como segundo argumento, por defecto true
             public static bool IsNull<T>(params T[] t)
                 where T: struct
             {

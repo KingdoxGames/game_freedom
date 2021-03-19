@@ -12,46 +12,29 @@ public partial class Interactable : MonoBehaviour
     #region Variables
     private bool isNear = false;
     private Collider col;
-
     [Header("Interactable Settigns")]
     public ParticleSystem eff_near;
     public Transform parent_reaction;
-
     //[Space(20)]
     //public Color color;
-
     #endregion
     #region Events
-    private void Awake()
-    {
-        this.Component(out col);
-    }
+    private void Awake() => this.Component(out col);
     private void Update()
     {
         CheckRequirements();
-
         if (!eff_near.IsNull()) eff_near.ActiveParticle(isNear);
         if (!col.IsNull()) col.enabled = isNear;
     }
     private void OnMouseDown()
     {
-        if (isNear)
-        {
-            Interact();
-        }
+        if (isNear) Interact();
     }
 #if false
-
     private void OnDrawGizmos(){
-
         Gizmos.color = color;
         Gizmos.DrawWireSphere(transform.position, distanceRequired);
-
-        if (!PlayerController.tr_player.IsNull())
-        {
-            Gizmos.DrawLine(transform.position, PlayerController.tr_player.position);
-        }
-
+        if (!PlayerController.tr_player.IsNull()) Gizmos.DrawLine(transform.position, PlayerController.tr_player.position);
     }
 #endif
     #endregion

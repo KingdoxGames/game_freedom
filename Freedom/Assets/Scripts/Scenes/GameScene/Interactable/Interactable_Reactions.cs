@@ -13,27 +13,20 @@ public partial class Interactable
     #endregion
     #region Method
     /// <summary>
-    /// Gestionara las condiciones y reacciones
+    /// Manages the news conditions and set the first reaction
+    /// based in <see cref="AssignReactions"/> and <see cref="NextReaction"/>
     /// </summary>
     partial void Interact()
     {
-
-        // ponemos en cola todas las reacciones
-        //lo estamos haciendo en el start
         AssignReactions();
-
-        // iniciamos la secuencia de reacciones
         NextReaction();
-
     }
    
     /// <summary>
     /// Insert all the reactions in the Queue
     /// </summary>
-    private void AssignReactions()
-    {
-        //🛡
-        if (parent_reaction.IsNull()) return;
+    private void AssignReactions(){
+        if (parent_reaction.IsNull()) return; //🛡
         reactions.Clear();
         foreach (Reaction r in parent_reaction.GetComponentsInChildren<Reaction>())
         {
@@ -41,18 +34,13 @@ public partial class Interactable
             reactions.Enqueue(r);
         }
     }
-
     /// <summary>
     /// Starts the next interaction of the queue and dequeues it.
     /// </summary>
     [ContextMenu("SIguiente Reacción")]
-    public void NextReaction()
-    {
-        //🛡
-        if (reactions.Count == 0) return;
-
+    public void NextReaction(){
+        if (reactions.Count == 0) return; //🛡
         reactions.Dequeue().ExecuteReaction();
     }
-
 }
 #endregion

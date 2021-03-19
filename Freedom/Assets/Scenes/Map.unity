@@ -405,7 +405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6942764399612278469, guid: 68390568cc10541c68be794c2635ce05, type: 3}
       propertyPath: message.dialog
-      value: qwe
+      value: "Este es temporal, se cambia automatico \u2705\u2705"
       objectReference: {fileID: 0}
     - target: {fileID: 6942764399612278469, guid: 68390568cc10541c68be794c2635ce05, type: 3}
       propertyPath: message.name
@@ -414,6 +414,10 @@ PrefabInstance:
     - target: {fileID: 6942764399612278469, guid: 68390568cc10541c68be794c2635ce05, type: 3}
       propertyPath: debug_information
       value: Testeo de los mensajes
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942764399612278469, guid: 68390568cc10541c68be794c2635ce05, type: 3}
+      propertyPath: waitSystem
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68390568cc10541c68be794c2635ce05, type: 3}
@@ -767,7 +771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6942764399612278469, guid: 68390568cc10541c68be794c2635ce05, type: 3}
       propertyPath: waitSystem
-      value: -1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68390568cc10541c68be794c2635ce05, type: 3}
@@ -1985,12 +1989,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e90f2028882e4c8c9c450af41a892b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axis_Y: 0
-  magnitude: 3
-  axis_limit: 20
-  delta_time: 0.1
-  distance: 10
   target: {fileID: 1161582200}
+  axis_Y: -360
+  axis_limit: 20
+  distance: 10
 --- !u!1 &1006027923
 GameObject:
   m_ObjectHideFlags: 0

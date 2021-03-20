@@ -27,7 +27,7 @@ public class ReactionDialog : Reaction
     [ContextMenu("Mostrar Dialogo")]
     protected override void React()
     {
-        base.React();
+        //base.React();
         Modal._AssignMessage(this);
     }
     protected override IEnumerator WaitReact()
@@ -51,6 +51,7 @@ public class ReactionDialog : Reaction
                 {
                     yield return new WaitForFixedUpdate();
                     _keep = !(waiTime.TimerFlag(ref _passTimeFlag, ref _count) && Control.PressAccept);
+                    Modal.ShowContinueSign(in _passTimeFlag);
                 }
                 break;
             case DialogInteraction.CAN_FILL_TEXT:
@@ -58,6 +59,7 @@ public class ReactionDialog : Reaction
                 {
                     yield return new WaitForFixedUpdate();
                     _keep = CheckFillText(waiTime.TimerFlag(ref _passTimeFlag, ref _count));
+                    Modal.ShowContinueSign(!Modal.IsLoading);
                     yield return new WaitForEndOfFrame();
                 }
                 break;
@@ -73,11 +75,12 @@ public class ReactionDialog : Reaction
     /// </summary>
     /// <param name="isTextDone"></param>
     private bool CheckFillText(in bool isReady){
+        bool _keep = true;
         if (isReady && Control.PressAccept ){
             if (Modal.IsLoading)Modal._FullLoadMessage();
-            else return false;
+            else _keep = false;
         }
-        return true;
+        return _keep;
     }
 
 

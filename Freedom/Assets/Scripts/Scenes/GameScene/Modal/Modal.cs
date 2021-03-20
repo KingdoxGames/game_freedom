@@ -54,10 +54,10 @@ public partial class Modal : MonoBehaviour
     private void AssignMessage(in ReactionDialog _dialog)
     {
         ClearMessage();
+        ShowContinueSign(false);
         obj_name.SetActive(!_dialog.message.name.Equals(""));
         dialog = _dialog;
         txt_name.text = _dialog.message.name;
-
         isLoading = true;
         DisplayModal();
     }

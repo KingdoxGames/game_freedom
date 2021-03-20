@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using XavHelpTo;
+using XavHelpTo.Set;
+using XavHelpTo.Change;
 #endregion
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Animator))]
@@ -21,6 +23,10 @@ public partial class Modal : MonoBehaviour
     [Space]
     public Text txt_name;
     public Text txt_dialog;
+    [Space]
+    public Image img_continueSign;
+    [Space]
+    public GameObject obj_name;
 
 
 
@@ -31,6 +37,9 @@ public partial class Modal : MonoBehaviour
         this.Singleton(ref _, false);
         this.Component(out anim);
         isLoading = false;
+    }
+    private void Start(){
+        ShowContinueSign(false);
     }
     private void Update()
     {
@@ -45,7 +54,7 @@ public partial class Modal : MonoBehaviour
     private void AssignMessage(in ReactionDialog _dialog)
     {
         ClearMessage();
-
+        obj_name.SetActive(!_dialog.message.name.Equals(""));
         dialog = _dialog;
         txt_name.text = _dialog.message.name;
 
@@ -61,6 +70,10 @@ public partial class Modal : MonoBehaviour
 
     ///<returns>Is Text Loading</returns>
     public static bool IsLoading => _.isLoading;
+
+    ///<returns>Show or hide the ContinueSign</returns>
+    public static void ShowContinueSign(in bool show = true) => _.img_continueSign.ColorParam(ColorType.a, show.ToInt());//(!isLoading).ToInt()
+
     #endregion
 }
 

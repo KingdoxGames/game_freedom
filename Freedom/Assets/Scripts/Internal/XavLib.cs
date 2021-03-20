@@ -380,10 +380,10 @@ namespace XavHelpTo
 
                 return c;
             }
-            public static void ColorParam(ref Image img, ColorType i, float val = 1)
+            public static void ColorParam(this Image img, ColorType i, float val = 1)
             {
-                Color c = img.color;
-                img.color = ColorParam(c, (int)i, val);
+                
+                img.color = ColorParam(img.color, (int)i, val);
             }
 
 
@@ -560,7 +560,7 @@ namespace XavHelpTo
                 }
                 //public static int ToFloat(this int val) => Mathf.Round(val /2);
                 /// <summary>
-                /// Cambia  a int su valor
+                /// change the value to a binary result
                 /// </summary>
                 public static int ToInt(this bool condition) => condition ? 1 : 0;
                 public static int ToInt(this float val) => (int)val;

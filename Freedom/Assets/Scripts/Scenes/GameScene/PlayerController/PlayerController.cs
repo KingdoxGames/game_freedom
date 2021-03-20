@@ -15,9 +15,6 @@ public partial class PlayerController : MonoBehaviour
     [Space]
     public static Transform tr_player;
 
-    [Header("Player Controller")]
-    public bool CanCheckAxis = true;
-
     #endregion
     #region Events
     private void Awake()
@@ -27,7 +24,7 @@ public partial class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (CanCheckAxis) axis_XY.Set(Control.Axis_X, 0, Control.Axis_Z);
+        if (Control.canCheckAxis) axis_XY.Set(Control.Axis_X, 0, Control.Axis_Z);
         else axis_XY.Set(0, 0, 0);
         CheckMovements();
         CheckOrientation();

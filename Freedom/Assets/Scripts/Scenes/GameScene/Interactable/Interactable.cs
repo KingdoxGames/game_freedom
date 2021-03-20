@@ -11,6 +11,8 @@ public partial class Interactable : MonoBehaviour
 {
     #region Variables
     private bool isNear = false;
+    [Tooltip("Si existe algún tipo de interacción, solo puede existir un solo momento de interacción")]
+    private static bool isInteracting = false;
     private Collider col;
     [Header("Interactable Settigns")]
     public ParticleSystem eff_near;
@@ -28,7 +30,7 @@ public partial class Interactable : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (isNear) Interact();
+        if (!isInteracting && isNear) Interact();
     }
 #if false
     private void OnDrawGizmos(){

@@ -9,6 +9,10 @@ public partial class Interactable
     #region Variable
     public Queue<Reaction> reactions = new Queue<Reaction>();
 
+    [Header("_Reactions")]
+    public bool canCheckAxis = true;
+    public bool canMove = true;
+    public bool canRotate = true;
 
     #endregion
     #region Method
@@ -18,6 +22,8 @@ public partial class Interactable
     /// </summary>
     partial void Interact()
     {
+        isInteracting = true;
+        PlayerReactionIn(false);
         AssignReactions();
         NextReaction();
     }
@@ -39,8 +45,30 @@ public partial class Interactable
     /// </summary>
     [ContextMenu("SIguiente Reacción")]
     public void NextReaction(){
-        if (reactions.Count == 0) return; //🛡
-        reactions.Dequeue().ExecuteReaction();
+        if (reactions.Count == 0) EndReactions();
+        else reactions.Dequeue().ExecuteReaction();
+    }
+
+
+    /// <summary>
+    /// Ends the interactions
+    /// </summary>
+    private void EndReactions()
+    {
+        isInteracting = false;
+        PlayerReactionIn(true);
+    }
+
+
+    /// <summary>
+    /// Enables or Disables the player activity using the settings can__ or returning the control
+    /// </summary>
+    /// <param name="normalize"></param>
+    private void PlayerReactionIn(bool normalize){
+
+        Control.canMove = normalize || canMove;
+        Control.canRotate = normalize || canRotate;
+        Control.canCheckAxis = normalize || canCheckAxis;
     }
 }
 #endregion

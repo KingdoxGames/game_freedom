@@ -1,7 +1,6 @@
 ﻿#region Access
 using System.Collections;
 using UnityEngine;
-using XavHelpTo.Look;
 using XavHelpTo.Know;
 using DialogInteract;
 #endregion

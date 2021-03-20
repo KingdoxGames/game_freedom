@@ -13,11 +13,16 @@ public static class Control
     private const string TAG_AXIS_Z = "Vertical";
     private const int DRAG_MOUSE_INPUT = 1;
 
-    private static KeyCode back = KeyCode.Escape;
+    [Header("Can Player Do")]
+    public static bool canCheckAxis = true;
+    public static bool canMove = true;
+    public static bool canRotate = true;
+
+
     #endregion
     #region Method
     ///<returns> Was Back Pressed? </returns>
-    public static bool PressBack => KeyDown(back);
+    public static bool PressBack => KeyDown(KeyCode.Escape);
 
     ///<returns> Was Accept Pressed? </returns>
     public static bool PressAccept => KeyDown(KeyCode.Mouse0);

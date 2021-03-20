@@ -3,23 +3,13 @@ using UnityEngine;
 #endregion
 public partial class PlayerController
 {
-    #region Variables
-    [Header("_Rotation")]
-    public bool canRotate = true;
-    #endregion
     #region Methods
     
     /// <summary>
     /// Check te rotation of the player
     /// </summary>
     partial void CheckOrientation(){
-        if (canRotate)
-        {
-            if (!axis_XY.Equals(Vector3.zero)){   
-                Rotate();
-            }
-        }
-
+        if (Control.canRotate && !axis_XY.Equals(Vector3.zero)) Rotate();
     }
     /// <summary>
     /// Player rotates based on the camera forward the movements in axis

@@ -10,7 +10,7 @@ using S = System;
 /// <summary>
 /// Herramientas para facilitar a Xavier contra el codigo
 /// <para>Aquí se poseerán funciones unicamente "static"</para>
-/// <see cref="XavHelpTo"/> Ultima Actualización => 12 marzo 2021
+/// <see cref="XavHelpTo"/> Ultima Actualización => 20 marzo 2021
 ///
 /// </summary>
 namespace XavHelpTo
@@ -18,7 +18,7 @@ namespace XavHelpTo
 
     /// <summary>
     /// Herramienta general de herramientas frecuentes
-    /// TODO -Nombres por ver, Solve, assing, parse
+    /// TODO -Nombres por ver, Solve, assign, parse
     /// </summary>
    public static class Parse
     {

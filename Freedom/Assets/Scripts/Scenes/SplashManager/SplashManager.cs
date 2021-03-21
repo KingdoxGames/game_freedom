@@ -29,7 +29,10 @@ public class SplashManager : MonoBehaviour
                 imgCtrl_Splash.Invert();
             }
         }
-        else if (timeInToGo.TimerIn(ref countToGo)) Change.ToScene(Scenes.MenuScene.ToInt());
+        else if (timeInToGo.TimerIn(ref countToGo))
+        {
+            Change.ToScene(Scenes.MenuScene.ToInt());
+        }
     }
     #endregion
 }

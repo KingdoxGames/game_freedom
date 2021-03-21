@@ -1,19 +1,15 @@
 ﻿#region
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Environment;
 using XavHelpTo.Set;
+using XavHelpTo.Change;
 using XavHelpTo.Get;
-using XavHelpTo.Know;
 #endregion
 public class GameManager : MonoBehaviour
 {
     #region Variable
     private static GameManager _;
     public static Camera cam = null;
-
-    //[Header("Game Manager")]
-
     #endregion
     #region Events
     private void Awake(){
@@ -22,7 +18,13 @@ public class GameManager : MonoBehaviour
     }
     #endregion
     #region Methods
-
-
+    /// <summary>
+    /// Returns to the menú
+    /// </summary>
+    public void GoToMenu() => Scenes.MenuScene.ToInt().ToScene();
+    /// <summary>
+    /// Restarts the game in the last saved data 
+    /// </summary>
+    public void ReStart() => Scenes.GameScene.ToInt().ToScene();
     #endregion
 }

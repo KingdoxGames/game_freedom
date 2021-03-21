@@ -13,8 +13,8 @@ namespace Environment
         [HideInInspector]
         public static Data data = new Data();
 
-        public const string savedPath = "saved.txt";
-        public const string version = "v0.1.1";
+        public const string savedPath = "saved4.txt";
+        public const string version = "v0.3.1";
         public const string TAG_PLAYER = "Player";
 
     }

@@ -1,11 +1,7 @@
 ﻿#region Access
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using XavHelpTo.Know;
-using XavHelpTo.Look;
-using XavHelpTo.Set;
 #endregion
 public class TutorialMessages : MonoBehaviour
 {
@@ -27,18 +23,15 @@ public class TutorialMessages : MonoBehaviour
     {
         AssignText(-1);
     }
-    private void Update(){
-        //Si no esta completo y estás en el Tick
-        if (!flag_IsDone && ratio_Loads.TimerIn(ref count_Loads)){
-            LoadInfo();
-        }
-    }
+    private void Update() =>LoadInfo();
     #endregion
     #region Method
     /// <summary>
     /// Loads a <see cref="char"/> of the text, advise in <see cref="flag_IsDone"/> whether is Ended
     /// </summary>
     private void LoadInfo(){
+        if (flag_IsDone || !ratio_Loads.TimerIn(ref count_Loads)) return;//🛡
+
         string text = index_ToLoad.Equals(-1) ? DEFAULT_TEXT : messages[index_ToLoad];
         txt_message.text += text[txt_message.text.Length];
         if (txt_message.text.Equals(text)) flag_IsDone = true;

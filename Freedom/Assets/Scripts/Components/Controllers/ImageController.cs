@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using XavHelpTo.Set;
 using XavHelpTo;
 #endregion
-
 public class ImageController : MonoBehaviour , IImageController
 {
     #region

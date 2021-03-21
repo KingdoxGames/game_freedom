@@ -13,52 +13,37 @@ using XavHelpTo.Set;
 /// </summary>
 public class DataPass : MonoBehaviour
 {
-    //~DataPass() => print("...");
-
     #region ####### VARIABLES
-
-    private static DataPass _;//Singleton....
-    public static bool isReady = false;
-
+    private static DataPass _;
     [Header("Saved Data")]
     [SerializeField]
     private SavedData savedData = new SavedData();
-
     #endregion
     #region ###### EVENTS
-    private void Awake() => this.Singletone(ref _);
-    private void Start() => DataInit();
+    private void Awake()
+    {
+        this.Singletone(ref _);
+        _._SaveLoadFile(!File.Exists(Path));
+    }
     #endregion
     #region ####### METHODS
-
-    /// <summary>
-    /// Revisamos si existen datos guardados, de no existir los crea
-    /// </summary>
-    private void DataInit()
-    {
-        isReady = false;
-        SaveLoadFile(!File.Exists(GetPath()));
-        isReady = true;
-    }
-
-
-
     /// <summary>
     /// Guardamos ó cargamos el archivo que poseeremos para contener los datos
     /// que se guardan en un archivo
     /// </summary>
     /// <param name="wantSave"></param>
-    public static void  SaveLoadFile(bool wantSave = false)
+    public static void SaveLoadFile(in bool wantSave = false) => _._SaveLoadFile(wantSave);
+    private void  _SaveLoadFile(bool wantSave = false)
     {
         BinaryFormatter _formatter = new BinaryFormatter();
-        FileStream _stream = new FileStream(GetPath(), wantSave ? FileMode.Create : FileMode.Open);
+        FileStream _stream = new FileStream(Path, wantSave ? FileMode.Create : FileMode.Open);
         DataStorage _dataStorage;
        
         //Dependiendo de si va a cargar o guardar hará algo o no
         if (wantSave)
         {
-            _.savedData.debug_savedTimes++;
-            _dataStorage = new DataStorage(GetSavedData());
+            savedData.debug_savedTimes++;
+            _dataStorage = new DataStorage(SavedData);
             _formatter.Serialize(_stream, _dataStorage);
             _stream.Close();
         }
@@ -66,25 +51,21 @@ public class DataPass : MonoBehaviour
         {
             _dataStorage = _formatter.Deserialize(_stream) as DataStorage;
             _stream.Close();
-            SetData(_dataStorage.savedData);
-
-            _.savedData = _dataStorage.savedData;
+            SetData( _dataStorage.savedData);
+            //savedData = _dataStorage.savedData; TODO por qué esto estaba activado?
         }
     }
-
     /// <summary>
-    /// Tomamos los datos que ya estén cargados
+    ///  Update the Data of <see cref="DataPass"/> in <seealso cref="SavedData"/> with <paramref name="newSavedData"/>
     /// </summary>
-    public static SavedData GetSavedData() => _.savedData;
-
-    /// <summary>
-    ///  Inserta los nuevos datos que poseerá dataPass en su "SavedData"
-    /// </summary>
-    /// <param name="newSavedData"></param>
-    public static void SetData(SavedData newSavedData) => _.savedData = newSavedData;
-
+    public static void SetData( SavedData newSavedData) => _.savedData = newSavedData;
+    /// <returns>The Loaded data in <see cref="DataPass"/></returns>
+    public static SavedData SavedData => _.savedData;
     /// <returns>The path of the saved data</returns>
-    private static string GetPath() => Application.persistentDataPath + Data.savedPath;
+    private static string Path => Application.persistentDataPath + Data.savedPath;
+
+    [ContextMenu("Guardar los datos")]
+    public void _Save() => SaveLoadFile(true);
     #endregion
 }
 #endregion
@@ -101,7 +82,6 @@ public class DataStorage
     //Con esto podremos guardar los datos de datapass a DataStorage
     public DataStorage(SavedData savedData) => this.savedData = savedData;
 }
-
 /// <summary>
 /// Este es el modelo de datos que vamos a guardar y manejar
 /// para los archivos que se crean... Estos datos internos pueden cambiar para los proyectos...
@@ -112,11 +92,18 @@ public class DataStorage
 [System.Serializable]
 public struct SavedData
 {
-    public int recordPts;
-
+    [Tooltip("El jugador nesecita que se le muestre el tutorial al iniciar?")]
+    public bool tutorialDone;
+    [Tooltip("decibeles guardado de musica")]
+    [Range(0,1f)]
+    public float musicPercent;
+    [Tooltip("Porcentaje guardado de sonido")]
+    [Range(0,1)]
+    public float soundPercent;
     //Extra Debug ?
     [Space(10)]
     [Header("Debug Area")]
+    [Tooltip("Para debug, saber las veces que se ha guardado")]
     public int debug_savedTimes;
 };
 #endregion

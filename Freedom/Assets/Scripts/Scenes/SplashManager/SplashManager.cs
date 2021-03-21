@@ -1,7 +1,8 @@
 ﻿#region Access
 using UnityEngine;
 using XavHelpTo.Know;
-using XavHelpTo.Look;
+using Environment;
+using XavHelpTo.Change;
 #endregion
 public class SplashManager : MonoBehaviour
 {
@@ -28,19 +29,7 @@ public class SplashManager : MonoBehaviour
                 imgCtrl_Splash.Invert();
             }
         }
-        else if (timeInToGo.TimerIn(ref countToGo)) GoToMenu();
+        else if (timeInToGo.TimerIn(ref countToGo)) Change.ToScene(Scenes.MenuScene.ToInt());
     }
-    #endregion
-    #region Method
-
-    private void GoToMenu()
-    {
-        "Nos vamos al menu".Print();
-        //TODO conectar con el menu
-
-        //se desactiva
-        gameObject.SetActive(false);
-    }
-
     #endregion
 }

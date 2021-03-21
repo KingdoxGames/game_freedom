@@ -18,6 +18,15 @@ namespace Environment
         public const string TAG_PLAYER = "Player";
 
     }
+    /// <summary>
+    /// Las escenas del juego, ordenadas como en "Build Settings"
+    /// </summary>
+    public enum Scenes
+    {
+        SplashScene=0,
+        MenuScene=1,
+        GameScene=2
+    }
     #endregion
 }
 

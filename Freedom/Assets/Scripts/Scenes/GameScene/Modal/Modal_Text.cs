@@ -8,13 +8,10 @@ public partial class Modal
     #region Variable
     private float ratioCount;
     private int index = 0;
-
     [Header("_Text")]
     public const float ratioTimer = 0.01f;
-
     #endregion
     #region Method
-
     /// <summary>
     /// Counts the time and adds a letter in the txt if <see cref="isLoading"/> is <see cref="true"/>
     /// </summary>

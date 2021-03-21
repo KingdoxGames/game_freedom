@@ -507,20 +507,24 @@ namespace XavHelpTo
                 /// Activa o desactiva el <seealso cref="GameObject"/> basado en una condición
                 /// <para>Dependencia con <seealso cref="GameObject"/> </para>
                 /// </summary>
-                public static void ActiveObject(GameObject obj, bool condition) => obj.SetActive(condition);
+                public static void ActiveObject(in GameObject obj, bool condition) => obj.SetActive(condition);
                 /// <summary>
                 /// Activa unicamente el objeto indicado del arreglo
                 /// <para>Por defecto el indice es el primero del arreglo</para>
                 /// <para>Dependencia con <seealso cref="ObjOnOff(GameObject, bool)"/> </para>
                 /// </summary>
-                public static void ActiveObjectsExcept(GameObject[] arr, int index = 0) { for (int x = 0; x < arr.Length; x++) ActiveObject(arr[x], x == index); }
+                public static void ActiveObjectsExcept(in GameObject[] arr, int index = 0) { for (int x = 0; x < arr.Length; x++) ActiveObject(arr[x], x == index); }
                 public static void ActiveObjectsExcept(int index, params GameObject[] arr) { for (int x = 0; x < arr.Length; x++) ActiveObject(arr[x], x == index); }
-
                 /// <summary>
-                /// Dependiendo de la condición determinamos si iniciar o apagar la animación
-                /// <para>Dependencia con <seealso cref="ParticleSystem"/> </para>
+                /// Active o Disable all the objects
                 /// </summary>
-                public static void ActiveParticle(this ParticleSystem particle, bool condition)
+                public static void ActiveObjects<T>(this T[] arr, bool val) where T : Component { for (int x = 0; x < arr.Length; x++) ActiveObject(arr[x].gameObject, val); }
+
+            /// <summary>
+            /// Dependiendo de la condición determinamos si iniciar o apagar la animación
+            /// <para>Dependencia con <seealso cref="ParticleSystem"/> </para>
+            /// </summary>
+            public static void ActiveParticle(this ParticleSystem particle, bool condition)
                 {
                     if (condition && particle.isStopped) particle.Play();
                     else if (!condition && particle.isPlaying) particle.Stop();

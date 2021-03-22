@@ -9,12 +9,11 @@ using XavHelpTo.Set;
 public partial class PlayerController : MonoBehaviour
 {
     #region Variables
-    
+
     private Vector3 axis_XY;
     private Rigidbody body;
     [Space]
     public static Transform tr_player;
-
     #endregion
     #region Events
     private void Awake()
@@ -24,8 +23,8 @@ public partial class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (Control.canCheckAxis) axis_XY.Set(Control.Axis_X, 0, Control.Axis_Z);
-        else axis_XY.Set(0, 0, 0);
+        CheckPause();
+        CheckAxisInputs();
         CheckMovements();
         CheckOrientation();
     }
@@ -47,6 +46,34 @@ public partial class PlayerController : MonoBehaviour
 #endif
     #endregion
     #region Methods
+    /// <summary>
+    /// Change the value of <see cref="isPaused"/>
+    /// </summary>
+    public void SetIsPaused(bool condition) {
+        Control.canCheckAxis = !condition;
+        Control.canMove = !condition;
+        Control.canRotate= !condition;
+        Control.canPause = !condition;
+
+    }
+    /// <summary>
+    /// updates the <see cref="axis_XY"/> wheter exist changes in <see cref="Control"/>
+    /// </summary>
+    private void CheckAxisInputs()
+    {
+        if (Control.canCheckAxis) axis_XY.Set(Control.Axis_X, 0, Control.Axis_Z);
+        else axis_XY.Set(0, 0, 0);
+    }
+    /// <summary>
+    /// Detects if the player wants to open the pause modal
+    /// </summary>
+    private void CheckPause(){
+        if (Control.canPause && Control.PressBack)
+        {
+            SetIsPaused(true);
+            SideModalManager._ChangeModal(0);
+        }
+    }
     partial void CheckOrientation();
     partial void CheckMovements();
     #endregion

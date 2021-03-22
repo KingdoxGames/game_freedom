@@ -67,3 +67,14 @@ namespace TutorialButtons
         ELECTIONS=2
     }
 }
+
+
+
+
+/*
+ * En caso de que Unity te lo borre
+ * 
+ * Controles => Para moverte usa 'W','A','S','D' y 'ESC' para pausar. puedes mover la camara arrastrando con 'Click derecho' del ratón. Se usa el botón 'Click izquierdo' para interactuar con los elementos del juego (prueba con los que brillan). 
+ * Guardado => Cada cierto tiempo se guardará el juego, estos guardados frecuentarán veni con cada corte de una historia.
+ * Elección => El jugador podrá tener la posibilidad de escoger qué hacer en algunos dialogos, teniendo que dar click a la opcion que desea. esto puede influir en la información recibida.
+ */

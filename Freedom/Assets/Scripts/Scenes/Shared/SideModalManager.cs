@@ -1,5 +1,6 @@
 ﻿#region Access
 using UnityEngine;
+using UnityEngine.UI;
 using XavHelpTo;
 using XavHelpTo.Set;
 using XavHelpTo.Change;
@@ -7,11 +8,13 @@ using XavHelpTo.Change;
 public class SideModalManager : MonoBehaviour
 {
     #region Variable
-    public const string TRIGGER_SHOW = "Show";
-    public const string TRIGGER_HIDE = "Hide";
-    private SideModalManager _;
+    private const string TRIGGER_SHOW = "Show";
+    private const string TRIGGER_HIDE = "Hide";
+    private static SideModalManager _;
     private bool[] animsShowed; // init in false ordered with anim_sideModals
     [Header("SideModalManager")]
+    [Space]
+    public Image img_background; // se activa si hay un modal activo
     [Tooltip("Modal a mostrar al iniciar, -1 significa ninguno")]
     public int indexInit = -1;
     [Tooltip("Donde se poseerá los side modal ")]
@@ -23,10 +26,10 @@ public class SideModalManager : MonoBehaviour
     {
         anim_sideModals.Length.NewIn(out animsShowed);
         anim_sideModals.ActiveObjects(true);
-        if (!indexInit.Equals(-1))
-        {
             ChangeModal(indexInit);
-        }
+        //if (!indexInit.Equals(-1))
+        //{
+        //}
     }
     #endregion
     #region MEthod
@@ -34,6 +37,7 @@ public class SideModalManager : MonoBehaviour
     /// <summary>
     /// Disables all the modals except the selected
     /// </summary>
+    public static void _ChangeModal(int showModal) => _.ChangeModal(showModal);
     public void ChangeModal(int showModal)
     {
 
@@ -53,6 +57,9 @@ public class SideModalManager : MonoBehaviour
             TriggerSideModal(showModal, TRIGGER_SHOW);
             animsShowed[showModal] = true;
         }
+
+        img_background.enabled = !showModal.Equals(-1);
+
     }
 
     /// <summary>

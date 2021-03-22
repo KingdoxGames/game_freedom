@@ -17,7 +17,7 @@ public static class Control
     public static bool canCheckAxis = true;
     public static bool canMove = true;
     public static bool canRotate = true;
-
+    public static bool canPause = true;
 
     #endregion
     #region Method

@@ -9,7 +9,7 @@ public class MenuManager : MonoBehaviour
     private MenuManager _;
     [Header("MenuManager")]
     public GameObject obj_hide;
-    public SideModalManager obj_modalManager;
+    public SideModalManager sideModal;
 
     #endregion
     #region Events
@@ -20,14 +20,14 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         SavedData _saved = DataPass.SavedData;
-        obj_modalManager.ChangeModal(_saved.tutorialDone ? 0 : 1);
-        if (_saved.tutorialDone)
+
+        if (!_saved.tutorialDone)
         {
+            sideModal.ChangeModal(1);
             _saved.tutorialDone = true;
             DataPass.SetData(_saved);
             DataPass.SaveLoadFile(true);
         }
-        
     }
     #endregion
     #region Methods

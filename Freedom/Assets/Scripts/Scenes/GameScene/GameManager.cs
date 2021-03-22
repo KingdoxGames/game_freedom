@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     #region Variable
     private static GameManager _;
+    [Header("Game Manager Settings")]
     public static Camera cam = null;
     #endregion
     #region Events

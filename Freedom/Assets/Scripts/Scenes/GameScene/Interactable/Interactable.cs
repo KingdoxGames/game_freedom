@@ -30,7 +30,7 @@ public partial class Interactable : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (!isInteracting && isNear) Interact();
+        if (Control.canPause && !isInteracting && isNear) Interact();
     }
 #if false
     private void OnDrawGizmos(){

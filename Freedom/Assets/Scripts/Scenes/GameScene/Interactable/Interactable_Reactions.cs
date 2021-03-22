@@ -65,7 +65,7 @@ public partial class Interactable
     /// </summary>
     /// <param name="normalize"></param>
     private void PlayerReactionIn(bool normalize){
-
+        Control.canPause = normalize; // -> el jugador no puede pausar en las interacciones
         Control.canMove = normalize || canMove;
         Control.canRotate = normalize || canRotate;
         Control.canCheckAxis = normalize || canCheckAxis;

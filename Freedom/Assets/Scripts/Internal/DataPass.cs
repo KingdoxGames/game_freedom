@@ -100,6 +100,14 @@ public struct SavedData
     [Tooltip("Porcentaje guardado de sonido")]
     [Range(0,1)]
     public float soundPercent;
+
+    [Tooltip("En qué acto estamos actualmente?")]
+    [Range(0,7)]
+    public int actualAct;
+
+    //TODO[Tooltip("Como mostraremos la pantalla de menu: 0 => enjaulado, 1 => celda con barrotes rotos y sin el jugador , 2 => celda rota ")]
+    //public int jailType;
+
     //Extra Debug ?
     [Space(10)]
     [Header("Debug Area")]

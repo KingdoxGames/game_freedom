@@ -11219,6 +11219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Navigation (Tabern)
       objectReference: {fileID: 0}
+    - target: {fileID: 1239374388302067212, guid: a7719df88e3504ed883bd10b70e44029, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1910715257534766731, guid: a7719df88e3504ed883bd10b70e44029, type: 3}
       propertyPath: m_LocalPosition.x
       value: 68
@@ -11297,6 +11301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Navigation (Dungeon Hall)
       objectReference: {fileID: 0}
+    - target: {fileID: 1239374388302067212, guid: a7719df88e3504ed883bd10b70e44029, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1910715257534766731, guid: a7719df88e3504ed883bd10b70e44029, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.1
@@ -11400,6 +11408,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Navigation (Frontier)
       objectReference: {fileID: 0}
+    - target: {fileID: 1239374388302067212, guid: a7719df88e3504ed883bd10b70e44029, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1910715257534766731, guid: a7719df88e3504ed883bd10b70e44029, type: 3}
       propertyPath: m_LocalPosition.x
       value: 32.5
@@ -11486,6 +11498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Navigation (Castle Hall)
       objectReference: {fileID: 0}
+    - target: {fileID: 1239374388302067212, guid: a7719df88e3504ed883bd10b70e44029, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 1910715257534766731, guid: a7719df88e3504ed883bd10b70e44029, type: 3}
       propertyPath: m_LocalPosition.x
       value: 32.25

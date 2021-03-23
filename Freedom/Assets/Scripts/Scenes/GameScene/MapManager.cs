@@ -50,7 +50,7 @@ public class MapManager : MonoBehaviour
     public static void ChangeMap(Maps to=Maps.NO_MAP){
         if (to.Equals(Maps.NO_MAP)) return;
 
-        Maps lastMap = _.selectedMap;
+        Maps lastMap = _.selectedMap.Print("green");
         _.selectedMap = to;
 
 

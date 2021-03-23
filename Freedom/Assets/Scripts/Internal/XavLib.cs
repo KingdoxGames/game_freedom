@@ -427,12 +427,13 @@ namespace XavHelpTo
                 return newArr;
             }
             /// <summary>
-            /// Hacemos que el valor cambio dentro de un margen de tiempo,
+            /// conocemos el valor cambiando en un tiempo
             /// <para>
             /// si este valor se sobrepasa entre 0 y 1 los ajusta
             /// </para>
             /// </summary>
-            public static float UnitInTime(float value, float toMax, float timeScale = 1) => Set.InUnitBounds(Mathf.MoveTowards(value, toMax, Time.deltaTime * timeScale * Set.Positive(toMax - value)));
+            public static float UnitInTime(this float value, float toMax, float timeScale = 1) => Set.InUnitBounds(Mathf.MoveTowards(value, toMax, Time.deltaTime * timeScale * Set.Positive(toMax - value)));
+            //public static float UnitInTime(float value, float toMax, float timeScale = 1) => Set.InUnitBounds(Mathf.MoveTowards(value, toMax, Time.deltaTime * timeScale * Set.Positive(toMax - value)));
 
            
 

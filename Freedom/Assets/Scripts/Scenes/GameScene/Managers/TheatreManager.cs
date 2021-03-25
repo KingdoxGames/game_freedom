@@ -18,7 +18,7 @@ public class TheatreManager : MonoBehaviour
     [Header("Theather Manager Settigns")]
     public CanvasGroup canvasG_hud;
     public Animator anim_screen;
-    public UnityAction actionRequirements;
+    public static UnityAction ActionRequirement;
     [Space]
     public int currentPart = -1;
     public string[] currentItems = new string[0];
@@ -27,6 +27,10 @@ public class TheatreManager : MonoBehaviour
     private void Awake()
     {
         this.Singleton(ref _,false);
+
+        //Initialize the part and items size
+        currentPart = 0;
+        currentItems = new string[2];
     }
     private void Update()
     {
@@ -45,7 +49,7 @@ public class TheatreManager : MonoBehaviour
     /// </summary>
     [ContextMenu("Actualiza todos los requerimientos")]
     public void RefreshRequirements(){
-        actionRequirements?.Invoke();
+        ActionRequirement?.Invoke();
     }
     /// <summary>
     /// Returns the actual <see cref="currentPart"/>
@@ -61,5 +65,6 @@ public class TheatreManager : MonoBehaviour
     /// uses <seealso cref="ScreenTrigger"/> and <seealso cref="Data.SCREEN_TRIGGERS"/>
     /// </summary>    
     public static void TriggerScreen(ScreenTrigger trigger) =>_.anim_screen.SetTrigger(Data.SCREEN_TRIGGERS[trigger.ToInt()]);
+
     #endregion
 }

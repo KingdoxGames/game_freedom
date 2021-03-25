@@ -32,9 +32,16 @@ public class RequirementController : MonoBehaviour
 
     #endregion
     #region Events
-    private void Start(){
-        transform.Components(out childs);
-        if (checkOnStart) RefreshElements();
+    private void Awake(){transform.Components(out childs);}
+    private void Start(){if (checkOnStart) RefreshElements();}
+    private void OnEnable()
+    {
+        TheatreManager.ActionRequirement += RefreshElements;
+
+    }
+    private void OnDisable()
+    {
+        TheatreManager.ActionRequirement -= RefreshElements;
     }
     #endregion
     #region Methods

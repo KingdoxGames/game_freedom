@@ -1,6 +1,8 @@
 ﻿#region Imports
 using UnityEngine;
+using _DataMaps;
 #endregion
+
 
 namespace Environment
 {
@@ -16,6 +18,9 @@ namespace Environment
         public const string savedPath = "saved4.txt";
         public const string version = "v0.4.0";
         public const string TAG_PLAYER = "Player";
+
+
+        public static DataMaps DataMaps { get; } = new DataMaps();
 
 
 

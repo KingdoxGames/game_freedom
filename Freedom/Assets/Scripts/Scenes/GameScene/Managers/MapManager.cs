@@ -16,7 +16,7 @@ public class MapManager : MonoBehaviour
 
     [Header("MapManager Settings")]
     public Transform parent_map;
-    public Map actualMap;
+    public Transform actualMap;
     [Space]
     public GameObject[] pref_maps;
     [Space]
@@ -29,6 +29,27 @@ public class MapManager : MonoBehaviour
     private void Awake()
     {
         this.Singletone(ref _,false);
+    }
+    private void Start()
+    {
+        //TEST
+        ChangeMap(Data.DataMaps.Indications[5].SetUp(out selectedMap));
+        
+        //ENDTEST
+        //ya con el DataPass y el TheatreManager con los valores esperados
+
+        // 0. tener la pantalla oscura
+        // 1. Conocer cual es nuestro "selectedMap" y "actualMap" basado en el contexto de la trama
+
+        // 2. Hacer la navegación hacia el sitio
+
+        // 3. 
+
+        //TODO
+        //cargamos el mapa al que se supone que debemos ir
+        //debe de tomarse en cuenta en qué entrada aparecer, mapa etc...
+        //ChangeMap(selectedMap); TODO
+
     }
     private void Update()
     {
@@ -56,7 +77,7 @@ public class MapManager : MonoBehaviour
         _.ClearMaps();
 
         GameObject map = Instantiate(_.pref_maps[to.ToInt()], _.parent_map);
-        _.actualMap = map.GetComponent<Map>();
+        _.actualMap = map.GetComponent<Transform>();
 
         _.FindMapNavigator(lastMap);
 
@@ -112,27 +133,4 @@ public class MapManager : MonoBehaviour
                    * n.distance);
     }
     #endregion
-}
-/// <summary>
-/// All the maps in game
-/// </summary>
-public enum Maps
-{
-    NO_MAP = -1,
-    //Prison Areas
-    A1_PRISON,
-    A2_SOCIAL_ROOM,
-    A3_DUNGEON,
-    A4_DUNGEON_HALL,
-
-    //Castle Areas
-    B1_THRONE,
-    B2_CASTLE_HALL,
-    B3_CASTLE_COURTYARD,
-    B4_FRONTIER,
-
-    //Home Areas
-    C1_BED_ROOM,
-    C2_TABERN,
-
 }

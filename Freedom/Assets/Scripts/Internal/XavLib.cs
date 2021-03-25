@@ -10,17 +10,16 @@ using S = System;
 /// <summary>
 /// Herramientas para facilitar a Xavier contra el codigo
 /// <para>Aquí se poseerán funciones unicamente "static"</para>
-/// <see cref="XavHelpTo"/> Ultima Actualización => 20 marzo 2021
+/// <see cref="XavHelpTo"/> Ultima Actualización => 25 marzo 2021
 ///
 /// </summary>
 namespace XavHelpTo
     {
 
     /// <summary>
-    /// Herramienta general de herramientas frecuentes
-    /// TODO -Nombres por ver, Solve, assign, parse
+    /// Herramienta para tener acceso general a las herramientas frecuentes
     /// </summary>
-   public static class Parse
+   public static class Redirect
     {
 
         //public static T Assign<T>(this T t, T t2) => t = t2;
@@ -101,7 +100,7 @@ namespace XavHelpTo
             /// </summary>
             public static void ComponentsWithoutOrder<T>(this GameObject gameobj, out T[] t) => t = gameobj.GetComponents<T>();
             /// <summary>
-            /// Return the specified component in order from the transform target
+            /// Return the specified components childs of the first level in order from the transform target
             /// </summary>
             public static void Components<T>(this Transform target, out T[] t)
             {
@@ -520,7 +519,7 @@ namespace XavHelpTo
                 /// Active o Disable all the objects
                 /// </summary>
                 public static void ActiveObjects<T>(this T[] arr, bool val) where T : Component { for (int x = 0; x < arr.Length; x++) ActiveObject(arr[x].gameObject, val); }
-
+                public static void ActiveObjects(this GameObject[] objects, bool condition) { foreach (GameObject o in objects) o.SetActive(condition); } 
             /// <summary>
             /// Dependiendo de la condición determinamos si iniciar o apagar la animación
             /// <para>Dependencia con <seealso cref="ParticleSystem"/> </para>
@@ -639,6 +638,9 @@ namespace XavHelpTo
             /// Check if one of the values from the array are equal
             /// </summary>
             public static bool IsEqualOf<T>(this T value, params T[] vals) { foreach (T val in vals) if (value.Equals(val)) return true; return false; }
+            /// <summary>
+            /// Check if exist a value same as the another array
+            /// </summary>
             public static bool IsEqualOf<T>(this T[] values, params T[] vals)
             {
                 bool finded = false;
@@ -650,6 +652,20 @@ namespace XavHelpTo
                 }
 
                 return finded;
+            }
+
+            /// <summary>
+            /// Check if all the values exist in vals without checking the order
+            /// Return true if vals size is 0 or is not assigned
+            /// return false if <seealso cref="values"/> is 0 length
+            /// </summary>
+            public static bool Contains<T>(this T[] values, params T[] vals){
+                bool keepInto = !values.Length.Equals(0);
+                foreach (T o in values){
+                    if (keepInto) keepInto = o.IsEqualOf(vals);
+                    else break;
+                }
+                return keepInto;
             }
 
             /// <summary>
@@ -735,7 +751,7 @@ namespace XavHelpTo
                 /// </summary>
                 public static bool TimerIn(this float cooldown, ref float count)
                 {
-                    count = (count + Time.deltaTime);
+                    count += Time.deltaTime;
                     bool result = count > cooldown;
                     if (result) count = 0;
                     return result;

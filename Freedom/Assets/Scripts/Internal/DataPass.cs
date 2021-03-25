@@ -103,7 +103,7 @@ public struct SavedData
 
     [Tooltip("En qué acto estamos actualmente?")]
     [Range(0,7)]
-    public int actualAct;
+    public int currentAct;
 
     //TODO[Tooltip("Como mostraremos la pantalla de menu: 0 => enjaulado, 1 => celda con barrotes rotos y sin el jugador , 2 => celda rota ")]
     //public int jailType;

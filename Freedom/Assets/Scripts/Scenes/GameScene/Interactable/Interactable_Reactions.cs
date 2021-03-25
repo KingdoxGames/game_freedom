@@ -10,9 +10,7 @@ public partial class Interactable
     public Queue<Reaction> reactions = new Queue<Reaction>();
 
     [Header("_Reactions")]
-    public bool canCheckAxis = true;
-    public bool canMove = true;
-    public bool canRotate = true;
+    public PlayerCan playerCan = new PlayerCan(false);
 
     #endregion
     #region Method
@@ -65,10 +63,8 @@ public partial class Interactable
     /// </summary>
     /// <param name="normalize"></param>
     private void PlayerReactionIn(bool normalize){
-        Control.canPause = normalize; // -> el jugador no puede pausar en las interacciones
-        Control.canMove = normalize || canMove;
-        Control.canRotate = normalize || canRotate;
-        Control.canCheckAxis = normalize || canCheckAxis;
+        Control.playerCan = normalize ? new PlayerCan(normalize) : playerCan;
     }
+
 }
 #endregion

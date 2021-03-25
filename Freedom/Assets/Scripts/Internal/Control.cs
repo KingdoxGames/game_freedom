@@ -14,10 +14,11 @@ public static class Control
     private const int DRAG_MOUSE_INPUT = 1;
 
     [Header("Can Player Do")]
-    public static bool canCheckAxis = true;
-    public static bool canMove = true;
-    public static bool canRotate = true;
-    public static bool canPause = true;
+    public static PlayerCan playerCan;
+    //public static bool canCheckAxis = true;
+    //public static bool canMove = true;
+    //public static bool canRotate = true;
+    //public static bool canPause = true;
 
     #endregion
     #region Method
@@ -55,4 +56,25 @@ public static class Control
      * // Input.GetKey(KeyCode.Mouse1);
      * // Input.GetMouseButton(DRAG_MOUSE_INPUT);
      */
+}
+/// <summary>
+/// Indicator of what player can do
+/// </summary>
+[System.Serializable]
+public struct PlayerCan
+{
+    public bool checkAxis;
+    public bool move;
+    public bool rotate;
+    public bool pause; //TODO revisar el manejo de pausa para dentro de reacciones...
+
+    public PlayerCan(bool checkAxis,bool move,bool rotate,bool pause)
+    {
+        this.checkAxis = checkAxis;
+        this.move = move;
+        this.rotate = rotate;
+        this.pause = pause;
+    }
+
+    public PlayerCan(bool condition) => this = new PlayerCan(condition, condition, condition, condition);
 }

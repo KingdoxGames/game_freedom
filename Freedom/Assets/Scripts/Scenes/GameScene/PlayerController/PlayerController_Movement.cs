@@ -21,7 +21,7 @@ public partial class PlayerController
     /// Moves the player based on the <see cref="cam"/> and<see cref="axis_XY"/>
     /// </summary>
     void Move(){
-        body.velocity = Control.canMove && !axis_XY.Equals(Vector3.zero) 
+        body.velocity = Control.playerCan.move && !axis_XY.Equals(Vector3.zero) 
             ? transform.forward.Axis(1, 0) * Time.deltaTime * speed * magnitude
             : Vector3.zero;
     }

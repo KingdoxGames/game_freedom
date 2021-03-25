@@ -1,9 +1,7 @@
 ﻿#region Access
 using UnityEngine;
-using Environment;
 using XavHelpTo.Know;
 using XavHelpTo.Get;
-using XavHelpTo.Set;
 #endregion
 [RequireComponent(typeof(Rigidbody))]
 public partial class PlayerController : MonoBehaviour
@@ -50,25 +48,21 @@ public partial class PlayerController : MonoBehaviour
     /// Change the value of <see cref="isPaused"/>
     /// </summary>
     public void SetIsPaused(bool condition) {
-        Control.canCheckAxis = !condition;
-        Control.canMove = !condition;
-        Control.canRotate= !condition;
-        Control.canPause = !condition;
-
+        Control.playerCan = new PlayerCan(!condition);
     }
     /// <summary>
     /// updates the <see cref="axis_XY"/> wheter exist changes in <see cref="Control"/>
     /// </summary>
     private void CheckAxisInputs()
     {
-        if (Control.canCheckAxis) axis_XY.Set(Control.Axis_X, 0, Control.Axis_Z);
+        if (Control.playerCan.checkAxis) axis_XY.Set(Control.Axis_X, 0, Control.Axis_Z);
         else axis_XY.Set(0, 0, 0);
     }
     /// <summary>
     /// Detects if the player wants to open the pause modal
     /// </summary>
     private void CheckPause(){
-        if (Control.canPause && Control.PressBack)
+        if (Control.playerCan.pause && Control.PressBack)
         {
             SetIsPaused(true);
             SideModalManager._ChangeModal(0);

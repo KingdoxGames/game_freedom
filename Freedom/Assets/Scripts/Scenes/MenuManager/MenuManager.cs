@@ -1,7 +1,9 @@
 ﻿#region Access
 using UnityEngine;
 using XavHelpTo;
+using XavHelpTo.Change;
 using XavHelpTo.Look;
+using Environment;
 #endregion
 public class MenuManager : MonoBehaviour
 {
@@ -38,11 +40,13 @@ public class MenuManager : MonoBehaviour
     public void PlayGame()
     {
         $"Iniciar a jugar".Print("green");
+        Change.ToScene(Scenes.GameScene.ToInt());
     }
     /// <summary>
     /// Close the game
     /// </summary>
     public void ExitGame(){
+        $"Gracias por Jugar :)".Print("red");
         Application.Quit();
     }
     #endregion

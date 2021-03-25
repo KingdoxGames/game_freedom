@@ -1,11 +1,8 @@
 ﻿#region Usings
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using XavHelpTo.Change;
 using XavHelpTo.Know;
 using XavHelpTo;
-using XavHelpTo.Look;
 #endregion
 public partial class Interactable : MonoBehaviour
 {
@@ -17,11 +14,17 @@ public partial class Interactable : MonoBehaviour
     [Header("Interactable Settigns")]
     public ParticleSystem eff_near;
     public Transform parent_reaction;
+    [Space]
+    public bool startInteraction = false;
     //[Space(20)]
     //public Color color;
+    private void Start()
+    {   
+        if (startInteraction) Interact();
+    }
     #endregion
     #region Events
-    private void Awake() => this.Component(out col);
+    private void Awake() => this.Component(out col,false);
     private void Update()
     {
         CheckRequirements();
@@ -30,7 +33,7 @@ public partial class Interactable : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (Control.canPause && !isInteracting && isNear) Interact();
+        if (Control.playerCan.pause && !isInteracting && isNear) Interact();
     }
 #if false
     private void OnDrawGizmos(){

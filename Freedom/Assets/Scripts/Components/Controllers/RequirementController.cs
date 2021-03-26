@@ -9,6 +9,9 @@ using XavHelpTo.Change;
 public class RequirementController : MonoBehaviour
 {
     #region Variables
+    //Elementos que serán activados cuando se cumpla las condiciones
+    private Transform[] childs;
+
     [Header("Requirements Controller Settings ")]
     public bool checkOnStart = true;
 
@@ -26,9 +29,7 @@ public class RequirementController : MonoBehaviour
     public string[] items = new string[0];
 
 
-    [Header("Elements EnableDisabled by requirements status")]
-    //Elementos que serán activados cuando se cumpla las condiciones
-    public Transform[] childs;
+   
 
     #endregion
     #region Events

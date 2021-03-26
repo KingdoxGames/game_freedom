@@ -33,7 +33,7 @@ public class MapManager : MonoBehaviour
     private void Start()
     {
         //TEST
-        ChangeMap(Data.DataMaps.Indications[5].SetUp(out selectedMap));
+        ChangeMap(Data.DataMaps.Indications[DataPass.SavedData.currentAct].SetUp(out selectedMap));
         
         //ENDTEST
         //ya con el DataPass y el TheatreManager con los valores esperados
@@ -68,11 +68,11 @@ public class MapManager : MonoBehaviour
     public static void ChangeMap(Maps to=Maps.NO_MAP){
         if (to.Equals(Maps.NO_MAP)) return;
 
-        Maps lastMap = _.selectedMap.Print("green");
+        Maps lastMap = _.selectedMap;
         _.selectedMap = to;
 
 
-        TheatreManager.TriggerScreen(ScreenTrigger.HIDE);
+        //TheatreManager.TriggerScreen(ScreenTrigger.HIDE);
 
         _.ClearMaps();
 

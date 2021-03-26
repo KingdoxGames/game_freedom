@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7659710805189785934}
   m_Layer: 0
-  m_Name: Act 1
+  m_Name: Act
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,6 +69,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7659710805197943061}
     m_Modifications:
+    - target: {fileID: 2117117490116817722, guid: f9854395c6d3d4822a8dfa2255ccea78, type: 3}
+      propertyPath: startInteraction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5421047358681760017, guid: f9854395c6d3d4822a8dfa2255ccea78, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

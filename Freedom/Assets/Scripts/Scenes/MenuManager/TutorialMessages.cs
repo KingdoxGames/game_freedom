@@ -9,8 +9,9 @@ public class TutorialMessages : MonoBehaviour
     private int index_ToLoad = -1;
     private bool flag_IsDone;
     private float count_Loads;
-    private const string DEFAULT_TEXT = "Haga click izquierdo en alguno de los botones de la derecha para leer más información.";
+    private const string DEFAULT_TEXT = "menu_tutorial_default";
     private const float ratio_Loads = 0.01f;
+    private string loadingText;
     [Header("Tutorial Messages")]
     [Tooltip("Mensajes ordenados en e orden de los botones correspondientes")]
     public Text txt_message;
@@ -30,11 +31,9 @@ public class TutorialMessages : MonoBehaviour
     /// Loads a <see cref="char"/> of the text, advise in <see cref="flag_IsDone"/> whether is Ended
     /// </summary>
     private void LoadInfo(){
-        if (flag_IsDone || !ratio_Loads.TimerIn(ref count_Loads)) return;//🛡
-
-        string text = index_ToLoad.Equals(-1) ? DEFAULT_TEXT : messages[index_ToLoad];
-        txt_message.text += text[txt_message.text.Length];
-        if (txt_message.text.Equals(text)) flag_IsDone = true;
+        if (flag_IsDone || !ratio_Loads.TimerIn(ref count_Loads) || loadingText.Length.Equals(0)) return;//🛡
+        txt_message.text += loadingText[txt_message.text.Length];
+        if (txt_message.text.Equals(loadingText)) flag_IsDone = true;
     }
     /// <summary>
     /// Clear any pass text and Set the new text and starts to load it
@@ -43,6 +42,7 @@ public class TutorialMessages : MonoBehaviour
         if (index.Equals(index_ToLoad) && !index.Equals(-1)) return; //🛡
         txt_message.text = "";
         index_ToLoad = index;
+        loadingText = TranslateSystem.TranslationOf(index_ToLoad.Equals(-1) ? DEFAULT_TEXT : messages[index_ToLoad]);
         flag_IsDone = false;
     }
 
@@ -54,6 +54,7 @@ public class TutorialMessages : MonoBehaviour
         txt_message.text = "";
         index_ToLoad = -1;
         flag_IsDone = true;
+        loadingText = "";
     }
     #endregion
 }

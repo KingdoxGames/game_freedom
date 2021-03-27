@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using XavHelpTo;
 using XavHelpTo.Set;
+using XavHelpTo.Look;
 using XavHelpTo.Change;
 #endregion
 [DisallowMultipleComponent]
@@ -36,6 +37,7 @@ public partial class Modal : MonoBehaviour
     {
         this.Singleton(ref _, false);
         this.Component(out anim);
+        
         isLoading = false;
     }
     private void Start(){
@@ -82,17 +84,18 @@ public partial class Modal : MonoBehaviour
 public struct Message
 {
     public string name;
-    [TextArea]
-    public string dialog;
+    public string key;
+    private string dialog;//TODO volver privado luego?
     //public Color color;
 
 
-    public Message(string name, string dialog)
+    public Message(string name, string key)
     {
         this.name = name;
-        this.dialog = dialog;
+        this.key = key;
+        this.dialog = TranslateSystem.TranslationOf(key);
         //this.color = color;
     }
 
-
+    public string Dialog => dialog.Print("red") ?? (dialog = TranslateSystem.TranslationOf(in key)).Print("green");//: TranslateSystem.TranslationOf(in key);
 }

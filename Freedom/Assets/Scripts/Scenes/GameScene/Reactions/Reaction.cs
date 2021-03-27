@@ -10,8 +10,8 @@ public class Reaction : MonoBehaviour
     #region Variables
         [HideInInspector]
         public Interactable interactable;
-
         [Header("⚡️Reaction Settings")]
+        [HideInInspector]
         public string debug_information;
         [Space]
         [Range(0,20)]

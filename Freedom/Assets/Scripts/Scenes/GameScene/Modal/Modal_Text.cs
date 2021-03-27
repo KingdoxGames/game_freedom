@@ -17,18 +17,17 @@ public partial class Modal
     /// </summary>
     public void LoadMessage(){
         if (dialog.IsNull() || !isLoading || !ratioTimer.TimerIn(ref ratioCount)) return;//🛡
-
-        int _length = dialog.message.dialog.Length;
-        txt_dialog.text += dialog.message.dialog[index++.Max(_length - 1)];
+        int _length = dialog.message.Dialog.Length;
+        txt_dialog.text += dialog.message.Dialog[index++.Max(_length - 1)];
         isLoading = !txt_dialog.text.Length.Equals(_length);
     }
-    /// <summary>
+    /// <summary>   
     /// Fullyfill the <see cref="UnityEngine.UI.Text"/> of <see cref="txt_dialog"/>
     /// </summary>
     public static void _FullLoadMessage() => _.FullLoadMessage();
     private void FullLoadMessage(){
         isLoading = false;
-        txt_dialog.text = dialog.message.dialog;
+        txt_dialog.text = dialog.message.Dialog;
     }
     /// <summary>
     /// Clear the modal

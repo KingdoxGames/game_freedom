@@ -6,7 +6,6 @@ using DialogInteract;
 #endregion
 /// <summary>
 /// TODO Falta una opcion en la que solo puedes pulsar cuando el texto esta listo, sin importar el tiempo
-/// TODO
 /// Reacciones que van a hacer interacción con el <seealso cref="Modal"/>
 /// </summary>
 public class ReactionDialog : Reaction
@@ -28,6 +27,7 @@ public class ReactionDialog : Reaction
     [ContextMenu("Mostrar Dialogo")]
     protected override void React()
     {
+
         //base.React();
         Modal._AssignMessage(this);
     }

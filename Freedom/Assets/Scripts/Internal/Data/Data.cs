@@ -18,6 +18,8 @@ namespace Environment
         public const string savedPath = "saved4.txt";
         public const string version = "v0.4.0";
         public const string TAG_PLAYER = "Player";
+        public const string PATH_LANG = "Lang/";
+        public const string DEFAULT_LANG = "Spanish";
 
 
         public static DataMaps DataMaps { get; } = new DataMaps();

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<main>
+    <string key="lang">Inglés</string>
+    <string key="test">HEHE BOIII IT WORKS !</string>
+
+    <_ key="0"><!--Act 0 - Dia de la revuelta--></_>
+    <_ key="1"><!--Act 1 - Exilio--></_>
+    <_ key="2"><!--Act 2 - Encerrados--></_>
+    <_ key="3"><!--Act 3 - El plan--></_>
+    <_ key="4"><!--Act 4 - Declaración--></_>
+    <_ key="5"><!--Act 5 -  La revuelta--></_>
+    <_ key="6"><!--Act 6 - El exterior--></_>
+    <_ key="7"><!--Act 7 - El Final--></_>
+</main>

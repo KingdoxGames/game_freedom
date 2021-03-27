@@ -263,14 +263,26 @@ namespace XavHelpTo
                     float c = 0;
                     foreach (float val in values){c += val;}
                     return c;
+            }
+            public static float SummAll(this Vector3 values) => SummAll(Change.Change.ToArray(values));
+
+
+            /// <summary>
+            /// Gets a random boolean
+            /// </summary>
+            public static bool RandomBool() => Random.Range(0, 2) == 0;
+
+
+            public static Color RandomColor(float min = 0, float max = 1 )
+            {
+                Color c = new Color();
+                for (int x = 0; x < 3; x++)
+                {
+                    c[x] = 1f.ZeroMax().Min(min).Max(max);
                 }
-                public static float SummAll(this Vector3 values) => SummAll(Change.Change.ToArray(values));
-
-
-                /// <summary>
-                /// Gets a random boolean
-                /// </summary>
-                public static bool RandomBool() => Random.Range(0, 2) == 0;
+                c[3] = 1;
+                return c;
+            }
         }
 
         #endregion

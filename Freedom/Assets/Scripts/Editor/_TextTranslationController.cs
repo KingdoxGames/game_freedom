@@ -34,10 +34,6 @@ public class _TextTranslationController : Editor
                 : tr.GetValueIn(tr.dic_Lang, ttc.key)
             ;
 
-
-
-
-
             GUIStyle style = new GUIStyle(EditorStyles.label);
             
             //Folder

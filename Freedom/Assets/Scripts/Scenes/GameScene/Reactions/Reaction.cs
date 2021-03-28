@@ -18,7 +18,12 @@ public class Reaction : MonoBehaviour
         [Tooltip(
         "Nos permitirá modificar el evento para saber cuanto tiempo debe esperar hasta la siguiente,")]
         public float waiTime = 0;
-
+    #endregion
+    #region Event
+    private void OnDrawGizmos()
+    {
+        name = $"Wait: ({waiTime} s) -> {debug_information}";
+    }
     #endregion
     #region Methods
 
@@ -37,7 +42,7 @@ public class Reaction : MonoBehaviour
     /// <summary>
     /// React with the interactable in case to be 
     /// </summary>
-    protected virtual void React() => $"Reacción".Print("white");
+    protected virtual void React(){if (base.Equals(typeof(Reaction)))$"Reacción".Print("white");}
 
     /// <summary>
     /// Waits until an external thing advise to continue the reaction

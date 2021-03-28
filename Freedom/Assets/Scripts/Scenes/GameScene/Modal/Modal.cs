@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using XavHelpTo;
 using XavHelpTo.Set;
-using XavHelpTo.Look;
 using XavHelpTo.Change;
 #endregion
 [DisallowMultipleComponent]
@@ -85,9 +84,8 @@ public struct Message
 {
     public string name;
     public string key;
-    private string dialog;//TODO volver privado luego?
+    private string dialog;
     //public Color color;
-
 
     public Message(string name, string key)
     {
@@ -97,5 +95,5 @@ public struct Message
         //this.color = color;
     }
 
-    public string Dialog => dialog.Print("red") ?? (dialog = TranslateSystem.TranslationOf(in key)).Print("green");//: TranslateSystem.TranslationOf(in key);
+    public string Dialog => dialog ?? (dialog = TranslateSystem.TranslationOf(in key));//.Print("green")
 }

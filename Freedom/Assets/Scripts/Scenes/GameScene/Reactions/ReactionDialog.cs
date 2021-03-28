@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using XavHelpTo.Know;
+using XavHelpTo.Set;
 using DialogInteract;
 #endregion
 /// <summary>
@@ -11,7 +12,9 @@ using DialogInteract;
 public class ReactionDialog : Reaction
 {
     #region Variables
-
+    [HideInInspector] private static float name_count = 0; // volatile?
+    [HideInInspector] public const float NAME_TIMER = 2;
+    [HideInInspector] public float finalTime = 0;
     [Header("_Dialog")]
     [Tooltip("Determina el comportamiento del dialogo, debemos esperar? podremos decidir cuando continuar? podemos llenar el texto?")]
     public DialogInteraction dialoginteraction = DialogInteraction.WAIT;
@@ -22,6 +25,23 @@ public class ReactionDialog : Reaction
     public bool closeLater = false;
 
 
+    #endregion
+    #region Event
+#if UNITY_EDITOR
+    
+    private void OnDrawGizmos(){
+
+        //actualizamos cada cierto tiempo
+        if (NAME_TIMER.TimerIn(ref name_count)){
+
+            string pj_name = message.name ?? "";
+            string pj_key = !message.key.Length.Equals(0) ? message.key : "Missing";
+            string pj_inter = dialoginteraction.ToString();
+
+            name = $"Msg: ({pj_key}) ->{pj_name} ({waiTime}s, {pj_inter})";
+        }
+    }
+#endif
     #endregion
     #region MEthods
     [ContextMenu("Mostrar Dialogo")]

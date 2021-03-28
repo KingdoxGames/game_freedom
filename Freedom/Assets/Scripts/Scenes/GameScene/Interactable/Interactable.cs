@@ -7,6 +7,8 @@ using XavHelpTo;
 public partial class Interactable : MonoBehaviour
 {
     #region Variables
+    [HideInInspector] public bool debug_refreshTime;
+
     private bool isNear = false;
     [Tooltip("Si existe algún tipo de interacción, solo puede existir un solo momento de interacción")]
     private static bool isInteracting = false;

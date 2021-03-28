@@ -13,6 +13,7 @@ public class RequirementController : MonoBehaviour
     private Transform[] childs;
 
     [Header("Requirements Controller Settings ")]
+    public string extraName = "";
     public bool checkOnStart = true;
 
     [Header("Requirements")]
@@ -27,7 +28,7 @@ public class RequirementController : MonoBehaviour
 
     [Tooltip("Los items requeridos, el maximo debe ser igual a la cantidad maxima de objetos que puede portar el personaje")]
     public string[] items = new string[0];
-
+    
 
    
 
@@ -44,6 +45,13 @@ public class RequirementController : MonoBehaviour
     {
         TheatreManager.ActionRequirement -= RefreshElements;
     }
+#if UNITY_EDITOR
+    private void OnDrawGizmos(){
+        string _items = "";
+        foreach (string i in items) _items += $" {i} ";
+        name = $"{extraName} Requirement: ({act}.{part})-> [{_items}]";
+    }
+#endif
     #endregion
     #region Methods
     /// <summary>

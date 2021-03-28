@@ -16,11 +16,12 @@ internal class _Reaction : Editor{
         GUIStyle style = new GUIStyle(EditorStyles.textArea);
         Reaction r = target as Reaction;
         style.normal.textColor = lastColor;
-        style.name = ".";//Hides the input area
+        style.name = ".";//Hides the input area just a dumby hack ;)
         style.fontSize = 18;
         if (r.debug_information.Length.Equals(0)) r.debug_information = "Info : ";
         r.debug_information = GUILayout.TextField(r.debug_information, style);
         DrawDefaultInspector();
+
     }
 }
 #endregion

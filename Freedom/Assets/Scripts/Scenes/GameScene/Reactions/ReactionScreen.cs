@@ -12,6 +12,12 @@ public class ReactionScreen : Reaction
     [Header("_Screen_Fade")]
     public ScreenTrigger trigger = ScreenTrigger.HIDE;
     #endregion
+    #region Events
+    private void OnDrawGizmos()
+    {
+        name = $"Screen: ({waiTime} s) -> {trigger}";
+    }
+    #endregion
     #region Methods
     protected override void React()
     {

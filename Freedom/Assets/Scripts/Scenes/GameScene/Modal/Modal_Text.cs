@@ -9,7 +9,7 @@ public partial class Modal
     private float ratioCount;
     private int index = 0;
     [Header("_Text")]
-    public const float ratioTimer = 0.01f;
+    public const float ratioTimer = 0.02f;
     #endregion
     #region Method
     /// <summary>

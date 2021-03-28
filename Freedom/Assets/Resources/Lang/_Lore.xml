@@ -170,6 +170,119 @@ Luego de que Eva llegue a la Sala social verán que los prisioneros están hacie
 (Descripción): Eva se dirige a la mazmorra, lugar donde estaba cubierto por los prisioneros mientras esquiva a los guardias que quedaban.
 -->
 <!-- Act 5 Part I Extra A
+| Si la pareja no es acusada |:
+[Guardia_1]: ¡Prisionera!, ¿dónde están los otros 2?
+[Guardia_2]: ¡Responde!
+[Eva Doan]: Yo....
+[Guardia_1]: Vas a tener que dar explicaciones, vamos.
 -->
 <!-- Act 5 Part I Extra B
+| Si la pareja es acusada |:
+[Guardia_1]: Vamos.
 -->
+<!-- Act 5 Part II
+(Descripción): Eva se dirige a la mazmorra y se pone a buscar la salida. luego tras encontrarla sale
+[Eva Doan]: Por fin. ¡ Vamos !
+-->
+<!-- Act 5 Part III
+(Descripción): Eva llega a el pasillo calabozo, donde se encuentra con unos prisioneros y otros guardias que han muerto en la revuelta, en un lado aparece el Guardia jefe en el suelo. (En el apartado Dialogo "Extra A" aparecerán los mensajes que puedes recibir de los prisioneros en especifico). Posteriormente Eva se va al Patio del castillo. 
+-->
+<!-- Act 5 Part III Extra A
+[Prisionero_1]: ¡Por fin!
+[Prisionero_2]: Lo logramos pero... ¿a qué costo?
+[Prisionero_3]: ¿De verdad era necesario  pelear?
+[Prisionero_4]: Jamás entenderé por que nos encerraron....
+[Prisionero_5]: Esto no se puede quedar así, vamos a por respuestas con el rey.
+[Prisionero_6]: Por fín veremos la luz otra vez...
+-->
+<!-- 📖 Act 6 Part I
+(Descripción): Eva sale del pasillo calabozo y se encuentra en frente de sus ojos un suelo repleto de tanto guardias como civiles, en ese momento se queda quieta pensando.
+[Eva Doan]: ¡Padre!
+(Descripción): Eva se dirige a la taberna para saber si su padre tuvo el mismo destino que los demas civiles.
+-->
+<!-- Act 6 Part II
+(Descripción): Eva llega a la taberna y mira hacia sus alrededores
+[Eva Doan]: Tiene que estar escondido, ¡estoy seguro de eso!.
+(Descripción): Eva se pone a buscar por sus alrededores y no logra conseguir a nadie, luego de un tiempo se queda pensando
+[Eva Doan]: De seguro está en el dormitorio
+(Descripción): Eva se dirige al dormitorio a toda velocidad.
+-->
+<!-- Act 6 Part III
+(Descripción): Eva tras llegar al dormitorio empieza a ver por todos lados
+[Eva Doan]:  ¡Papá! ¿doóde estas?
+(Descripción): Luego de un tiempo no suena que hubiese alguien
+[Eva Doan]: Fabri.....
+(Descripción): Luego de un momento, Eva empieza a salir del dormitorio, cuando de repente se empieza a mover una de las camas, saliendo Fabri debajo de una de estas. se dan un gran abrazo que dura 5 segundos
+[Fabri]: Ohh Eva, ¡me alegra que estés bien !
+[Eva Doan]: ¿Es que te has quedado sordo?
+[Fabri]: Es que con tanto ruido afuera, quise irme a dormir, la verdad afuera estaba horrible...
+[Eva Doan]: Por favor, ¿dime qué ocurrió ?
+[Fabri]: Eva, la verdad es que no entiendo bien, pero vino un brujo y empezó ha asesinar a todo el que pasaba en frente de el, a los guardias no les gusto eso e intentaron atraparlo, sin embargo el brujo....
+[Eva Doan]: Ya pero.. ¿por qué?
+[Fabri]: No tengo ni idea, si hubiese estado mas tiempo no estaría aquí..
+[Eva Doan]: Me alegra que te encuentres bien Pa. Los exprisioneros se dirigen al trono, nesecitan respuestas, y yo también, quedate aquí o huye.
+[Fabri]: Eva ten mucho cuidado, ahí está.
+(Descripción): Hay un momento de silencio entre los dos, luego Eva se da media vuelta y antes de salir por la puerta..
+[Eva Doan]: ¿Escondete sí? te quiero.
+[Fabri]: Ten cuidado...
+-->
+<!-- Act 6 Part IV
+(Descripción): Eva llega al patio del castillo, donde ve que todos están cerca de el pasillo del castillo.
+[Eva Doan]: Esta vivo mi padre
+[Prisionero_1]: ¿Vivo? ¿pero cómo?
+[Eva Doan]: se escondió a tiempo, seguro habrán otros escondidos. Hay que tener cuidado, en el trono se encuentra el causante de todo esto
+[Prisionero_2]: El rey, ¿no?
+[Eva Doan]: Al parecer es un brujo el que ha hecho todo esto.
+(Descripcion): Eva y compañia se dirigen al Pasillo castillo.
+(En caso de dialogar con alguno de los prisioneros te dirán el dialogo de "Extra A")
+-->
+<!-- Act 6 Part IV Extra A
+[Prisioneros]: ¡Al trono!
+-->
+<!-- 📖 Act 7 Part I
+(Descripcion):Eva y compañía llegan corriendo hasta darse cuenta que el sitio esta lleno de guardias muertos en el suelo, siendo esto lo que más destaca.
+(En caso de dialogar con alguno de los prisioneros te dirán lo que dice el dialogo "Extra A").
+Luego al dirigirse al trono Eva y compañia empiezan a moverse para allá en conjunto...
+-->
+<!-- Act 7 Part I Extra A
+[Prisioneros]: Al trono.... Vamos juntos..
+-->
+<!-- Act 7 Part II
+(Descripción): Eva llega al trono y encuentra al brujo sentado en el trono del rey, a un lado se encuentra el cadaver del rey.
+[Brujo]: ¡Bienvenidos!
+[Prisionero_1]: ¿Pero qué...?
+(Descripción): Se muestra como alrededor del trono se encuentra montaña de cadaveres de los guardias que intentaron dar con el Brujo
+[Eva Doan]: Mira lo que has hecho, ¿estás satisfecho?
+[Brujo]: La verdad es que sí, deberían de estar agradecidos, otra colonia humana ha sido relegada a migajas
+[Prisionero_2]: Pero, ¡¿por qué?!
+[Brujo]: ¿Acaso no están hartos de ese trato que le dan a las demás especies? ¿O me van a decir que siempre se nos ha visto como iguales?
+[Eva Doan]: Es cierto que muchas personas eran malas, pero así como hay malas hay buenas, y tú ya no formas parte.
+[Prisionero_3]: ¿De verdad crees que vas a quedar Impune?
+[Brujo]: Depende de ustedes, yo los podría llevar a un mundo en donde los no-humano fuesemos vistos como iguales ¿me ayudarán?
+(Descripción): Luego de un momento de silencio mirandose entre los prisioneros y el Brujo empiezan a correr hacia el
+[Brujo]: Insolentes
+(Descripción): El brujo lanza una barrera con la que empieza a protegerse y evitar que los prisioneros se le acerquen.
+[Prisionero_1]: Debe haber una forma para acercarse
+(Descripción): (Eva busca una lanza y un escudo para avanzar por la barrera).
+[Brujo]: ¿Como te atreves? ¿una humana? son los seres más debiles
+[Eva Doan]: Por separados somos insignificantes, lo que nos hace grandes es la unión de un mismo objetivo.
+(Descripción): Los prisioneros empiezan a rodear al brujo y entre algunos logran agarrarlo, posteriormente Eva arroja la lanza en dirección al brujo, este empieza a caer al suelo
+[Brujo]: ¿Qué han hecho....? Lo lamentaran....
+(Descripción): Eva y compañia ven como el cuerpo del brujo desaparece del mundo. La pantalla se oscurece
+(empieza a mostrarse el final de la historia en en Dialogo "Extra A")
+-->
+<!-- Act 7 Part II Extra A
+"Los prisioneros se pusieron a buscar por todos los hogares notificando de que el brujo había caído,
+poco a poco aparecieron más y más personas que lograron huir en el momento,
+paso el tiempo y empezó a volver a existir un equilibrio entre todas las criaturas,
+a pesar de lo ocurrido con el brujo se volvió a unir el reino de las migajas que había,
+donde Eva propuso ser la nueva Reina, la mayoría estuvo a favor debido a sus hazañas contra el brujo,
+declarandola la nueva Reina del reino, junto con un ejercito multicultural y racial, teniendo golems, hombre lobos y humanos,
+entre otros en sus tropas.
+La paz y la libertad volvió a existir, donde todos eran aceptados..... FIN"
+-->
+
+
+
+
+

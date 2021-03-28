@@ -10,6 +10,7 @@ public class Reaction : MonoBehaviour
     #region Variables
         [HideInInspector]
         public Interactable interactable;
+        protected bool skiping = false;
         [Header("⚡️Reaction Settings")]
         [HideInInspector]
         public string debug_information;
@@ -20,9 +21,18 @@ public class Reaction : MonoBehaviour
         public float waiTime = 0;
     #endregion
     #region Event
+    private void Awake(){
+        skiping = false;
+    }
     private void OnDrawGizmos()
     {
         name = $"Wait: ({waiTime} s) -> {debug_information}";
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)){
+            interactable.NextReaction();
+        }
     }
     #endregion
     #region Methods

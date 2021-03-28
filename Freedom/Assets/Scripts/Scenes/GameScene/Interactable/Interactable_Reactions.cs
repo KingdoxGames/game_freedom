@@ -51,7 +51,7 @@ public partial class Interactable
     /// <summary>
     /// Ends the interactions
     /// </summary>
-    private void EndReactions()
+    public void EndReactions()
     {
         isInteracting = false;
         PlayerReactionIn(true);

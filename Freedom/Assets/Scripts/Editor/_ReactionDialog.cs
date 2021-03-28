@@ -29,11 +29,11 @@ public class _ReactionDialog : Editor
         Message(in r);
 
     }
-    
+   
     #endregion
     #region Methods
 
-   
+
 
     private void Name(in ReactionDialog r){
         if (r.message.name.Length.Equals(0)) return; // 🛡

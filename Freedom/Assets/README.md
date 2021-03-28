@@ -1,8 +1,8 @@
 ﻿# Cosas principales por hacer
 
-- Ventana para mostrar el modal de opciones de menú (Hacer un componente con esa posibilidad y que sea general)
+#Ventana para mostrar el modal de opciones de menú (Hacer un componente con esa posibilidad y que sea general)
 
-- Hacer un manejo de puntos guardado dependiendod e la ruta tomada (string o cadena de int?, o enum?)
+#Hacer un manejo de puntos guardado dependiendod e la ruta tomada (string o cadena de int?, o enum?)
 
 "[Hacer un sistema que levante dialogos y que muestre los textos (en el debe tambien poseer una opción para saltar dialogos)]()"
 
@@ -14,6 +14,6 @@
 
 #[Para cada mapa separar objetos padre que tendrán el nombre de la respectiva escena, (de esa manera se tiene un control de toda la escena para cada uno he incluso hacer grandes animaciones llamandola desde esta)]
 
-- Hacer la pantalla de menú
+#Hacer la pantalla de menú
 
--[EXTRA] Hacer un manejo de mostrar los caracteres de texto  (Y que conozca cuando puede ocupar en el ancho del dialogo en el que se encuentra)
+#Hacer un manejo de mostrar los caracteres de texto  (Y que conozca cuando puede ocupar en el ancho del dialogo en el que se encuentra)

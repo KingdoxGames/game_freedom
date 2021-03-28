@@ -42,6 +42,7 @@ public class ReactionDialog : Reaction
         }
     }
 #endif
+   
     #endregion
     #region MEthods
     [ContextMenu("Mostrar Dialogo")]
@@ -55,7 +56,7 @@ public class ReactionDialog : Reaction
     {
         float _count = 0;
         bool _passTimeFlag = false;
-        bool _keep = true;
+        bool _keep = !skiping;
 
         yield return new WaitForFixedUpdate();
 

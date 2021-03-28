@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 📖 Act 0 Part I
+ (Descripción): Muchos civiles empiezan a forcejear contra los guardia.
+[Rey]: Orden!, he dicho que se controlen, ya está decidido, las demás especies NO PUEDEN VOLVER, ¡iros! iros muy lejos, ya no forman parte de esta nación.
+[Civil_1]: ¿Pero es que estás bien? ¿cómo se te ocurre desterrar medio pueblo ?
+[Civil_2]: Pues mej....
+[Eva Doan]: ¡Pero eso no puede ser!, ¿de qué lado estás? la tienes agarrada con las demás ?
+[Guardias]: ¡Señores retrocedan o los haremos retroceder!
+[Eva Doan]: ¿Y como los guardias permiten est..?
+[Guardia_1]: Mi deber es obedecer al rey, ¡he dicho retrocedan!.
+[Eva Doan y algunos civiles]: ¡No esta bien!
+[Rey]: ¡Ya fue suficiente!, saquenlos de aquí, ya no formais parte.
+(Descripción): Los guardias empiezan a acorralar y empujar a los civiles opositores a la salida del reino.
+[Eva Doan]: Estan cometiendo un error....
+--> 
+<!-- 📖 Act 1 Part I
+(Descripción): Los guardias empujan lejos a los civiles al exilio, algunos retroceden y mantienen guardia.
+[Guardia_1]: Mejor iros, o si no tendremos que apresarlos, desde ahora son enemigos del reino.
+(Descripción): Eva y compañía se reunen y se agrupan.
+[Eva Doan]: ¿¡Pero como serán tan..!?
+[Ex-Civil_1]: Dejalo, no vale la pena dialogar con ellos, tendremos que dar la cara por nuestra cuenta.
+[Ex-Civil_2]: No lo puedo creer, todo por unas tontas peleas que podían ser calmadas, se calientan unas personas y hacen esto....
+[Eva Doan]: Hay que volver, debería haber una forma de colarse...
+[Ex-Civil_2]: Seguro lo hay, pero implicará distraer a esos guardias seguro...
+(Descripción): Luego de que Eva Doan lográn distraer a algunos guardias usando rocas y ramas para moverlos, se adentrán un poco, sin embargo de los lados salen guardias de entre los arboles para rodearles.
+[Guardia_1]: Se los hemos advertido, ¡GUARDIAAS!
+(Descripción): Los guardias golpean a los exciviles y a Eva, dejandoles desmayados.
+[Guardia_1]: Llevenselos.
+-->
+<!-- 📖 Act 2 Part I
+[Guardia_1]: Disfruta de tu nueva estancia.
+(Descripción): Los guardias cierran la celda de Eva Doan con ella dentro.
+[Nol Ma]: ¿Estas bien?
+[Eva Doan]: Si... supongo..
+[Nol Ma]: Nol, Nol Ma.
+[Eva Doan]: Eva, Eva Doan.
+["Vueltitas"]: ¿Cuantos años nueva?.
+[Eva Doan]: 20... espera... ¡¿Había alguien ahí?!
+[Nol Ma]: Se ha comportado más de lo que esperaba.
+["Vueltitas"]: buah, que mala suerte, serás muy ruda ¿no?
+[Nol Ma]: Es su edad, sino estaría como nostros.
+["Vueltitas"]: Ahhh, en ese caso yo dos.
+[Eva Doan]: ¿solo 2 años?.
+[Nol Ma]: Años perros, yo tres.
+[Eva Doan]: Vaya...la verdad no sé contar eso.
+[Nol Ma]: Presentate almenos.
+["Vueltitas"]: Noli deja algo de misterio, me apodan "Vueltitas".
+[Eva Doan]: Un placer, supongo...
+["Vueltitas"]: ¿Y tú que hiciste?
+[Eva Doan]: ¿Les parece normal que los guardias estén desterrando a todos los no-humanos?
+[Nol Ma]: Los guardias comentaron esa revuelta.
+["Vueltitas"]: Ah si si, ya me acuerdo.ustedes se entregaron, yo hubiera huido la verdad.
+[Eva Doan]: No nos estabamos entregando, estabamos tratando de obligar a cambiar la opinion publica.
+[Nol Ma]: Ellos tenian las armas.
+[Eva Doan]: Ya sabíamos, pero ¿como puedes irte y ver algo así?
+(Descripción): Se toma un momento de silencio de 5 segundos
+["Vueltitas"]: Cuentale lo de ya sabes qué.
+[Nol Ma]: ¿Si? bueno, siempre que no interfiera. Eva, nosotros nos vamos a fugar esta noche, cuando nos regresen a las celdas.
+["Vueltitas"]: Nesecitaríamos unas cosas y puede que no salga tan mal, igual esto es mejor que la eternidad.
+[Eva Doan]: Es enserio que nos...
+[Nol Ma]: No bromea, lo escuchamos. Planean dejarnos de por vida aquí.
+["Vueltitas"]: Bien ¿que dices?
+(Descripción): (Dependiendo de lo que escoja el jugador se tendrá unos dialogos extras, si acepta tendrá los "Extra A").
+[Eva Doan]: Bueno, creo que me iré a dormir.
+[Nol Ma]: Que descances.
+["Vueltitas"]: Si tienes pesadillas toca :).
+(Descripción): Eva se va a descansar.
+-->
+<!-- Act 2 Part I Extra A
+    ["Vueltitas"]: ¡Maravilloso!, ahora seremos 3 al asedio Noli !.
+    [Nol Ma]: Silencio, ya es hora.
+-->
+<!-- 📖 Act 3 Part I
+(Descripción): 4 guardias llegan a la escena y abren las celdas de todas las personas
+[Guardia_1]: Salid, nos vamos a la Sala.
+(Descripción): Los guardias y los prisioneros se van de la escena, teniendo un guardia adelante y atrás.
+["Vueltitas"]: ¿Cómo amaneció mi principe azul? [Eva Doan]: Me gusta tu pelaje Nol.
+["Vueltitas"]: ¿Te arreglaste para mi?
+[Nol Ma]: ...
+(Descripción): Se quedan en un silencio incomodo por un momento, luego se desplazan a la salida.
+[Eva Doan]: Esto de la ¿Sala...?
+[Nol Ma]: Sala Social, comer y hablar
+["Vueltitas"]: Nos quieren cuerdos almenos.
+[Eva Doan]: La eternidad no me trae paz Vueltitas...
+[Nol Ma]: Ya llegamos.
+-->
+<!-- Act 3 Part II
+(Descripción): Los guardias dejan a los 3 prisioneros y se repliegan junto con el resto de guardias de la sala.
+["Vueltitas"]: Genial ¿no?
+[Nol Ma]: Subjetivo...
+[Eva Doan]: Si, subjetivo...
+["Vueltitas"]: Noli ¿cual es el plan?, sentemonos aquí.
+[Nol Ma]: Nosotros no sentaremos por aquí Eva, sería bueno que hablaras con los de aquí. Cuando estes lista ven aquí y comemos.
+["Vueltitas"]: ¡Pero no te tardes ! eso sería muy cruel de tu parte.
+(Descripción): (Si aceptaste huir con ellos se mostrará el Dialogo "Extra A" ), "Vueltitas" y Nol Ma se sientan en el asiento más cercano y se quedan hablando hasta que haya terminado Eva, luego se sentarán los 3 a comer (Si Eva decide fugarse con la pareja y no ha encontrado los materiales que le pidieron se mostrará el mensaje "Extra B"). (Eva puede dialogar con algunos de los de la prisión, al hacerlo mostrará uno de los mensajes que aparece en Dialogo Extra C, en él se mostrará para cada persona en especifico)
+-->
+<!-- Act 3 Part II Extra A
+Busca cosas del suelo, afiladas pero no endeble.
+-->
+<!-- Act 3 Part II Extra B
+Busca, te esperamos
+-->
+<!-- Act 3 Part II Extra C
+Fue terrible, una banda de 4 de esos desgraciados me rodearon, no era necesario usar las armas de esa manera....
+Recuerdo que uno de ellos casi arremete contra un lobito bebe, como se nota que el poder se les fue de las manos.
+Dejame, ya tengo suficiente con esto...
+Creo que te ví cuando estabas en la revuelta, hicimos lo que pudimos, pero la injusticia no se puede quedar así.
+-->
+<!-- Act 3 Part III
+(Descripcion): Eva y la pareja comienzan a comer, mientras que de fondo se muestra como un prisionero se les acerca
+[Prisionero]: Chicos tengo algo importante que decirles, en estos dias haremos una revuelta, ¡atentos!, corred la voz.
+[Nol Ma]: ¿ De verdad creen que no correrá sangre?
+(Descripción): Luego de hablar, el prisionero se mueve a su asiento tras pasar la voz, luego desde la dirección de la mazmorra vienen unos guardias a acercarse a Eva Doan
+["Vueltitas"]: ¿Que hice esta vez?
+[Guardia_1]: Eva Doan, ven con nosotros.
+[Eva Doan]: ¿Qué hice esta vez...?
+(Descripción): Eva se levanta de su asiento y junto a 4 guardias que lo rodean la escoltan a la mazmorra. 
+-->
+<!-- 📖 Act 4 Part I
+(Descripción): Eva y los guardias aparecen en la escena y la rodean, dejandole espacio con Guardia jefe
+[Guardia jefe]: ¿Qué tal estuvo tu primer dia?
+[Eva Doan]: ...
+[Guardia jefe]: Te he llamado para ofrecerte un ticket que podrá sacarte de la situación en la que te encuentras Eva.
+[Eva Doan]: Cuentame.
+[Guardia jefe]: Como humana que ha vivido con ellos puede que el cambio te haya vuelto así, sin embargo, esta no es tu lucha, podemos intentar sacarte de este aprieto si nos das información
+[Eva Doan]: ¿Qué información?
+[Guardia jefe]: Dime algo que los guardias no sepamos y te sacaremos.
+(Descripción): (Eva podrá decidir en comentarle que se irá la pareja de hombre lobos de la celda en la que esta, la revuelta de los prisioneros ó negarse a hablar), tras responder
+[Guardia jefe]: Jamas sacaríamos a una de ellos, guardias por favor llevenla a su celda.
+(Descripción): Eva es enviada con los guardias a su celda, salen de la escena.
+-->
+<!-- Act 4 Part II
+(Descripcion): Los guardias escoltan a Eva hasta su celda, cuando la encierran se retiran de la escena
+["Vueltitas"]: ¿Estas bien?
+[Eva Doan]: ...
+[Nol Ma]: A la acción
+(Descripción) la pareja empieza a afilar con las garras los barrotes y logran abrirse paso.
+(Si Eva aceptó fugarse con ellos usará los materiales y empezará a hacer lo mismo, logrando salir) (En los dialogos Extra se muestran los escenarios y sus dialogos siguientes) (Si Eva no huye con ellos): Luego Eva se va dormir
+-->
+<!-- Act 4 Part II Extra A
+| Si la pareja huye sin ti y no es acusada |:
+["Vueltitas"]: Bueno, supongo que es hora de partir, me la pasé bien contigo :)
+[Eva Doan]: Ojalá salgan.
+[Nol Ma]: Rapido, en esa pared
+(Descripción): Nol empieza a cavar en la pared que estaba de lado contrario a la sala social y se van...
+-->
+<!-- Act 4 Part II Extra B
+| Si la pareja huye contigo y no es acusada |:
+["Vueltitas"]: ¡Hora de partir!
+[Eva Doan]: Gracias chicos..
+[Nol Ma]: Rapido, en esa pared
+(Descripción): Nol empieza a cavar en la parede que estaba de lado contrario a la sala social y se van...
+[Eva Doan]: Y... ¿a donde vamos ?
+[Nol Ma]: Nosotros iremos al sur, ahí estaremos a salvo.
+["Vueltitas"]: Ven con nosotros, estará mejor que aquí.
+[Eva Doan]: Ya no puedo volver, chicos, muchas gracias...
+(En este caso se llega a un final aceptado). FIN
+-->
+<!-- Act 4 Part II Extra C
+| Si la pareja es acusada |:
+(Descripción): De la nada unos guardias salen y empiezan a asesinar a todos los que estén fuera de la celda
+(Si el jugador se encuentra fuera de la celda morirá, siendo un "final no aceptado"),
+luego se llevan los cuerpos
+-->
+<!-- 📖 Act 5 Part I
+(Descripción): Eva será despertada por los guardias
+(dependiendo de lo sucedido puede mostrar un dialogo en los "Dialogos extra") .
+Luego de que Eva llegue a la Sala social verán que los prisioneros están haciendo desostros, Eva aprovecha y se apara de los guardias y empieza a correr.
+[Prisionero_1]: A la mazmorra !
+(Descripción): Eva se dirige a la mazmorra, lugar donde estaba cubierto por los prisioneros mientras esquiva a los guardias que quedaban.
+-->
+<!-- Act 5 Part I Extra A
+-->
+<!-- Act 5 Part I Extra B
+-->

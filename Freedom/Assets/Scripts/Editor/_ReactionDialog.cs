@@ -5,17 +5,18 @@ using UnityEngine;
 using UnityEditor;
 #endregion
 [CustomEditor(typeof(ReactionDialog))]
-public class _ReactionDialog : MonoBehaviour
+public class _ReactionDialog : Editor
 {
     #region Variables
 
     #endregion
     #region Events
-    //public override void OnInspectorGUI()
-    //{
-    //    //DrawDefaultInspector();
-    //}
+    public override void OnInspectorGUI()
+    {
+
+        DrawDefaultInspector();
+    }
     #endregion
-        #region Methods
-        #endregion
+    #region Methods
+    #endregion
 }

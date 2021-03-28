@@ -10,6 +10,7 @@
         <string key="menu_back">Atrás</string>
         <string key="menu_exit">Salir</string>
 
+    <_ key="_menu_tutorial"><!--  TUTORIAL  --></_>
         <string key="menu_tutorial">Tutorial</string>
             <string key="menu_tutorial_default">
                 Haga click izquierdo en alguno de los botones de la derecha para leer más información.
@@ -26,17 +27,19 @@
             <string key="menu_tutorial_election_value">
                 El jugador podrá tener la posibilidad de escoger qué hacer en algunos dialogos, teniendo que dar click a la opcion que desea. esto puede influir en la información recibida.
             </string>
-
+    <_ key="_menu_options"><!--  OPTIONS  --></_>
         <string key="menu_options">Opciones</string>
         <string key="menu_options_volume">Volumen</string>
         <string key="menu_options_sound">Sonido</string>
 
+    <_ key="_menu_pause"><!--  PAUSE  --></_>
         <string key="menu_pause">Pausa</string>
         <string key="menu_pause_resume">Reanudar</string>
 
+    <_ key="_menu_end"><!--  END  --></_>
         <string key="menu_end">Fin</string>
         <string key="menu_end_title">Fin de la aventura</string>
-            <string key="menu_end_value">
+            <string key="menu_end_value🛑">
                 //cambiar 🛑 Este es el mensaje que se muestra cuando el jugador la ha cagado feo y no hay salida guapa. cambiarlo internamente....
             </string>
         <string key="menu_end_restart">Reiniciar</string>
@@ -62,110 +65,150 @@
             <string key="0.1.12">Estan cometiendo un error....</string>
     <_ key="1"><!--Act 1 - Exilio--></_>
         <_ key="1.1"><!--Part I--></_>
-
+            <string key="1.1.1">Los guardias empujan lejos a los civiles al exilio, algunos retroceden y mantienen guardia.</string>
+            <string key="1.1.2">Mejor iros, o si no tendremos que apresarlos, desde ahora son enemigos del reino.</string>
+            <string key="1.1.3">Eva y compañía se reunen y se agrupan.</string>
+            <string key="1.1.4">¿¡Pero como serán tan..!?</string>
+            <string key="1.1.5">Dejalo, no vale la pena dialogar con ellos, tendremos que dar la cara por nuestra cuenta.</string>
+            <string key="1.1.6">No lo puedo creer, todo por unas tontas peleas que podían ser calmadas, se calientan unas personas y hacen esto....</string>
+            <string key="1.1.7">Hay que volver, debería haber una forma de colarse...</string>
+            <string key="1.1.8">Seguro lo hay, pero implicará distraer a esos guardias seguro...</string>
+            <string key="1.1.9">Luego de que Eva Doan lográn distraer a algunos guardias usando rocas y ramas para moverlos, se adentrán un poco, sin embargo de los lados salen guardias de entre los arboles para rodearles.</string>
+            <string key="1.1.10">Se los hemos advertido, ¡GUARDIAAS!</string>
+            <string key="1.1.11">Los guardias golpean a los exciviles y a Eva, dejandoles desmayados.</string>
+            <string key="1.1.12">Llevenselos.</string>
     <_ key="2"><!--Act 2 - Encerrados--></_>
+        <_ key="2.1"><!--Part I--></_>
+            <string key="2.1.1">Disfruta de tu nueva estancia.</string>
+            <string key="2.1.2">Los guardias cierran la celda de Eva Doan con ella dentro.</string>
+            <string key="2.1.3">¿Estas bien?</string>
+            <string key="2.1.4">Si... supongo..</string>
+            <string key="2.1.5">Nol, Nol Ma.</string>
+            <string key="2.1.6">Eva, Eva Doan.</string>
+            <string key="2.1.7">¿Cuantos años nueva?.</string>
+            <string key="2.1.8">20... espera... ¡¿Había alguien ahí?!</string>
+            <string key="2.1.9">Se ha comportado más de lo que esperaba.</string>
+            <string key="2.1.10">buah, que mala suerte, serás muy ruda ¿no?</string>
+            <string key="2.1.11">Es su edad, sino estaría como nostros.</string>
+            <string key="2.1.12">Ahhh, en ese caso yo dos.</string>
+            <string key="2.1.13">¿solo 2 años?.</string>
+            <string key="2.1.14">Años perros, yo tres.</string>
+            <string key="2.1.15">Vaya...la verdad no sé contar eso.</string>
+            <string key="2.1.16">Presentate almenos.</string>
+            <string key="2.1.17">Noli deja algo de misterio, me apodan "Vueltitas".</string>
+            <string key="2.1.18">Un placer, supongo...</string>
+            <string key="2.1.19">¿Y tú que hiciste?</string>
+            <string key="2.1.20">¿Les parece normal que los guardias estén desterrando a todos los no-humanos?</string>
+            <string key="2.1.21">Los guardias comentaron esa revuelta.</string>
+            <string key="2.1.22">Ah si si, ya me acuerdo.ustedes se entregaron, yo hubiera huido la verdad.</string>
+            <string key="2.1.23">No nos estabamos entregando, estabamos tratando de obligar a cambiar la opinion publica.</string>
+            <string key="2.1.24">Ellos tenian las armas.</string>
+            <string key="2.1.25">Ya sabíamos, pero ¿como puedes irte y ver algo así?</string>
+            <string key="2.1.26">Se toma un momento de silencio de 5 segundos</string>
+            <string key="2.1.27">Cuentale lo de ya sabes qué.</string>
+            <string key="2.1.28">¿Si? bueno, siempre que no interfiera. Eva, nosotros nos vamos a fugar esta noche, cuando nos regresen a las celdas.</string>
+            <string key="2.1.29">Nesecitaríamos unas cosas y puede que no salga tan mal, igual esto es mejor que la eternidad.</string>
+            <string key="2.1.30">Es enserio que nos...</string>
+            <string key="2.1.31">No bromea, lo escuchamos. Planean dejarnos de por vida aquí.</string>
+            <string key="2.1.32">Bien ¿que dices?</string>
+                <string key="2.1.33🛑">🛑Quitar o ver⭐️(Dependiendo de lo que escoja el jugador se tendrá unos dialogos extras, si acepta tendrá los "Extra A").</string>
+            <string key="2.1.34">Bueno, creo que me iré a dormir.</string>
+            <string key="2.1.35">Que descances.</string>
+            <string key="2.1.36">Si tienes pesadillas toca :).</string>
+            <string key="2.1.37">Eva se va a descansar.</string>
+        <_ key="2.1A"><!--Part I Extra A--></_>
+            <string key="2.1A.1">¡Maravilloso!, ahora seremos 3 al asedio Noli !.</string>
+            <string key="2.1A.2">Silencio, ya es hora.</string>
     <_ key="3"><!--Act 3 - El plan--></_>
-        <_ key="0.2"><!--Part II--></_>
+        <_ key="3.1"><!--Part I--></_>
+            <string key="3.1.1">4 guardias llegan a la escena y abren las celdas de todas las personas</string>
+            <string key="3.1.2">Salid, nos vamos a la Sala.</string>
+            <string key="3.1.3">Los guardias y los prisioneros se van de la escena, teniendo un guardia adelante y atrás.</string>
+            <string key="3.1.4">¿Cómo amaneció mi principe azul? [Eva Doan]: Me gusta tu pelaje Nol.</string>
+            <string key="3.1.5">¿Te arreglaste para mi?</string>
+            <string key="3.1.6">...</string>
+            <string key="3.1.7">Se quedan en un silencio incomodo por un momento, luego se desplazan a la salida.</string>
+            <string key="3.1.8">Esto de la ¿Sala...?</string>
+            <string key="3.1.9">Sala Social, comer y hablar</string>
+            <string key="3.1.10">Nos quieren cuerdos almenos.</string>
+            <string key="3.1.11">La eternidad no me trae paz Vueltitas...</string>
+            <string key="3.1.12">Ya llegamos.</string>
+        <_ key="3.2"><!--Part II--></_>
+            <string key="3.2.1">Los guardias dejan a los 3 prisioneros y se repliegan junto con el resto de guardias de la sala.</string>
+            <string key="3.2.2">Genial ¿no?</string>
+            <string key="3.2.3">Subjetivo...</string>
+            <string key="3.2.4">Si, subjetivo...</string>
+            <string key="3.2.5">Noli ¿cual es el plan?, sentemonos aquí.</string>
+            <string key="3.2.6">Nosotros no sentaremos por aquí Eva, sería bueno que hablaras con los de aquí. Cuando estes lista ven aquí y comemos.</string>
+            <string key="3.2.7">¡Pero no te tardes ! eso sería muy cruel de tu parte.</string>
+                <string key="3.2.8🛑">🛑 (Si aceptaste huir con ellos se mostrará el Dialogo "Extra A" ), "Vueltitas" y Nol Ma se sientan en el asiento más cercano y se quedan hablando hasta que haya terminado Eva, luego se sentarán los 3 a comer (Si Eva decide fugarse con la pareja y no ha encontrado los materiales que le pidieron se mostrará el mensaje "Extra B"). (Eva puede dialogar con algunos de los de la prisión, al hacerlo mostrará uno de los mensajes que aparece en Dialogo Extra C, en él se mostrará para cada persona en especifico)</string>
+        <_ key="3.2A"><!--Part II Extra A--></_>
+            <string key="3.2A.1">Busca cosas del suelo, afiladas pero no endeble.</string>
+        <_ key="3.2B"><!--Part II Extra B--></_>
+            <string key="3.2B.1">Busca, te esperamos</string>
+        <_ key="3.2C"><!--Part II Extra C--></_>
+            <string key="3.2C.1">Fue terrible, una banda de 4 de esos desgraciados me rodearon, no era necesario usar las armas de esa manera....</string>
+            <string key="3.2C.2">Recuerdo que uno de ellos casi arremete contra un lobito bebe, como se nota que el poder se les fue de las manos.</string>
+            <string key="3.2C.3">Dejame, ya tengo suficiente con esto...</string>
+            <string key="3.2C.4">Creo que te ví cuando estabas en la revuelta, hicimos lo que pudimos, pero la injusticia no se puede quedar así.</string>
+        <_ key="3.3"><!--Part III--></_>
+            <string key="3.3.1">Eva y la pareja comienzan a comer, mientras que de fondo se muestra como un prisionero se les acerca</string>
+            <string key="3.3.2">Chicos tengo algo importante que decirles, en estos dias haremos una revuelta, ¡atentos!, corred la voz.</string>
+            <string key="3.3.3">¿ De verdad creen que no correrá sangre?</string>
+            <string key="3.3.4">Luego de hablar, el prisionero se mueve a su asiento tras pasar la voz, luego desde la dirección de la mazmorra vienen unos guardias a acercarse a Eva Doan</string>
+            <string key="3.3.5">¿Que hice esta vez?</string>
+            <string key="3.3.6">Eva Doan, ven con nosotros.</string>
+            <string key="3.3.7">¿Qué hice esta vez...?</string>
+            <string key="3.3.8">Eva se levanta de su asiento y junto a 4 guardias que lo rodean la escoltan a la mazmorra. </string>
     <_ key="4"><!--Act 4 - Declaración--></_>
-    <_ key="5"><!--Act 5 -  La revuelta--></_>
+        <_ key="4.1"><!--Part I--></_>
+            <string key="4.1.1">Eva y los guardias aparecen en la escena y la rodean, dejandole espacio con Guardia jefe</string>
+            <string key="4.1.2">¿Qué tal estuvo tu primer dia?</string>
+            <string key="4.1.3">...</string>
+            <string key="4.1.4">Te he llamado para ofrecerte un ticket que podrá sacarte de la situación en la que te encuentras Eva.</string>
+            <string key="4.1.5">Cuentame.</string>
+            <string key="4.1.6">Como humana que ha vivido con ellos puede que el cambio te haya vuelto así, sin embargo, esta no es tu lucha, podemos intentar sacarte de este aprieto si nos das información</string>
+            <string key="4.1.7">¿Qué información?</string>
+            <string key="4.1.8">Dime algo que los guardias no sepamos y te sacaremos.</string>
+            <string key="4.1.9🛑"> 🛑(Eva podrá decidir en comentarle que se irá la pareja de hombre lobos de la celda en la que esta, la revuelta de los prisioneros ó negarse a hablar), tras responder</string>
+            <string key="4.1.10">Jamas sacaríamos a una de ellos, guardias por favor llevenla a su celda.</string>
+            <string key="4.1.11">Eva es enviada con los guardias a su celda, salen de la escena.</string>
+        <_ key="4.2"><!--Part II--></_>
+            <string key="4.2.1">Los guardias escoltan a Eva hasta su celda, cuando la encierran se retiran de la escena</string>
+            <string key="4.2.2">¿Estas bien?</string>
+            <string key="4.2.3">...</string>
+            <string key="4.2.4">A la acción</string>
+            <string key="4.2.5">la pareja empieza a afilar con las garras los barrotes y logran abrirse paso.</string>
+            <string key="4.2.6🛑">🛑(Si Eva aceptó fugarse con ellos usará los materiales y empezará a hacer lo mismo, logrando salir) (En los dialogos Extra se muestran los escenarios y sus dialogos siguientes) (Si Eva no huye con ellos): Luego Eva se va dormir</string>
+        <_ key="4.3A"><!--Part II Extra A--></_>
+            <string key="4.3A.1">Bueno, supongo que es hora de partir, me la pasé bien contigo :)</string>
+            <string key="4.3A.2">Ojalá salgan.</string>
+            <string key="4.3A.3">Rapido, en esa pared</string>
+            <string key="4.3A.4">Nol empieza a cavar en la pared que estaba de lado contrario a la sala social y se van...</string>
+        <_ key="4.3B"><!--Part II Extra B--></_>
+            <string key="4.3B.1">¡Hora de partir!</string>
+            <string key="4.3B.2">Gracias chicos..</string>
+            <string key="4.3B.3">Rapido, en esa pared</string>
+            <string key="4.3B.4">Nol empieza a cavar en la parede que estaba de lado contrario a la sala social y se van...</string>
+            <string key="4.3B.5">Y... ¿a donde vamos ?</string>
+            <string key="4.3B.6">Nosotros iremos al sur, ahí estaremos a salvo.</string>
+            <string key="4.3B.7">Ven con nosotros, estará mejor que aquí.</string>
+            <string key="4.3B.8">Ya no puedo volver, chicos, muchas gracias...</string>
+        <_ key="4.3C"><!--Part II Extra C--></_>
+            <string key="4.3C.1">De la nada unos guardias salen y empiezan a asesinar a todos los que estén fuera de la celda</string>
+    <_ key="5"><!--Act 5 - La revuelta--></_>
+        <_ key="5.1"><!--Part I--></_>
+            <string key="5.1.1">Eva será despertada por los guardias</string>
+            <string key="5.1.2">Luego de que Eva llegue a la Sala social verán que los prisioneros están haciendo desostros, Eva aprovecha y se apara de los guardias y empieza a correr.</string>
+            <string key="5.1.3">A la mazmorra !</string>
+            <string key="5.1.4">Eva se dirige a la mazmorra, lugar donde estaba cubierto por los prisioneros mientras esquiva a los guardias que quedaban.</string>
+        <_ key="5.1"><!--Part I Extra A--></_>
+
+        <_ key="5.1"><!--Part I Extra B--></_>
+
+        <_ key="5.2"><!--Part II--></_>
+            
     <_ key="6"><!--Act 6 - El exterior--></_>
     <_ key="7"><!--Act 7 - El Final--></_>
-   
     
 </main>
-
-<!-- 📖 Act 0 Part I
-(Descripción): Muchos civiles empiezan a forcejear contra los guardia.
-[Rey]: Orden !, he dicho que se controlen, ya está decidido, las demás especies NO PUEDEN VOLVER, ¡iros! iros muy lejos, ya no forman parte de esta nación.
-[Civil_1]: ¿Pero es que estás bien? ¿cómo se te ocurre desterrar medio pueblo ?
-[Civil_2]: Pues mej....
-[Eva Doan]: ¡Pero eso no puede ser!, ¿de qué lado estás? la tienes agarrada con las demás ?
-[Guardias]: ¡Señores retrocedan o los haremos retroceder!
-[Eva Doan]: ¿Y como los guardias permiten est..?
-[Guardia_1]: Mi deber es obedecer al rey, ¡he dicho retrocedan!.
-[Eva Doan y algunos civiles]: ¡No esta bien!
-[Rey]: ¡Ya fue suficiente!, saquenlos de aquí, ya no formais parte.
-(Descripción): Los guardias empiezan a acorralar y empujar a los civiles opositores a la salida del reino.
-[Eva Doan]: Estan cometiendo un error....
--->
-<!-- 📖 Act 1 Part I
-(Descripción): Los guardias empujan lejos a los civiles al exilio, algunos retroceden y mantienen guardia.
-[Guardia_1]: Mejor iros, o si no tendremos que apresarlos, desde ahora son enemigos del reino.
-(Descripción): Eva y compañía se reunen y se agrupan.
-[Eva Doan]: ¿¡Pero como serán tan..!?
-[Ex-Civil_1]: Dejalo, no vale la pena dialogar con ellos, tendremos que dar la cara por nuestra cuenta.
-[Ex-Civil_2]: No lo puedo creer, todo por unas tontas peleas que podían ser calmadas, se calientan unas personas y hacen esto....
-[Eva Doan]: Hay que volver, debería haber una forma de colarse...
-[Ex-Civil_2]: Seguro lo hay, pero implicará distraer a esos guardias seguro...
-(Descripción): Luego de que Eva Doan lográn distraer a algunos guardias usando rocas y ramas para moverlos, se adentrán un poco, sin embargo de los lados salen guardias de entre los arboles para rodearles.
-[Guardia_1]: Se los hemos advertido, ¡GUARDIAAS!
-(Descripción): Los guardias golpean a los exciviles y a Eva, dejandoles desmayados.
-[Guardia_1]: Llevenselos.
--->
-<!-- 📖 Act 2 Part I
-[Guardia_1]: Disfruta de tu nueva estancia.
-(Descripción): Los guardias cierran la celda de Eva Doan con ella dentro.
-[Nol Ma]: ¿Estas bien?
-[Eva Doan]: Si... supongo..
-[Nol Ma]: Nol, Nol Ma.
-[Eva Doan]: Eva, Eva Doan.
-["Vueltitas"]: ¿Cuantos años nueva?.
-[Eva Doan]: 20... espera... ¡¿Había alguien ahí?!
-[Nol Ma]: Se ha comportado más de lo que esperaba.
-["Vueltitas"]: buah, que mala suerte, serás muy ruda ¿no?
-[Nol Ma]: Es su edad, sino estaría como nostros.
-["Vueltitas"]: Ahhh, en ese caso yo dos.
-[Eva Doan]: ¿solo 2 años?.
-[Nol Ma]: Años perros, yo tres.
-[Eva Doan]: Vaya... la verdad no sé contar eso.
-[Nol Ma]: Presentate almenos.
-["Vueltitas"]: Noli deja algo de misterio, me apodan "Vueltitas".
-[Eva Doan]: Un placer, supongo...
-["Vueltitas"]: ¿Y tú que hiciste?
-[Eva Doan]: ¿Les parece normal que los guardias estén desterrando a todos los no-humanos?
-[Nol Ma]: Los guardias comentaron esa revuelta.
-["Vueltitas"]: Ah si si, ya me acuerdo. ustedes se entregaron, yo hubiera huido la verdad.
-[Eva Doan]: No nos estabamos entregando, estabamos tratando de obligar a cambiar la opinion publica.
-[Nol Ma]: Ellos tenian las armas.
-[Eva Doan]: Ya sabíamos, pero ¿como puedes irte y ver algo así?
-(Descripción): Se toma un momento de silencio de 5 segundos
-["Vueltitas"]: Cuentale lo de ya sabes qué.
-[Nol Ma]: ¿Si? bueno, siempre que no interfiera. Eva, nosotros nos vamos a fugar esta noche, cuando nos regresen a las celdas.
-["Vueltitas"]: Nesecitaríamos unas cosas y puede que no salga tan mal, igual esto es mejor que la eternidad.
-[Eva Doan]: Es enserio que nos...
-[Nol Ma]: No bromea, lo escuchamos. Planean dejarnos de por vida aquí.
-["Vueltitas"]: Bien ¿que dices?
-(Descripción): (Dependiendo de lo que escoja el jugador se tendrá unos dialogos extras, si acepta tendrá los "Extra A").
-[Eva Doan]: Bueno, creo que me iré a dormir.
-[Nol Ma]: Que descances.
-["Vueltitas"]: Si tienes pesadillas toca :).
-(Descripción): Eva se va a descansar.
--->
-<!-- ⭐️ Act 2 Part I Extra A
-    ["Vueltitas"]: ¡Maravilloso!, ahora seremos 3 al asedio Noli !.
-    [Nol Ma]: Silencio, ya es hora.
--->
-<!-- 📖 Act 3 Part I
-(Descripción): 4 guardias llegan a la escena y abren las celdas de todas las personas
-[Guardia_1]: Salid, nos vamos a la Sala.
-(Descripción): Los guardias y los prisioneros se van de la escena, teniendo un guardia adelante y atrás.
-["Vueltitas"]: ¿Cómo amaneció mi principe azul? [Eva Doan]: Me gusta tu pelaje Nol.
-["Vueltitas"]: ¿Te arreglaste para mi?
-[Nol Ma]: ...
-(Descripción): Se quedan en un silencio incomodo por un momento, luego se desplazan a la salida.
-[Eva Doan]: Esto de la ¿Sala...?
-[Nol Ma]: Sala Social, comer y hablar
-["Vueltitas"]: Nos quieren cuerdos almenos.
-[Eva Doan]: La eternidad no me trae paz Vueltitas...
-[Nol Ma]: Ya llegamos.
--->
-<!-- Act 3 Part II
-(Descripción): Los guardias dejan a los 3 prisioneros  y se repliegan junto con el resto de guardias de la sala. ["Vueltitas"]: Genial ¿no? [Nol Ma]: Subjetivo... [Eva Doan]: Si, subjetivo... ["Vueltitas"]: Noli ¿cual es el plan?, sentemonos aquí. [Nol Ma]: Nosotros no sentaremos por aquí Eva, sería bueno que hablaras con los de aquí. Cuando estes lista ven aquí y comemos. ["Vueltitas"]: ¡Pero no te tardes ! eso sería muy cruel de tu parte. (Descripción): (Si aceptaste huir con ellos se mostrará el Dialogo "Extra A" ), "Vueltitas" y Nol Ma se sientan en el asiento más cercano y se quedan hablando hasta que haya terminado Eva, luego se sentarán los 3 a comer (Si Eva decide fugarse con la pareja y no ha encontrado los materiales que le pidieron se mostrará el mensaje "Extra B"). (Eva puede dialogar con algunos de los de la prisión, al hacerlo mostrará uno de los mensajes que aparece en Dialogo Extra C, en él se mostrará para cada persona en especifico)
--->
-<!-- Act 1 Part I-->
-<!-- Act 1 Part I-->
-<!-- Act 1 Part I-->
-<!-- Act 1 Part I-->
-<!-- Act 1 Part I-->
-<!-- Act 1 Part I-->
-<!-- Act 1 Part I-->

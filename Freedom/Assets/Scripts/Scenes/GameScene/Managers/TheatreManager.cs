@@ -55,6 +55,7 @@ public class TheatreManager : MonoBehaviour
     /// Returns the actual <see cref="currentPart"/>
     /// </summary>
     public static int CurrentPart => _.currentPart;
+    public static void SetPart(in int i) => _.currentPart = i;
     /// <summary>
     /// Returns the actual <see cref="currentItems"/>
     /// </summary>

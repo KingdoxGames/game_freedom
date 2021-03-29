@@ -13,8 +13,7 @@ public class ReactionScreen : Reaction
     public ScreenTrigger trigger = ScreenTrigger.HIDE;
     #endregion
     #region Events
-    private void OnDrawGizmos()
-    {
+    public override void OnDrawGizmos(){
         name = $"Screen: ({waiTime} s) -> {trigger}";
     }
     #endregion

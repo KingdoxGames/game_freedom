@@ -2,11 +2,9 @@
 using System.Collections;
 using UnityEngine;
 using XavHelpTo.Know;
-using XavHelpTo.Set;
 using DialogInteract;
 #endregion
 /// <summary>
-/// TODO Falta una opcion en la que solo puedes pulsar cuando el texto esta listo, sin importar el tiempo
 /// Reacciones que van a hacer interacción con el <seealso cref="Modal"/>
 /// </summary>
 public class ReactionDialog : Reaction
@@ -24,12 +22,11 @@ public class ReactionDialog : Reaction
     [Tooltip("Determina si cierra o abre el modal al culminar")]
     public bool closeLater = false;
 
-
     #endregion
     #region Event
 #if UNITY_EDITOR
-    
-    private void OnDrawGizmos(){
+
+    public override void OnDrawGizmos(){
 
         //actualizamos cada cierto tiempo
         if (NAME_TIMER.TimerIn(ref name_count)){
@@ -91,6 +88,8 @@ public class ReactionDialog : Reaction
         if (closeLater) Modal.DisplayModal(false);
 
         interactable.NextReaction();
+        gameObject.SetActive(false);
+
     }
     /// <summary>
     /// Based wether is done or not the message proccess can fullLoad the text o pass

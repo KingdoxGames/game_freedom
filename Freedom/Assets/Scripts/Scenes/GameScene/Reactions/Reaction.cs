@@ -21,10 +21,10 @@ public class Reaction : MonoBehaviour
         public float waiTime = 0;
     #endregion
     #region Event
-    private void Awake(){
+    public virtual void Awake(){
         skiping = false;
     }
-    private void OnDrawGizmos()
+    public virtual void OnDrawGizmos()
     {
         name = $"Wait: ({waiTime} s) -> {debug_information}";
     }
@@ -63,6 +63,7 @@ public class Reaction : MonoBehaviour
         float _countTime = 0;
         while (!waiTime.TimerIn(ref _countTime)) yield return new WaitForEndOfFrame();
         interactable.NextReaction();
+        gameObject.SetActive(false);
     }
 
 

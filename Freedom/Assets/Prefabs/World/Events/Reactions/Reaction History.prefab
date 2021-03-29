@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2334888929624313774
+--- !u!1 &4465795184350509169
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6151205761149908186}
-  - component: {fileID: 413850016962412261}
+  - component: {fileID: 4780767374642439532}
+  - component: {fileID: 3697582604933203159}
   m_Layer: 0
-  m_Name: Can_   checkAxis  move  rotate  -_ Moverte mientras pasan textos...
+  m_Name: Reaction History
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6151205761149908186
+--- !u!4 &4780767374642439532
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2334888929624313774}
+  m_GameObject: {fileID: 4465795184350509169}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,23 +31,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &413850016962412261
+--- !u!114 &3697582604933203159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2334888929624313774}
+  m_GameObject: {fileID: 4465795184350509169}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2335ba002117842f6a7d6c1554431bfd, type: 3}
+  m_Script: {fileID: 11500000, guid: e5b943bf8b3d4464f999cf171d931217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: {fileID: 0}
-  debug_information: Moverte mientras pasan textos...
+  debug_information: 'Info : '
   waiTime: 0
-  playerCan:
-    checkAxis: 1
-    move: 1
-    rotate: 1
-    pause: 0
+  act: -1
+  part: -1
+  extra: -1
+  refreshMap: 0

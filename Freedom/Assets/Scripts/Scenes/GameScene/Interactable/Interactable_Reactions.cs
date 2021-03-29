@@ -11,9 +11,11 @@ public partial class Interactable
 
     [Header("_Reactions")]
     public PlayerCan playerCan = new PlayerCan(false);
-
+    [Tooltip("Devolverle todas las opciones al final?")]
+    public bool canAllInEnd = false;
     #endregion
     #region Method
+    [ContextMenu("Interactuar")]
     /// <summary>
     /// Manages the news conditions and set the first reaction
     /// based in <see cref="AssignReactions"/> and <see cref="NextReaction"/>
@@ -32,8 +34,9 @@ public partial class Interactable
     private void AssignReactions(){
         if (parent_reaction.IsNull()) return; //🛡
         reactions.Clear();
-        foreach (Reaction r in parent_reaction.GetComponentsInChildren<Reaction>())
+        foreach (Reaction r in parent_reaction.GetComponentsInChildren<Reaction>(true))
         {
+            r.gameObject.SetActive(true);
             r.interactable = this;
             reactions.Enqueue(r);
         }
@@ -54,7 +57,7 @@ public partial class Interactable
     public void EndReactions()
     {
         isInteracting = false;
-        PlayerReactionIn(true);
+        PlayerReactionIn(canAllInEnd);
     }
 
 

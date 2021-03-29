@@ -20,10 +20,13 @@ namespace Environment
         public const string TAG_PLAYER = "Player";
         public const string PATH_LANG = "Lang/";
         public const string DEFAULT_LANG = "Spanish";
+
         public const int ACT_QTY = 7;
         public const int PARTS_QTY = 4;//does not apply for every act
         public const int EXTRA_QTY = 3;//does not apply for every part
+        public const int ITEM_QTY = 6; // not used frequently
 
+        public const string END_TITLE_KEY = "menu_end_title";
         public static DataMaps DataMaps { get; } = new DataMaps();
 
 

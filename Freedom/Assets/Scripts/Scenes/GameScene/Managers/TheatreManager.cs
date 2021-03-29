@@ -21,7 +21,7 @@ public class TheatreManager : MonoBehaviour
     public static UnityAction ActionRequirement;
     [Space]
     public int currentPart = -1;
-    public string[] currentItems = new string[0];
+    public int[] currentItems = new int[0];
     #endregion
     #region Events
     private void Awake()
@@ -29,8 +29,8 @@ public class TheatreManager : MonoBehaviour
         this.Singleton(ref _,false);
 
         //Initialize the part and items size
-        currentPart = 0;
-        currentItems = new string[2];
+        currentPart = 1;
+        currentItems = new int[2];
     }
     private void Update()
     {
@@ -59,8 +59,11 @@ public class TheatreManager : MonoBehaviour
     /// <summary>
     /// Returns the actual <see cref="currentItems"/>
     /// </summary>
-    public static string[] CurrentItems => _.currentItems;
-
+    public static int[] CurrentItems => _.currentItems;
+    /// <summary>
+    /// Set the new item in the currentArray
+    /// </summary>
+    public static void SetItem(int item) => item.PushIn(ref _.currentItems);
     /// <summary>
     /// Assign a trigger eff in the <see cref="Animator"/> of the screen
     /// uses <seealso cref="ScreenTrigger"/> and <seealso cref="Data.SCREEN_TRIGGERS"/>

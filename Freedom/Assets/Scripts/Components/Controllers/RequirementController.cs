@@ -27,7 +27,7 @@ public class RequirementController : MonoBehaviour
     public int part = 1;
 
     [Tooltip("Los items requeridos, el maximo debe ser igual a la cantidad maxima de objetos que puede portar el personaje")]
-    public string[] items = new string[0];
+    public int[] items = new int[0];
     
 
    
@@ -48,7 +48,7 @@ public class RequirementController : MonoBehaviour
 #if UNITY_EDITOR
     private void OnDrawGizmos(){
         string _items = "";
-        foreach (string i in items) _items += $" {i} ";
+        foreach (int i in items) _items += $" Item_{i} ";
         name = $"{extraName} Requirement: ({act}.{part})-> [{_items}]";
     }
 #endif

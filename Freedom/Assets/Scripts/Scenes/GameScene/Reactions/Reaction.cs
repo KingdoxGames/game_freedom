@@ -30,12 +30,24 @@ public class Reaction : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)){
-            interactable.NextReaction();
-        }
+        CheckForSkip();
     }
     #endregion
     #region Methods
+
+    /// <summary>
+    /// Revisa si se peude hacer skip
+    /// </summary>
+    private void CheckForSkip(){
+        if (interactable
+            && Interactable.Interacting
+            && Input.GetKeyDown(KeyCode.Space)
+            && interactable.reactions.Contains(this)
+            ){
+            
+            interactable.NextReaction();
+        }
+    }
 
     /// <summary>
     /// Reaccionamos con la que estaba presente a la siguiente

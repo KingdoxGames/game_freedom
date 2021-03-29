@@ -314,6 +314,7 @@ namespace XavHelpTo
             /// Pushes the array with the news values in the last
             /// </summary>
             public static T[] PushIn<T>(this T t, params T[] ts) => Set.Push(t, ts);
+            public static T[] PushIn<T>(this T t, ref T[] ts) => ts = Set.Push(t, ts);
 
             /// <summary>
             /// Creas una nueva dimension de arreglo del tipo que desees

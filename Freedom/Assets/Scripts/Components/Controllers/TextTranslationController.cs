@@ -15,10 +15,9 @@ public class TextTranslationController : MonoBehaviour
     [Header("TextTranslation Setting")]
     public string key;
 
-    #region Debug Variables
-    [HideInInspector] public bool isDebug = false;
-    #endregion
-
+        #region Debug Variables
+        [HideInInspector] public bool isDebug = false;
+        #endregion
 
     #endregion
     #region Events
@@ -40,9 +39,18 @@ public class TextTranslationController : MonoBehaviour
     }
     #endregion
     #region Methodpda
-
+    /// <summary>
+    /// Assign directly the text
+    /// </summary>
+    public void SetText( string result) => txt.text = result;
+    /// <summary>
+    /// Refreshes the texts
+    /// </summary>
     private void RefreshText() => txt.text = TranslateSystem.TranslationOf(key);
 
+    /// <summary>
+    /// Clears the text
+    /// </summary>
     private void ClearText() => txt.text = "";
     #endregion
 }

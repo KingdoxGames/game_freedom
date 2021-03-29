@@ -162,6 +162,9 @@ MonoBehaviour:
   waiTime: 0
   teleporter: {fileID: 2268714683365477621}
   target: {fileID: 0}
+  blockPosition: 0
+  blockRotation: 0
+  inverseRotation: 0
 --- !u!1 &8164334077919272147
 GameObject:
   m_ObjectHideFlags: 0

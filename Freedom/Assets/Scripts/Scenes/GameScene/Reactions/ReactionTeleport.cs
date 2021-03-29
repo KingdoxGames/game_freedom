@@ -1,6 +1,8 @@
 ﻿#region Access
 using UnityEngine;
 using Environment;
+using XavHelpTo.Look;
+
 #endregion
 public class ReactionTeleport : Reaction
 {
@@ -8,7 +10,13 @@ public class ReactionTeleport : Reaction
 
     public Transform teleporter;
     public Transform target;
-
+    [Space]
+    [Tooltip("Evitas que modifique la posición")]
+    public bool blockPosition = false;
+    [Tooltip("Evitas que modifique la rotación")]
+    public bool blockRotation = false;
+    [Space]
+    public bool inverseRotation = false;
     #endregion
     #region Events
     public override void Awake(){
@@ -23,9 +31,13 @@ public class ReactionTeleport : Reaction
     public override void OnDrawGizmos(){
 
         name = $"Teleport: ({waiTime} s) ";
+        name += !blockPosition ? " Position " : "";
+        name += !blockRotation ? " Rotation " : "";
+        name += !blockRotation && inverseRotation ? " InverseRotation ": "";
         name += !teleporter ? "(Child?)" : $"({teleporter.name})"; // by default his child;
         name += " -> ";
         name += !target ? "(Player?)" : $"({target.name})"; // by default is player;
+        name += $" {debug_information}";
     }
     #endregion
     #region Methods
@@ -34,11 +46,19 @@ public class ReactionTeleport : Reaction
         //GameObject obj = GameObject.FindWithTag(Data.TAG_PLAYER.ToString());
 
         //base.React();
-        target.position = teleporter.position;
-        target.rotation = teleporter.rotation;
-        if (target.CompareTag(Data.TAG_PLAYER)){
-            target.position += Vector3.up;  
+        if (!blockPosition)
+        {
+            target.position = teleporter.position;
+            if (target.CompareTag(Data.TAG_PLAYER)) target.position += Vector3.up;  
         }
+        if (!blockRotation) {
+            target.rotation = inverseRotation
+                ? Quaternion.Inverse(teleporter.rotation)
+                : teleporter.rotation;
+        }
+
+
+        if (blockRotation && blockPosition) $"{nameof(ReactionTeleport)} Error: -> No estás haciendo nada aquí :/".Print("red");
     }
     #endregion
 }

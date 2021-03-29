@@ -13,10 +13,10 @@ internal class _Reaction : Editor{
     private void Awake() => lastColor = Get.RandomColor(.6f);
     public override void OnInspectorGUI(){
         // base.OnInspectorGUI();
-        GUIStyle style = new GUIStyle(EditorStyles.textArea);
+        GUIStyle style = new GUIStyle(EditorStyles.label);
         Reaction r = target as Reaction;
         style.normal.textColor = lastColor;
-        style.name = ".";//Hides the input area just a dumby hack ;)
+        style.wordWrap = true;
         style.fontSize = 18;
         if ( r && r.debug_information.Length.Equals(0)) r.debug_information = "Info : ";
         r.debug_information = GUILayout.TextField(r.debug_information, style);

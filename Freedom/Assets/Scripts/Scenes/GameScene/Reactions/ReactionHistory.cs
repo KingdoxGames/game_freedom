@@ -13,9 +13,12 @@ public class ReactionHistory : Reaction
     public int part = -1;
     [Range(-1,Data.EXTRA_QTY)]
     public int extra = -1;
+    [Range(-1, Data.ITEM_QTY)]
+    public int item = -1;
+
     [Space]
-    public bool refreshMap = false;//TODO aja y cual mapa? :))))))))
-    //TODO por ver -> string localthing ="typeA" //rollo cuando decidas contra el jefe guardia
+    [Tooltip("Cambia al mapa selecto")]
+    public Maps map = Maps.NO_MAP;
 
     #endregion
     #region Events
@@ -26,6 +29,7 @@ public class ReactionHistory : Reaction
         name += ToShow(act, "Act");
         name += ToShow(part, "Part");
         name += ToShow(extra, "Extra");
+        name += ToShow(item, "Item");
         name += $" {debug_information} ";
     }
     #endregion
@@ -40,6 +44,7 @@ public class ReactionHistory : Reaction
         {
             saved.currentAct = act;
             DataPass.SetData(saved);
+            DataPass.SaveLoadFile(true);
         }
 
         //PART
@@ -47,10 +52,21 @@ public class ReactionHistory : Reaction
             TheatreManager.SetPart(part);
         }
 
-        //if (true)
-        //{
-        //    MapManager.ChangeMap((Maps))
-        //}
+        //EXTRA
+        //TODO
+
+        //ITEM
+        if (true) //FIXME
+        {
+            //TheatreManager.CurrentItems
+
+        }
+        //FIXME
+
+        //MAP
+        if (!map.Equals(Maps.NO_MAP)) MapManager.ChangeMap(map, false);
+
+
 
     }
     private string ToShow(in int i, string val) => !i.Equals(-1) ? $"{val} {i} " : "";

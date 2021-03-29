@@ -39,13 +39,17 @@
     <_ key="_menu_end"><!--  END  --></_>
         <string key="menu_end">Fin</string>
         <string key="menu_end_title">Fin de la aventura</string>
-            <string key="menu_end_value🛑">
-                //cambiar 🛑 Este es el mensaje que se muestra cuando el jugador la ha cagado feo y no hay salida guapa. cambiarlo internamente....
-            </string>
+            <string key="menu_end_value">Este es el mensaje que se muestra cuando el jugador la ha cagado feo y no hay salida guapa. cambiarlo internamente....</string>
+                <string key="menu_end_value_1.1">Los guardias agarraron a Eva Doan y la hicieron papilla, quizá lo mejor era ser más cautelosa...</string>
         <string key="menu_end_restart">Reiniciar</string>
 
 
 
+    <_ key="item"><!--  OBJECTS  --></_>  
+        <_ key="item_1">Rocas</_>
+            <string key="item_1_equip">Has recogido unas rocas</string>
+        <_ key="item_2">Ramas</_>  
+            <string key="item_2_equip">Has recogido unas ramas</string>
 
 
 
@@ -73,7 +77,7 @@
             <string key="1.1.6">No lo puedo creer, todo por unas tontas peleas que podían ser calmadas, se calientan unas personas y hacen esto....</string>
             <string key="1.1.7">Hay que volver, debería haber una forma de colarse...</string>
             <string key="1.1.8">Seguro lo hay, pero implicará distraer a esos guardias seguro...</string>
-            <string key="1.1.9">Luego de que Eva Doan lográn distraer a algunos guardias usando rocas y ramas para moverlos, se adentrán un poco, sin embargo de los lados salen guardias de entre los arboles para rodearles.</string>
+            <string key="1.1.9🛑">🛑Luego de que Eva Doan lográn distraer a algunos guardias usando rocas y ramas para moverlos, se adentrán un poco, sin embargo de los lados salen guardias de entre los arboles para rodearles.</string>
             <string key="1.1.10">Se los hemos advertido, ¡GUARDIAAS!</string>
             <string key="1.1.11">Los guardias golpean a los exciviles y a Eva, dejandoles desmayados.</string>
             <string key="1.1.12">Llevenselos.</string>

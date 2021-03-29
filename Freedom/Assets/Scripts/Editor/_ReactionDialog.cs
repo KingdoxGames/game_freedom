@@ -35,6 +35,10 @@ public class _ReactionDialog : Editor
 
 
 
+    /// <summary>
+    /// Shows the name
+    /// </summary>
+    /// <param name="r"></param>
     private void Name(in ReactionDialog r){
         if (r.message.name.Length.Equals(0)) return; // 🛡
         GUIStyle style = new GUIStyle(EditorStyles.label);
@@ -44,6 +48,10 @@ public class _ReactionDialog : Editor
 
     }
 
+    /// <summary>
+    /// Shows the translated emssage based on the <seealso cref="TranslateSystem"/>
+    /// </summary>
+    /// <param name="r"></param>
     private void Message(in ReactionDialog r){
         GUIStyle style = new GUIStyle(EditorStyles.label);
         style.normal.textColor = Color.red;

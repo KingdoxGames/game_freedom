@@ -57,6 +57,5 @@ public class _TranslateSystem : Editor
 
 
     private string AssignText(ref string txt, GUIStyle _style= default) => GUILayout.TextField(txt, _style ?? style);
-
 }
 #endregion

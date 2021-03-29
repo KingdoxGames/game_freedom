@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using XavHelpTo;
 using XavHelpTo.Set;
 using XavHelpTo.Change;
+using Environment;
 #endregion
 public class SideModalManager : MonoBehaviour
 {
@@ -26,10 +27,7 @@ public class SideModalManager : MonoBehaviour
     {
         anim_sideModals.Length.NewIn(out animsShowed);
         anim_sideModals.ActiveObjects(true);
-            ChangeModal(indexInit);
-        //if (!indexInit.Equals(-1))
-        //{
-        //}
+        ChangeModal(indexInit);
     }
     #endregion
     #region MEthod
@@ -63,8 +61,25 @@ public class SideModalManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Only in <seealso cref="Scenes.GameScene"/>. Change the displayed text in end
+    /// </summary>
+    public static void ChangeEndText(in string key){
+        //if (SceneManager.GetActiveScene().buildIndex.Equals(Scenes.GameScene.ToInt())) return; // 🛡
+        _.ChangeModal(SideModalGame.END.ToInt());
+        EndConfigurations end = FindObjectOfType<EndConfigurations>();
+        string title = TranslateSystem.TranslationOf(Data.END_TITLE_KEY);
+        string result = TranslateSystem.TranslationOf(key);
+
+
+        end.FillWithText(title, result);
+
+
+    }
+
+    /// <summary>
     /// Set the trigger in the animation 
     /// </summary>
     private void TriggerSideModal(in int animIndex, in string trigger) => anim_sideModals[animIndex].SetTrigger(trigger);
     #endregion
 }
+public enum SideModalGame{PAUSE,OPTIONS,END}

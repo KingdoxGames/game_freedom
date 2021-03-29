@@ -1,5 +1,4 @@
 ﻿#region Access
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using XavHelpTo.Know;
@@ -54,10 +53,14 @@ public partial class Interactable
     /// <summary>
     /// Ends the interactions
     /// </summary>
-    public void EndReactions()
-    {
+    public void EndReactions(){
         isInteracting = false;
-        PlayerReactionIn(canAllInEnd);
+        if (canAllInEnd){
+            PlayerReactionIn(true);
+        }
+        if (destroyWhenEnds){
+            Destroy(gameObject);
+        }
     }
 
 

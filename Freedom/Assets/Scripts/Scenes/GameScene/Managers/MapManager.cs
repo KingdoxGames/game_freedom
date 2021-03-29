@@ -32,24 +32,7 @@ public class MapManager : MonoBehaviour
     }
     private void Start()
     {
-        //TEST
-        ChangeMap(Data.DataMaps.Indications[DataPass.SavedData.currentAct].SetUp(out selectedMap));
-        
-        //ENDTEST
-        //ya con el DataPass y el TheatreManager con los valores esperados
-
-        // 0. tener la pantalla oscura
-        // 1. Conocer cual es nuestro "selectedMap" y "actualMap" basado en el contexto de la trama
-
-        // 2. Hacer la navegación hacia el sitio
-
-        // 3. 
-
-        //TODO
-        //cargamos el mapa al que se supone que debemos ir
-        //debe de tomarse en cuenta en qué entrada aparecer, mapa etc...
-        //ChangeMap(selectedMap); TODO
-
+        RefreshMap();
     }
     private void Update()
     {
@@ -61,28 +44,29 @@ public class MapManager : MonoBehaviour
     }
     #endregion
     #region Method
+
+    [ContextMenu("Refrescar acto")]
+    /// <summary>
+    /// Refresh the map based on the <seealso cref="DataPass.savedData"/> act
+    /// </summary>
+    private void RefreshMap() => ChangeMap(Data.DataMaps.Indications[DataPass.SavedData.currentAct].SetUp(out _.selectedMap));
     /// <summary>
     /// Destroy the actual map and then creates another based on the prefabs
     /// and it try to adjust the player position based on the mapNavigator
     /// </summary>
-    public static void ChangeMap(Maps to=Maps.NO_MAP){
+    public static void ChangeMap(in Maps to, bool movePlayer = true) => _._ChangeMap(in to, movePlayer);
+    private void _ChangeMap(in Maps to, in bool movePlayer){
         if (to.Equals(Maps.NO_MAP)) return;
-
         Maps lastMap = _.selectedMap;
-        _.selectedMap = to;
-
-
-        //TheatreManager.TriggerScreen(ScreenTrigger.HIDE);
-
-        _.ClearMaps();
-
+        selectedMap = to;
+        ClearMaps();
         GameObject map = Instantiate(_.pref_maps[to.ToInt()], _.parent_map);
-        _.actualMap = map.GetComponent<Transform>();
+        actualMap = map.GetComponent<Transform>();
 
-        _.FindMapNavigator(lastMap);
-
-
-
+        if (movePlayer)
+        {
+            FindMapNavigator(lastMap);
+        }
     }
 
 
@@ -131,6 +115,9 @@ public class MapManager : MonoBehaviour
                    (n.transform.position
                    + n.transform.forward
                    * n.distance);
+
+        //TODO test
+        PlayerController.tr_player.rotation = n.transform.rotation;
     }
     #endregion
 }

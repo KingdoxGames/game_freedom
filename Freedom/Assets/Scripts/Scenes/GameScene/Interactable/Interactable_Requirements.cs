@@ -8,7 +8,9 @@ public partial class Interactable
     #region Variables
     [Header("_Requirements")]
     [Range(0, 5f)]
-    public float distanceRequired = 0f;
+    public float distanceRequired = 0f; // where 0 == does not required
+    //[Space]
+    //public int[] itemsRequireds; TODO
     #endregion
     #region Methods
 
@@ -23,8 +25,10 @@ public partial class Interactable
         if (PlayerController.tr_player.IsNull()) return;
         //🛡
         isNear = !PlayerController.tr_player.IsNull()
-            && !eff_near.IsNull()
-            && Vector3.Distance(transform.position,PlayerController.tr_player.position) <= distanceRequired
+            && Vector3.Distance(
+                transform.position,
+                PlayerController.tr_player.position
+            ) <= distanceRequired
         ;
     }
 

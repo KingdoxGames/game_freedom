@@ -31,7 +31,7 @@ public class ReactionDialog : Reaction
         //actualizamos cada cierto tiempo
         if (NAME_TIMER.TimerIn(ref name_count)){
 
-            string pj_name = message.name ?? "";
+            string pj_name = message.chatName.ToString();
             string pj_key = !message.key.Length.Equals(0) ? message.key : "Missing";
             string pj_inter = dialoginteraction.ToString();
 
@@ -57,32 +57,32 @@ public class ReactionDialog : Reaction
 
         yield return new WaitForFixedUpdate();
 
-        switch (dialoginteraction)
+
+        while (_keep)
         {
-            case DialogInteraction.WAIT:
-                while (_keep){
-                    yield return new WaitForFixedUpdate();
-                    _keep = !waiTime.TimerFlag(ref _passTimeFlag, ref _count);
-                }
-                break;
-            case DialogInteraction.WAIT_AND_CONTINUE:
-                while (_keep)
-                {
-                    yield return new WaitForFixedUpdate();
-                    _keep = !(waiTime.TimerFlag(ref _passTimeFlag, ref _count) && Control.PressAccept);
-                    Modal.ShowContinueSign(in _passTimeFlag);
-                }
-                break;
-            case DialogInteraction.CAN_FILL_TEXT:
-                while (_keep)
-                {
-                    yield return new WaitForFixedUpdate();
-                    _keep = CheckFillText(waiTime.TimerFlag(ref _passTimeFlag, ref _count));
+            yield return new WaitForFixedUpdate();
+
+            waiTime.TimerFlag(ref _passTimeFlag, ref _count);
+
+            switch (dialoginteraction)
+            {
+                case DialogInteraction.WAIT:
+                    _keep = !_passTimeFlag;
+                    break;
+                case DialogInteraction.WAIT_AND_CONTINUE:
+                    bool condition = !Modal.IsLoading && _passTimeFlag; // si esta listo
+                    _keep = !(condition && Control.PressAccept);
+                    Modal.ShowContinueSign(condition);
+
+                    break;
+                case DialogInteraction.CAN_FILL_TEXT:
+                    _keep = CheckFillText(_passTimeFlag);
                     Modal.ShowContinueSign(!Modal.IsLoading);
                     yield return new WaitForEndOfFrame();
-                }
-                break;
+                    break;
+            }
         }
+      
         yield return new WaitForFixedUpdate();
 
         if (closeLater) Modal.DisplayModal(false);

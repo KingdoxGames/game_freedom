@@ -45,11 +45,27 @@
 
 
 
+
+    <_ key="namechat"><!--  CHARACTERS  --></_>  
+        <character key="namechat_-1"></character>
+        <character key="namechat_0">Eva Doan</character>
+        <character key="namechat_1">Guardia</character>
+        <character key="namechat_2">Nol Ma</character>
+        <character key="namechat_3">Vueltitas</character>
+        <character key="namechat_4">Fabri Doan</character>
+        <character key="namechat_5">Prisionero</character>
+        <character key="namechat_6">Brujo</character>
+        <character key="namechat_7">Guardia Jefe</character>
+        <character key="namechat_8">Ciudadano</character>
+        <character key="namechat_9">Rey</character>
+
+
+
     <_ key="item"><!--  OBJECTS  --></_>  
         <_ key="item_1">Rocas</_>
-            <string key="item_1_equip">Has recogido unas rocas</string>
+            <item key="item_1_equip">Has recogido unas rocas</item>
         <_ key="item_2">Ramas</_>  
-            <string key="item_2_equip">Has recogido unas ramas</string>
+            <item key="item_2_equip">Has recogido unas ramas</item>
 
 
 
@@ -80,7 +96,12 @@
             <string key="1.1.9🛑">🛑Luego de que Eva Doan lográn distraer a algunos guardias usando rocas y ramas para moverlos, se adentrán un poco, sin embargo de los lados salen guardias de entre los arboles para rodearles.</string>
             <string key="1.1.10">Se los hemos advertido, ¡GUARDIAAS!</string>
             <string key="1.1.11">Los guardias golpean a los exciviles y a Eva, dejandoles desmayados.</string>
-            <string key="1.1.12">Llevenselos.</string>
+            <string key="1.1.12">Llevenselos. Veamos si que les parece la prisión</string>
+            <string key="1.1.13">Los guardias se llevan a los capturados a la prisión...</string>
+        <_ key="1.1A"><!--Part I Extra A--></_>
+            <string key="1.1A.1">Con esto de seguro podré acercarme a la entrada</string>
+            <string key="1.1A.2">Eva Logra hacerse con la entrada...</string>
+
     <_ key="2"><!--Act 2 - Encerrados--></_>
         <_ key="2.1"><!--Part I--></_>
             <string key="2.1.1">Disfruta de tu nueva estancia.</string>
@@ -104,11 +125,11 @@
             <string key="2.1.19">¿Y tú que hiciste?</string>
             <string key="2.1.20">¿Les parece normal que los guardias estén desterrando a todos los no-humanos?</string>
             <string key="2.1.21">Los guardias comentaron esa revuelta.</string>
-            <string key="2.1.22">Ah si si, ya me acuerdo.ustedes se entregaron, yo hubiera huido la verdad.</string>
+            <string key="2.1.22">Ah si si, ya me acuerdo. Ustedes se entregaron, yo hubiera huido la verdad.</string>
             <string key="2.1.23">No nos estabamos entregando, estabamos tratando de obligar a cambiar la opinion publica.</string>
             <string key="2.1.24">Ellos tenian las armas.</string>
             <string key="2.1.25">Ya sabíamos, pero ¿como puedes irte y ver algo así?</string>
-            <string key="2.1.26">Se toma un momento de silencio de 5 segundos</string>
+            <string key="2.1.26🛑">🛑Se toma un momento de silencio de 5 segundos</string>
             <string key="2.1.27">Cuentale lo de ya sabes qué.</string>
             <string key="2.1.28">¿Si? bueno, siempre que no interfiera. Eva, nosotros nos vamos a fugar esta noche, cuando nos regresen a las celdas.</string>
             <string key="2.1.29">Nesecitaríamos unas cosas y puede que no salga tan mal, igual esto es mejor que la eternidad.</string>
@@ -123,6 +144,8 @@
         <_ key="2.1A"><!--Part I Extra A--></_>
             <string key="2.1A.1">¡Maravilloso!, ahora seremos 3 al asedio Noli !.</string>
             <string key="2.1A.2">Silencio, ya es hora.</string>
+
+
     <_ key="3"><!--Act 3 - El plan--></_>
         <_ key="3.1"><!--Part I--></_>
             <string key="3.1.1">4 guardias llegan a la escena y abren las celdas de todas las personas</string>
@@ -164,6 +187,8 @@
             <string key="3.3.6">Eva Doan, ven con nosotros.</string>
             <string key="3.3.7">¿Qué hice esta vez...?</string>
             <string key="3.3.8">Eva se levanta de su asiento y junto a 4 guardias que lo rodean la escoltan a la mazmorra. </string>
+
+
     <_ key="4"><!--Act 4 - Declaración--></_>
         <_ key="4.1"><!--Part I--></_>
             <string key="4.1.1">Eva y los guardias aparecen en la escena y la rodean, dejandole espacio con Guardia jefe</string>
@@ -200,6 +225,8 @@
             <string key="4.3B.8">Ya no puedo volver, chicos, muchas gracias...</string>
         <_ key="4.3C"><!--Part II Extra C--></_>
             <string key="4.3C.1">De la nada unos guardias salen y empiezan a asesinar a todos los que estén fuera de la celda</string>
+
+
     <_ key="5"><!--Act 5 - La revuelta--></_>
         <_ key="5.1"><!--Part I--></_>
             <string key="5.1.1">Eva será despertada por los guardias</string>
@@ -225,6 +252,8 @@
             <string key="5.3A.4">Jamás entenderé por que nos encerraron....</string>
             <string key="5.3A.5">Esto no se puede quedar así, vamos a por respuestas con el rey.</string>
             <string key="5.3A.6">Por fín veremos la luz otra vez...</string>
+
+
     <_ key="6"><!--Act 6 - El exterior--></_>
         <_ key="6.1"><!--Part I--></_>
             <string key="6.1.1">Eva sale del pasillo calabozo y se encuentra en frente de sus ojos un suelo repleto de tanto guardias como civiles, en ese momento se queda quieta pensando.</string>
@@ -265,6 +294,8 @@
             <string key="6.4.8🛑">(En caso de dialogar con alguno de los prisioneros te dirán el dialogo de "Extra A")</string>
         <_ key="6.4A"><!--Part IV Extra A--></_>
             <string key="6.4A.1">[Prisioneros]: ¡Al trono!</string>
+
+
     <_ key="7"><!--Act 7 - El Final--></_>
         <_ key="7.1"><!--Part I--></_>
             <string key="7.1.1🛑">🛑 Eva y compañía llegan corriendo hasta darse cuenta que el sitio esta lleno de guardias muertos en el suelo, siendo esto lo que más destaca.</string>

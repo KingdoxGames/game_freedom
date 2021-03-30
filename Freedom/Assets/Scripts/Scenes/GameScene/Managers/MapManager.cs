@@ -102,7 +102,7 @@ public class MapManager : MonoBehaviour
         {
             int index = navigators.ZeroMax();
             _.MovePlayer(navigators[index]);
-            $"NO ENCONTRÓ en {lastMap} yendo a {_.actualMap}".Print("red");
+            //$"NO ENCONTRÓ en {lastMap} yendo a {_.actualMap}".Print("red");
         }
     }
 
@@ -116,7 +116,6 @@ public class MapManager : MonoBehaviour
                    + n.transform.forward
                    * n.distance);
 
-        //TODO test
         PlayerController.tr_player.rotation = n.transform.rotation;
     }
     #endregion

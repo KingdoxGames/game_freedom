@@ -1,8 +1,8 @@
 ﻿#region Access
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Environment;
+using XavHelpTo.Change;
+using XavHelpTo.Look;
 #endregion
 public class ReactionHistory : Reaction
 {
@@ -15,6 +15,7 @@ public class ReactionHistory : Reaction
     public int extra = -1;
     [Range(-1, Data.ITEM_QTY)]
     public int item = -1;
+    public bool addItem = true;
 
     [Space]
     [Tooltip("Cambia al mapa selecto")]
@@ -25,11 +26,12 @@ public class ReactionHistory : Reaction
     public override void OnDrawGizmos()
     {
         name = $"History: ({waiTime} s) -> ";
-        name += "ChangeMap ";
+        name += ToShow(map.ToInt(),"ChangeMap"); ;
         name += ToShow(act, "Act");
         name += ToShow(part, "Part");
         name += ToShow(extra, "Extra");
-        name += ToShow(item, "Item");
+        string addOrRemove = addItem ? "ADD" : "REMOVE";
+        name += ToShow(item, $"{addOrRemove} Item");
         name += $" {debug_information} ";
     }
     #endregion
@@ -40,8 +42,7 @@ public class ReactionHistory : Reaction
 
         //ACT
         SavedData saved = DataPass.SavedData;
-        if (ToChange(in act, in saved.currentAct))
-        {
+        if (ToChange(in act, in saved.currentAct)){
             saved.currentAct = act;
             DataPass.SetData(saved);
             DataPass.SaveLoadFile(true);
@@ -55,13 +56,11 @@ public class ReactionHistory : Reaction
         //EXTRA
         //TODO
 
-        //ITEM
-        if (true) //FIXME
-        {
-            //TheatreManager.CurrentItems
 
+        //ITEM
+        if (!item.Equals(-1)) {
+            TheatreManager.SetItem(item, addItem);
         }
-        //FIXME
 
         //MAP
         if (!map.Equals(Maps.NO_MAP)) MapManager.ChangeMap(map, false);

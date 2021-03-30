@@ -10,7 +10,7 @@ using S = System;
 /// <summary>
 /// Herramientas para facilitar a Xavier contra el codigo
 /// <para>Aquí se poseerán funciones unicamente "static"</para>
-/// <see cref="XavHelpTo"/> Ultima Actualización => 25 marzo 2021
+/// <see cref="XavHelpTo"/> Ultima Actualización => 30 marzo 2021
 ///
 /// </summary>
 namespace XavHelpTo
@@ -447,24 +447,21 @@ namespace XavHelpTo
             public static float UnitInTime(this float value, float toMax, float timeScale = 1) => Set.InUnitBounds(Mathf.MoveTowards(value, toMax, Time.deltaTime * timeScale * Set.Positive(toMax - value)));
             //public static float UnitInTime(float value, float toMax, float timeScale = 1) => Set.InUnitBounds(Mathf.MoveTowards(value, toMax, Time.deltaTime * timeScale * Set.Positive(toMax - value)));
 
-           
-
-
-                /// <summary>
-                /// Llenamos un arreglo con el valor escogido
-                /// </summary>
-                public static T[] FillWith<T>(T tValue, params T[] ts)
+            /// <summary>
+            /// Llenamos un arreglo con el valor escogido
+            /// </summary>
+            public static T[] FillWith<T>(this T tValue, ref T[] ts)
+            {
+                for (int x = 0; x < ts.Length; x++)
                 {
-                    for (int x = 0; x < ts.Length; x++)
-                    {
-                        ts[x] = tValue;
-                    }
-                    return ts;
+                    ts[x] = tValue;
                 }
-                public static T[] FillWith<T>(T tValue, int qty) => FillWith(tValue, new T[qty]);
-
-
-
+                return ts;
+            }
+            public static T[] FillWith<T>(this int qty ,T tValue){
+                T[] newT = new T[qty];
+                return FillWith(tValue, ref newT);
+            }
                 /// <summary>
                 /// Cambiamos los valores que son iguales de su mismo arreglo, cambiandolos con alguno entre el maximo
                 /// <para> Devuelve un arreglo con los valores pero distintos en caso de encontrar repetidos</para>

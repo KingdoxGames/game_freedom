@@ -10,22 +10,19 @@ public partial class Interactable : MonoBehaviour
     [HideInInspector] public bool debug_refreshTime;
 
     private bool isNear = false;
-    //private bool needItems = false;
-    [Tooltip("Si existe algún tipo de interacción, solo puede existir un solo momento de interacción")]
+    private bool haveItems = false;
     private static bool isInteracting = false;
     private Collider col;
+
     [Header("Interactable Settigns")]
     public ParticleSystem eff_near;
     public Transform parent_reaction;
+
     [Space]
-    public bool startInteraction = false;
-    [Space]
-    [Tooltip("Interactuar automaticamente si está cerca")]
-    public bool nearInteract = false;
-    [Space]
-    public bool destroyWhenEnds = false;
-    //[Space(20)]
-    //public Color color;
+    public bool startInteraction = false; // iniciar interactuando
+    public bool nearInteract = false; // interactuar si esta cerca
+    public bool destroyWhenEnds = false; // eliminar interacción si termina
+
     #endregion
     #region Events
     private void Awake() => this.Component(out col,false);
@@ -33,22 +30,15 @@ public partial class Interactable : MonoBehaviour
     {   
         if (startInteraction) Interact();
     }
-    private void Update()
-    {
+    private void Update(){
+
         CheckRequirements();
-        if (!eff_near.IsNull()) eff_near.ActiveParticle(isNear);
+        if (!eff_near.IsNull()) eff_near.ActiveParticle(!isInteracting && isNear);
         if (!col.IsNull()) col.enabled = isNear;
 
         if (nearInteract && IsInteractable) {
             Interact(); // only if is interactable triggering their  cercanies
         }
-
-
-
-        //if (needItems)
-        //{
-
-        //}
 
     }
     private void OnMouseDown()
@@ -70,7 +60,7 @@ public partial class Interactable : MonoBehaviour
     /// <summary>
     /// returns true wether is interactable
     /// </summary>
-    private bool IsInteractable => Control.playerCan.pause && !isInteracting && isNear;
+    private bool IsInteractable => Control.playerCan.pause && !isInteracting && isNear && haveItems;
 
     /// <summary>
     /// Shows if is interacting

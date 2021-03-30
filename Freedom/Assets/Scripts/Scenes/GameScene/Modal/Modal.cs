@@ -1,7 +1,9 @@
 ﻿#region Access
 using UnityEngine;
 using UnityEngine.UI;
+using Environment;
 using XavHelpTo;
+using XavHelpTo.Look;
 using XavHelpTo.Set;
 using XavHelpTo.Change;
 #endregion
@@ -56,9 +58,13 @@ public partial class Modal : MonoBehaviour
     {
         ClearMessage();
         ShowContinueSign(false);
-        obj_name.SetActive(!_dialog.message.name.Equals(""));
+
+        _dialog.message.Name.Print("green");
+        _dialog.message.Dialog.Print("green");
+
+        obj_name.SetActive(!_dialog.message.Name.Equals(""));
         dialog = _dialog;
-        txt_name.text = _dialog.message.name;
+        txt_name.text = _dialog.message.Name;
         isLoading = true;
         DisplayModal();
     }
@@ -82,18 +88,50 @@ public partial class Modal : MonoBehaviour
 [System.Serializable]
 public struct Message
 {
-    public string name;
+    public NameChat chatName;
     public string key;
+
+    private string name;
     private string dialog;
     //public Color color;
 
-    public Message(string name, string key)
+    public Message(NameChat chatName, string key)
     {
-        this.name = name;
+        //assign the keys
         this.key = key;
+        this.chatName = chatName;
+
+        //set the translations
+        this.name = TranslateSystem.TranslationOf(Data.NAMECHAT_KEY + chatName.ToInt());
         this.dialog = TranslateSystem.TranslationOf(key);
         //this.color = color;
     }
 
+
+    /// <summary>
+    /// Shows the name and if does not exist any text keeps in blank
+    /// </summary>
+    public string Name => name ?? (name = TranslateSystem.TranslationOf(NameKey));
+
+    public string NameKey => Data.NAMECHAT_KEY + chatName.ToInt();
+
+    /// <summary>
+    /// Shows the Dialog or in case if does not exist the translation
+    /// </summary>
     public string Dialog => dialog ?? (dialog = TranslateSystem.TranslationOf(in key));//.Print("green")
+}
+
+[System.Serializable]
+public enum NameChat{
+    NO = -1,
+    EVA_DOAN = 0,
+    GUARD = 1,
+    NOL_MA = 2,
+    VUELTITAS = 3,
+    FABRI_DOAN = 4,
+    PRISSONNER = 5,
+    WARLOCK = 6,
+    GUARD_BOSS = 7,
+    PEOPLE = 8, // Ciudadanos
+    KING = 9,
 }

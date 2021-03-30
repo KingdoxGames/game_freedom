@@ -17,6 +17,8 @@ public class ReactionTeleport : Reaction
     public bool blockRotation = false;
     [Space]
     public bool inverseRotation = false;
+    [Space]
+    public bool lookingAt = false; 
     #endregion
     #region Events
     public override void Awake(){
@@ -48,13 +50,32 @@ public class ReactionTeleport : Reaction
         //base.React();
         if (!blockPosition)
         {
-            target.position = teleporter.position;
-            if (target.CompareTag(Data.TAG_PLAYER)) target.position += Vector3.up;  
+
+            target.position = teleporter.position;    
+
+
+            if (target.CompareTag(Data.TAG_PLAYER))
+            {
+                target.position += Vector3.up;
+            }
         }
         if (!blockRotation) {
-            target.rotation = inverseRotation
-                ? Quaternion.Inverse(teleporter.rotation)
-                : teleporter.rotation;
+
+
+            Quaternion rotation = teleporter.rotation;
+
+            if (lookingAt)
+            {
+                rotation = Quaternion.LookRotation(teleporter.position - target.position);
+                rotation.x = 0;
+                rotation.z = 0;
+            }
+
+            if (inverseRotation){
+                rotation = Quaternion.Inverse(rotation);
+            }
+
+            target.rotation = rotation;
         }
 
 

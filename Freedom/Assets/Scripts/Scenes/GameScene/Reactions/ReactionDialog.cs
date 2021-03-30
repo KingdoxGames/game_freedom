@@ -82,7 +82,8 @@ public class ReactionDialog : Reaction
                     break;
             }
         }
-      
+
+        Modal.ShowContinueSign(false);
         yield return new WaitForFixedUpdate();
 
         if (closeLater) Modal.DisplayModal(false);

@@ -28,16 +28,17 @@ public partial class Modal : MonoBehaviour
     [Space]
     public Image img_continueSign;
     [Space]
-    public GameObject obj_name;
-
-
-
+    public CanvasGroup canvas_name;
+    public CanvasGroup canvas_text;
+    public CanvasGroup canvas_continueSign;
+    
     #endregion
     #region Events
     private void Awake()
     {
         this.Singleton(ref _, false);
         this.Component(out anim);
+        StartOptions();
         
         isLoading = false;
     }
@@ -47,6 +48,7 @@ public partial class Modal : MonoBehaviour
     private void Update()
     {
         LoadMessage();
+
     }
     #endregion
     #region Method
@@ -59,11 +61,14 @@ public partial class Modal : MonoBehaviour
         ClearMessage();
         ShowContinueSign(false);
 
-        _dialog.message.Name.Print("green");
-        _dialog.message.Dialog.Print("green");
+        //_dialog.message.Name.Print("green");
+        //_dialog.message.Dialog.Print("green");
 
-        obj_name.SetActive(!_dialog.message.Name.Equals(""));
-        dialog = _dialog;
+        canvas_name.alpha = (!_dialog.message.Name.Equals("")).ToInt();
+        canvas_text.alpha = 1;
+        canvas_continueSign.alpha = 1;
+
+    dialog = _dialog;
         txt_name.text = _dialog.message.Name;
         isLoading = true;
         DisplayModal();
@@ -73,14 +78,15 @@ public partial class Modal : MonoBehaviour
     /// Show or hide the modal in Scene
     /// </summary>
     public static void DisplayModal(in bool showModal) => _.DisplayModal(showModal);
-    private void DisplayModal( bool showModal = true) => anim.SetTrigger(showModal ? "Show" : "Hide");
-
+    private void DisplayModal( bool showModal = true) => anim.SetTrigger(showModal ? Data.SCREEN_TRIGGERS[ScreenTrigger.SHOW.ToInt()] : Data.SCREEN_TRIGGERS[ScreenTrigger.HIDE.ToInt()]);
     ///<returns>Is Text Loading</returns>
     public static bool IsLoading => _.isLoading;
-
     ///<returns>Show or hide the ContinueSign</returns>
     public static void ShowContinueSign(in bool show = true) => _.img_continueSign.ColorParam(ColorType.a, show.ToInt());//(!isLoading).ToInt()
-
+    #endregion
+    #region Partial Actions
+    partial void LoadMessage(); // _Text
+    partial void StartOptions(); // _Options
     #endregion
 }
 
@@ -133,5 +139,5 @@ public enum NameChat{
     WARLOCK = 6,
     GUARD_BOSS = 7,
     PEOPLE = 8, // Ciudadanos
-    KING = 9,
+    KING = 9
 }

@@ -66,7 +66,7 @@ namespace XavHelpTo
                 types[x] = objs.GetType();
             }
             return types;
-        }
+            }
 
             /// <summary>
             /// TODO, futuro tomador de los componentes
@@ -642,6 +642,7 @@ namespace XavHelpTo
                 /// Detecta si el indice está dentro del arreglo
                 /// </summary>
                 public static bool IsOnBounds(int i, int length) => i == Mathf.Clamp(i, 0, length - 1);
+                public static bool IsOnBounds<T>(this int i, T[] length) => IsOnBounds(i, length.Length);
                 public static bool IsOnBounds(int i, int length, bool direction) => i == Mathf.Clamp(i + (direction ? 1 : -1) , 0, length - 1);
             
             /// <summary>

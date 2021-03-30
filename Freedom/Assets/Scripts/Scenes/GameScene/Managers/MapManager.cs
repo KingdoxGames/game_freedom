@@ -23,7 +23,7 @@ public class MapManager : MonoBehaviour
     public Maps selectedMap;
     //public acta
     [Header("Debug")]
-    public bool _debug_change=false;
+    public bool _debugStop=false;
     #endregion
     #region Events
     private void Awake()
@@ -32,16 +32,16 @@ public class MapManager : MonoBehaviour
     }
     private void Start()
     {
-        RefreshMap();
-    }
-    private void Update()
-    {
-        if (_debug_change)
+        if (!_debugStop)
         {
-            ChangeMap(selectedMap);
-            _debug_change = false;
+            RefreshMap();
+        }
+        else
+        {
+            $"{nameof(MapManager)} {nameof(_debugStop)} {_debugStop} Esto desactivar... o quitar en prod".Print("red");
         }
     }
+    
     #endregion
     #region Method
 
@@ -50,6 +50,7 @@ public class MapManager : MonoBehaviour
     /// Refresh the map based on the <seealso cref="DataPass.savedData"/> act
     /// </summary>
     private void RefreshMap() => ChangeMap(Data.DataMaps.Indications[DataPass.SavedData.currentAct].SetUp(out _.selectedMap));
+
     /// <summary>
     /// Destroy the actual map and then creates another based on the prefabs
     /// and it try to adjust the player position based on the mapNavigator
@@ -68,7 +69,6 @@ public class MapManager : MonoBehaviour
             FindMapNavigator(lastMap);
         }
     }
-
 
     /// <summary>
     /// Destroy any map who keeps in the scene( in <see cref="parent_map"/>)

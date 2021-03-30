@@ -58,9 +58,13 @@ public partial class Interactable
         if (canAllInEnd){
             PlayerReactionIn(true);
         }
+        if (disableWhenEnds){
+            gameObject.SetActive(false);
+        }
         if (destroyWhenEnds){
             Destroy(gameObject);
         }
+        
     }
 
 

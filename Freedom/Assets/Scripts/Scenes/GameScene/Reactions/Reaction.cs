@@ -75,7 +75,7 @@ public class Reaction : MonoBehaviour
         float _countTime = 0;
         while (!waiTime.TimerIn(ref _countTime)) yield return new WaitForEndOfFrame();
         interactable.NextReaction();
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
 

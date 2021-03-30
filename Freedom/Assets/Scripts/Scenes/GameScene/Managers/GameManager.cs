@@ -1,9 +1,7 @@
 ﻿#region
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Environment;
 using XavHelpTo.Set;
-using XavHelpTo.Look;
 using XavHelpTo.Change;
 using XavHelpTo.Get;
 #endregion

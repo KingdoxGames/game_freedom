@@ -22,7 +22,7 @@ public partial class Interactable : MonoBehaviour
     public bool startInteraction = false; // iniciar interactuando
     public bool nearInteract = false; // interactuar si esta cerca
     public bool destroyWhenEnds = false; // eliminar interacción si termina
-
+    public bool disableWhenEnds = false; //desactiva el elemento..
     #endregion
     #region Events
     private void Awake() => this.Component(out col,false);

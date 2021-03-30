@@ -129,7 +129,7 @@
             <string key="2.1.23">No nos estabamos entregando, estabamos tratando de obligar a cambiar la opinion publica.</string>
             <string key="2.1.24">Ellos tenian las armas.</string>
             <string key="2.1.25">Ya sabíamos, pero ¿como puedes irte y ver algo así?</string>
-            <string key="2.1.26🛑">🛑Se toma un momento de silencio de 5 segundos</string>
+                <string key="2.1.26🛑">🛑Se toma un momento de silencio de 5 segundos</string>
             <string key="2.1.27">Cuentale lo de ya sabes qué.</string>
             <string key="2.1.28">¿Si? bueno, siempre que no interfiera. Eva, nosotros nos vamos a fugar esta noche, cuando nos regresen a las celdas.</string>
             <string key="2.1.29">Nesecitaríamos unas cosas y puede que no salga tan mal, igual esto es mejor que la eternidad.</string>
@@ -137,6 +137,8 @@
             <string key="2.1.31">No bromea, lo escuchamos. Planean dejarnos de por vida aquí.</string>
             <string key="2.1.32">Bien ¿que dices?</string>
                 <string key="2.1.33🛑">🛑Quitar o ver⭐️(Dependiendo de lo que escoja el jugador se tendrá unos dialogos extras, si acepta tendrá los "Extra A").</string>
+                    <option key="2.1.33.opt_A">Unirse a la fuga</option>
+                    <option key="2.1.33.opt_B">Quedarse en prisión</option>
             <string key="2.1.34">Bueno, creo que me iré a dormir.</string>
             <string key="2.1.35">Que descances.</string>
             <string key="2.1.36">Si tienes pesadillas toca :).</string>
@@ -200,6 +202,9 @@
             <string key="4.1.7">¿Qué información?</string>
             <string key="4.1.8">Dime algo que los guardias no sepamos y te sacaremos.</string>
             <string key="4.1.9🛑"> 🛑(Eva podrá decidir en comentarle que se irá la pareja de hombre lobos de la celda en la que esta, la revuelta de los prisioneros ó negarse a hablar), tras responder</string>
+                <option key="4.1.9🤔1">Acusar a los lobos</option>
+                <option key="4.1.9🤔2">Hablar de la revuelta</option>
+                <option key="4.1.9🤔3">Negarse a hablar</option>
             <string key="4.1.10">Jamas sacaríamos a una de ellos, guardias por favor llevenla a su celda.</string>
             <string key="4.1.11">Eva es enviada con los guardias a su celda, salen de la escena.</string>
         <_ key="4.2"><!--Part II--></_>

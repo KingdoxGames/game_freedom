@@ -46,11 +46,15 @@ public class TextTranslationController : MonoBehaviour
     /// <summary>
     /// Refreshes the texts
     /// </summary>
-    private void RefreshText() => txt.text = TranslateSystem.TranslationOf(key);
+    public void RefreshText(){
+        if (key.Length.Equals(0)) return; //🛡
+
+        txt.text = TranslateSystem.TranslationOf(key);
+    }
 
     /// <summary>
     /// Clears the text
     /// </summary>
-    private void ClearText() => txt.text = "";
+    public void ClearText() => txt.text = "";
     #endregion
 }

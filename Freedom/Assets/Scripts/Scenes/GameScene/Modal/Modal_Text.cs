@@ -15,7 +15,7 @@ public partial class Modal
     /// <summary>
     /// Counts the time and adds a letter in the txt if <see cref="isLoading"/> is <see cref="true"/>
     /// </summary>
-    public void LoadMessage(){
+    partial void LoadMessage(){
         if (dialog.IsNull() || !isLoading || !ratioTimer.TimerIn(ref ratioCount)) return;//🛡
         int _length = dialog.message.Dialog.Length;
         txt_dialog.text += dialog.message.Dialog[index++.Max(_length - 1)];

@@ -107,6 +107,8 @@ public struct SavedData
 
     public string currentLang;
 
+    public int currentExtra;
+
     //TODO[Tooltip("Como mostraremos la pantalla de menu: 0 => enjaulado, 1 => celda con barrotes rotos y sin el jugador , 2 => celda rota ")]
     //public int jailType;
 

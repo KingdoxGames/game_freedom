@@ -28,9 +28,12 @@ public partial class Modal : MonoBehaviour
     [Space]
     public Image img_continueSign;
     [Space]
+    public Image img_namechat;
+    [Space]
     public CanvasGroup canvas_name;
     public CanvasGroup canvas_text;
     public CanvasGroup canvas_continueSign;
+    public CanvasGroup canvas_img_namechat;//TODO
     
     #endregion
     #region Events
@@ -61,9 +64,9 @@ public partial class Modal : MonoBehaviour
         ClearMessage();
         ShowContinueSign(false);
 
-        //_dialog.message.Name.Print("green");
-        //_dialog.message.Dialog.Print("green");
-
+        string path = Data.PATH_SPRITES + _dialog.message.NameKey;
+        img_namechat.sprite = Resources.Load(path, typeof(Sprite)) as Sprite;
+        canvas_img_namechat.alpha = 1;
         canvas_name.alpha = (!_dialog.message.Name.Equals("")).ToInt();
         canvas_text.alpha = 1;
         canvas_continueSign.alpha = 1;

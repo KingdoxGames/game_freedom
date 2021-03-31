@@ -118,5 +118,13 @@ public class TheatreManager : MonoBehaviour
     /// </summary>    
     public static void TriggerScreen(ScreenTrigger trigger) =>_.anim_screen.SetTrigger(Data.SCREEN_TRIGGERS[trigger.ToInt()]);
 
+
+    /// <summary>
+    /// Changes the value of one of the items
+    /// </summary>
+    public static void Debug_ItemChange(int index, int value) {
+        _.currentItems[index] = value;
+        _.RefreshEquippedImages();
+    }
     #endregion
 }

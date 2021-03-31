@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using XavHelpTo.Know;
+using XavHelpTo.Look;
 using DialogInteract;
 #endregion
 /// <summary>
@@ -57,7 +58,6 @@ public class ReactionDialog : Reaction
 
         yield return new WaitForFixedUpdate();
 
-
         while (_keep)
         {
             yield return new WaitForFixedUpdate();
@@ -82,14 +82,14 @@ public class ReactionDialog : Reaction
                     break;
             }
         }
-
+        yield return new WaitForFixedUpdate();
         Modal.ShowContinueSign(false);
         yield return new WaitForFixedUpdate();
 
         if (closeLater) Modal.DisplayModal(false);
 
         interactable.NextReaction();
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
 
     }
     /// <summary>

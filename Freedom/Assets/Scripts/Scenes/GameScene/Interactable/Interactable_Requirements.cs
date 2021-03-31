@@ -1,7 +1,7 @@
 ﻿#region Access
 using UnityEngine;
 using XavHelpTo.Know;
-
+using Environment;
 #endregion
 public partial class Interactable
 {
@@ -11,6 +11,9 @@ public partial class Interactable
     public float distanceRequired = 0f; // where 0 == does not required
     //[Space]
     public int[] itemsRequireds;
+
+    [Range(0, Data.EXTRA_QTY)] // where 0 == does not required
+    public int extraRequired;
     #endregion
     #region Methods
 
@@ -33,6 +36,10 @@ public partial class Interactable
         //si no hay requerimientos ó los requeridos se encuentran
         haveItems = itemsRequireds.Length.Equals(0)
             || itemsRequireds.Contains(TheatreManager.CurrentItems);
+
+
+        haveExtra = extraRequired == 0 || DataPass.SavedData.currentExtra.Equals(extraRequired);
+
     }
 
     #endregion

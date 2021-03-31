@@ -48,7 +48,6 @@ public class ReactionOption : Reaction
     protected override IEnumerator WaitReact()
     {
         int response = -1;
-
         //Si no ha escogido
         while (response.Equals(-1))
         {
@@ -56,16 +55,11 @@ public class ReactionOption : Reaction
             response = Modal.CheckResponse();
             yield return new WaitForEndOfFrame();
         }
-
-        yield return new WaitForEndOfFrame();
-
-
         Transform tr = tr_parent.GetChild(response);
+        //tr.name.Print("blue");
         GameObject obj = tr.gameObject;
 
-        obj.SetActive(false);
-        obj.SetActive(false);
-        yield return new WaitForEndOfFrame();
+        obj.SetActive(true);
 
         //ejecuta lo normal
         yield return StartCoroutine(base.WaitReact());

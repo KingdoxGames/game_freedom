@@ -10,7 +10,7 @@ using S = System;
 /// <summary>
 /// Herramientas para facilitar a Xavier contra el codigo
 /// <para>Aquí se poseerán funciones unicamente "static"</para>
-/// <see cref="XavHelpTo"/> Ultima Actualización => 30 marzo 2021
+/// <see cref="XavHelpTo"/> Ultima Actualización => 31 marzo 2021
 ///
 /// </summary>
 namespace XavHelpTo
@@ -505,6 +505,13 @@ namespace XavHelpTo
         /// Herramienta para la alteración de cosas
         /// </summary>
         public static class Change{
+
+
+                /// <summary>
+                /// Returns the rounded value
+                /// </summary>
+                public static int Round(this float val) => (int)val;
+
                 /// <summary>
                 /// Cambiamos a la escena indicada en numerico
                 /// </summary>

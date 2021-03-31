@@ -52,10 +52,7 @@ MonoBehaviour:
   keysOption:
   - 2.1.33.opt_A
   - 2.1.33.opt_B
-  obj_options:
-  - {fileID: 4605184785462501677}
-  - {fileID: 8383806632100212895}
-  - {fileID: 1555460546572266403}
+  tr_parent: {fileID: 7294578508903028311}
 --- !u!1 &1555460546572266403
 GameObject:
   m_ObjectHideFlags: 0

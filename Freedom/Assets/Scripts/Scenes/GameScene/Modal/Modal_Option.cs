@@ -52,12 +52,13 @@ public partial class Modal {
     public static void DisplayOptions(bool wantDisplay, bool soloAppear = false){
         _.canvas_parent_options.alpha = wantDisplay.ToInt();
 
-        int alpha = soloAppear.ToInt();
+        int alpha = (!soloAppear).ToInt();
 
         //poder ocultar name, text opyions y continueSign?
         _.canvas_name.alpha = alpha;
         _.canvas_text.alpha = alpha;
         _.canvas_continueSign.alpha = alpha;
+        _.canvas_img_namechat.alpha = alpha;
 
         DisplayModal(wantDisplay);
     }
@@ -65,13 +66,12 @@ public partial class Modal {
     /// Response of an button when any was been pressed
     /// </summary>
     public void PressedButton(int i){
-        //TODO dependiendo del boton tendremos una respuesta distinta, esta será dinamica para las opt
-        Debug.Log("Boton presionado = " + i);
-        DisplayOptions(false);//esconde la pantalla
-        
+        if (_.canvas_parent_options.alpha.Equals(0)) return; // 🛡 Patch
+        //Debug.Log("Boton presionado = " + i);
+        _.canvas_parent_options.alpha = 0;
+        DisplayModal(false);
+        _.response = i;
     }
-
-
     /// <summary>
     /// Dependiendo de la cantidad de 
     /// </summary>
@@ -109,16 +109,3 @@ public partial class Modal {
     }
     #endregion
 }
-
-/*
- * 
-    Crear opciones(params strings[])
- 
-    Limpiar opciones(
-
-
-
-
-    ___
-    usar buttons? y si son presionados notifican, tenemos su referencia
- */

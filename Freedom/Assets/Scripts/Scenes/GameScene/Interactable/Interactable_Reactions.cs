@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using XavHelpTo.Know;
+using XavHelpTo;
+using XavHelpTo.Look;
+using XavHelpTo.Get;
 #endregion
 public partial class Interactable
 {
@@ -33,7 +36,9 @@ public partial class Interactable
     private void AssignReactions(){
         if (parent_reaction.IsNull()) return; //🛡
         reactions.Clear();
-        foreach (Reaction r in parent_reaction.GetComponentsInChildren<Reaction>(true))
+        Reaction[] _reactions;
+        parent_reaction.Components(out _reactions);
+        foreach (Reaction r in _reactions) // parent_reaction.GetComponentsInChildren<Reaction>(true)
         {
             r.gameObject.SetActive(true);
             r.interactable = this;
@@ -54,6 +59,7 @@ public partial class Interactable
     /// Ends the interactions
     /// </summary>
     public void EndReactions(){
+        //$"{name} EndReaction".Print("black");
         isInteracting = false;
         if (canAllInEnd){
             PlayerReactionIn(true);

@@ -11,6 +11,7 @@ public partial class Interactable : MonoBehaviour
 
     private bool isNear = false;
     private bool haveItems = false;
+    private bool haveExtra = false;
     private static bool isInteracting = false;
     private Collider col;
 
@@ -49,7 +50,7 @@ public partial class Interactable : MonoBehaviour
     private void OnDrawGizmos(){
         Gizmos.color = Color.black;
         Gizmos.DrawWireSphere(transform.position, distanceRequired);
-        if (!PlayerController.tr_player.IsNull()) Gizmos.DrawLine(transform.position, PlayerController.tr_player.position);
+        //if (!PlayerController.tr_player.IsNull()) Gizmos.DrawLine(transform.position, PlayerController.tr_player.position);
     }
 #endif
     #endregion
@@ -60,7 +61,7 @@ public partial class Interactable : MonoBehaviour
     /// <summary>
     /// returns true wether is interactable
     /// </summary>
-    private bool IsInteractable => Control.playerCan.pause && !isInteracting && isNear && haveItems;
+    private bool IsInteractable => Control.playerCan.pause && !isInteracting && isNear && haveItems && haveExtra;
 
     /// <summary>
     /// Shows if is interacting

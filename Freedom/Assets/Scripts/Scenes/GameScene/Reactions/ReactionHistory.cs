@@ -42,20 +42,30 @@ public class ReactionHistory : Reaction
 
         //ACT
         SavedData saved = DataPass.SavedData;
+        bool changesInSaved = false;
         if (ToChange(in act, in saved.currentAct)){
             saved.currentAct = act;
-            DataPass.SetData(saved);
-            DataPass.SaveLoadFile(true);
+            changesInSaved = true;
         }
 
         //PART
         if (ToChange(in part,TheatreManager.CurrentPart)) {
             TheatreManager.SetPart(part);
+
         }
 
         //EXTRA
-        //TODO
+        if (!extra.Equals(-1)){
+            saved.currentExtra = extra;
+            changesInSaved = true;
+        }
 
+        // ---> SAVE?
+        if (changesInSaved)
+        {
+            DataPass.SetData(saved);
+            DataPass.SaveLoadFile(true);
+        }
 
         //ITEM
         if (!item.Equals(-1)) {
@@ -66,7 +76,7 @@ public class ReactionHistory : Reaction
         if (!map.Equals(Maps.NO_MAP)) MapManager.ChangeMap(map, false);
 
 
-
+       
     }
     private string ToShow(in int i, string val) => !i.Equals(-1) ? $"{val} {i} " : "";
     /// <summary>

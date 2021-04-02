@@ -42,6 +42,7 @@
         <string key="menu_end_title">Fin de la aventura</string>
             <string key="menu_end_value">Este es el mensaje que se muestra cuando el jugador la ha cagado feo y no hay salida guapa. cambiarlo internamente....</string>
                 <string key="menu_end_value_1.1">Los guardias agarraron a Eva Doan y la hicieron papilla, quizá lo mejor era ser más cautelosa...</string>
+                <string key="menu_end_value_5.1">Los guardias agarraron a Eva Doan, la eliminaron antes de que pudiese escapar. Debería haber sido más escurridiza...</string>
         <string key="menu_end_restart">Reiniciar</string>
 
 
@@ -79,7 +80,7 @@
             <ending key="ending_true_text">Todo salio bien :)</ending>
         <_ key="ending_extra_1">FINAL: TODOS ESCAPAN<!--  Escapan con Eva Doan y se liberan   --></_>
             <ending key="ending_extra_1_title">Final Bueno..?</ending>
-            <ending key="ending_extra_1_text">Nol Ma, Vueltitas y Eva Doan logran Huir de la prisión,
+            <ending key="ending_extra_1_text">Nol Ma, Vueltitas y Eva Doan, logran huir de la prisión,
 se fueron al sur como acordaron,
 donde vivieron despreocupadamente en otros reinos, poco despues
 llega la noticia de que el reino había sido destruido....
@@ -266,7 +267,7 @@ tantos golpes que estos dejaron de moverse, habían sido asesinados en el acto.
     <_ key="5"><!--Act 5 - La revuelta--></_>
         <_ key="5.1"><!--Part I--></_>
             <string key="5.1.1">Eva será despertada por los guardias</string>
-            <string key="5.1.2">Luego de que Eva llegue a la Sala social verán que los prisioneros están haciendo desostros, Eva aprovecha y se apara de los guardias y empieza a correr.</string>
+            <string key="5.1.2">Luego de que Eva llegue a la Sala social verán que los prisioneros están haciendo destrosos, Eva aprovecha, se separa de los guardias y empieza a correr.</string>
             <string key="5.1.3">A la mazmorra !</string>
             <string key="5.1.4">Eva se dirige a la mazmorra, lugar donde estaba cubierto por los prisioneros mientras esquiva a los guardias que quedaban.</string>
         <_ key="5.1A"><!--Part I Extra A--></_>
@@ -275,12 +276,14 @@ tantos golpes que estos dejaron de moverse, habían sido asesinados en el acto.
             <string key="5.1A.3">Yo....</string>
             <string key="5.1A.4">Vas a tener que dar explicaciones, vamos.</string>
         <_ key="5.1B"><!--Part I Extra B--></_>
-            <string key="5.1B.1">[Guardia_1]: Vamos.</string>
+            <string key="5.1B.1">Vamos.</string>
+        <_ key="5.1C"><!--Part I Extra C--></_>
+            <string key="5.1C.1">¡Tenemos una aquí!</string>
         <_ key="5.2"><!--Part II--></_>
-            <string key="5.2.1">Eva se dirige a la mazmorra y se pone a buscar la salida. luego tras encontrarla sale</string>
+            <string key="5.2.1">Eva se dirige a la mazmorra y se pone a buscar la salida</string>
             <string key="5.2.2">Por fin. ¡ Vamos !</string>
         <_ key="5.3"><!--Part III--></_>
-            <string key="5.3.1">Eva llega a el pasillo calabozo, donde se encuentra con unos prisioneros y otros guardias que han muerto en la revuelta, en un lado aparece el Guardia jefe en el suelo. (En el apartado Dialogo "Extra A" aparecerán los mensajes que puedes recibir de los prisioneros en especifico). Posteriormente Eva se va al Patio del castillo. </string>
+            <string key="5.3.1🛑">🛑Eva llega a el pasillo calabozo, donde se encuentra con unos prisioneros y otros guardias que han muerto en la revuelta, en un lado aparece el Guardia jefe en el suelo.</string>
         <_ key="5.3A"><!--Part III Extra A--></_>
             <string key="5.3A.1">¡Por fin!</string>
             <string key="5.3A.2">Lo logramos pero... ¿a qué costo?</string>
@@ -292,8 +295,8 @@ tantos golpes que estos dejaron de moverse, habían sido asesinados en el acto.
 
     <_ key="6"><!--Act 6 - El exterior--></_>
         <_ key="6.1"><!--Part I--></_>
-            <string key="6.1.1">Eva sale del pasillo calabozo y se encuentra en frente de sus ojos un suelo repleto de tanto guardias como civiles, en ese momento se queda quieta pensando.</string>
-            <string key="6.1.2">¡Padre!</string>
+            <string key="6.1.1 🛑">🛑Eva sale del pasillo calabozo y se encuentra en frente de sus ojos un suelo repleto de tanto guardias como civiles, en ese momento se queda quieta pensando.</string>
+            <string key="6.1.2">¡Padre! debo ir a la taberna</string>
             <string key="6.1.3">Eva se dirige a la taberna para saber si su padre tuvo el mismo destino que los demas civiles.</string>
         <_ key="6.2"><!--Part II--></_>
             <string key="6.2.1">Eva llega a la taberna y mira hacia sus alrededores</string>
@@ -303,7 +306,7 @@ tantos golpes que estos dejaron de moverse, habían sido asesinados en el acto.
             <string key="6.2.5">Eva se dirige al dormitorio a toda velocidad.</string>
         <_ key="6.3"><!--Part III--></_>
             <string key="6.3.1">Eva tras llegar al dormitorio empieza a ver por todos lados</string>
-            <string key="6.3.2">¡Papá! ¿doóde estas?</string>
+            <string key="6.3.2">¡Papá! ¿dónde estas?</string>
             <string key="6.3.3">Luego de un tiempo no suena que hubiese alguien</string>
             <string key="6.3.4">Fabri.....</string>
             <string key="6.3.5">Luego de un momento, Eva empieza a salir del dormitorio, cuando de repente se empieza a mover una de las camas, saliendo Fabri debajo de una de estas. se dan un gran abrazo que dura 5 segundos</string>

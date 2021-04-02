@@ -1,9 +1,12 @@
 ﻿#region
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using Environment;
 using XavHelpTo.Set;
 using XavHelpTo.Change;
 using XavHelpTo.Get;
+using XavHelpTo.Look;
 #endregion
 public class GameManager : MonoBehaviour
 {
@@ -11,12 +14,17 @@ public class GameManager : MonoBehaviour
     private static GameManager _;
     private Camera cam = null;
     public GameObject obj_cheatModal;
+    [Space]
+    public CanvasGroup canvas_endGame;
+    public Text txt_endGameTitle;
+    public Text txt_endGameInfo;
     #endregion
     #region Events
     private void Awake() {
         this.Singletone(ref _, false);
         cam = cam.Default(Camera.main);
     }
+   
     private void Update()
     {
 
@@ -28,6 +36,31 @@ public class GameManager : MonoBehaviour
     }
     #endregion
     #region Methods
+
+
+    /// <summary>
+    /// Displays in screen the EndGame screen
+    /// Insert the translations based on the key
+    /// </summary>
+    public static void _ShowEndGame(string key) => _.StartCoroutine(_.ShowEndGame(key));
+    private IEnumerator ShowEndGame(string key){
+
+        // 1. activamos el objeto
+        canvas_endGame.gameObject.SetActive(true);
+
+        // 2. ponemos las traduccion
+        txt_endGameTitle.text = TranslateSystem.TranslationOf(key + Data.END_GAME_TITLE_KEY);
+        txt_endGameInfo.text = TranslateSystem.TranslationOf(key + Data.END_GAME_INFO_KEY);
+        yield return new WaitForEndOfFrame();
+
+        float limit = 1;
+        // 3. mostramos lentamente en pantalla
+        while (!canvas_endGame.alpha.Equals(limit)){
+            canvas_endGame.alpha = canvas_endGame.alpha.UnitInTime(limit);
+            yield return new WaitForEndOfFrame();
+        }
+        "YOU WIN !".Print("magenta");
+    }
 
     /// <summary>
     /// Enable/disable the cheats

@@ -12,8 +12,8 @@ public partial class Interactable
     //[Space]
     public int[] itemsRequireds;
 
-    [Range(0, Data.EXTRA_QTY)] // where 0 == does not required
-    public int extraRequired;
+    [Range(-1, Data.EXTRA_QTY)] // where -1 == does not required
+    public int extraRequired = -1;
     #endregion
     #region Methods
 
@@ -38,7 +38,7 @@ public partial class Interactable
             || itemsRequireds.Contains(TheatreManager.CurrentItems);
 
 
-        haveExtra = extraRequired == 0 || DataPass.SavedData.currentExtra.Equals(extraRequired);
+        haveExtra = extraRequired.Equals(-1) || DataPass.SavedData.currentExtra.Equals(extraRequired);
 
     }
 

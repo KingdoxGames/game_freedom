@@ -38,6 +38,9 @@ namespace Environment
         public const string END_TITLE_KEY = "menu_end_title"; // key to end sideModal
         public const string NAMECHAT_KEY = "namechat_"; // Key to namechat names
 
+
+        public const string END_GAME_TITLE_KEY = "_title";
+        public const string END_GAME_INFO_KEY = "_text";
     }
     /// <summary>
     /// Las escenas del juego, ordenadas como en "Build Settings"

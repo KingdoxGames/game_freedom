@@ -38,7 +38,7 @@ namespace XavHelpTo
         /// TODO mover para acá el singleton de <seealso cref="Set.Set.Singletone{T}(T, ref T, bool)"/>
         /// </summary>
         public static void Singleton<T>(this T @this, ref T @_, bool isMultiScene = true)
-                where T : Object
+                where T : MonoBehaviour
         {
             Set.Set.Singletone(@this,ref @_, isMultiScene);
         }
@@ -203,6 +203,8 @@ namespace XavHelpTo
 
             public static T Range<T>(params T[] range) => range[ZeroMax(range.Length)];
 
+            public static T Any<T>(this T[] t) => t[t.ZeroMax()];
+
             /// <summary>
             /// Returns a random value between the limits possitive and negative
             /// </summary>
@@ -329,7 +331,7 @@ namespace XavHelpTo
             /// <param name="this"></param>
             /// <param name="gameObject"></param>
             public static void Singletone<T>(this T @this, ref T @_, bool isMultiScene = true)
-                where T: Object
+                where T: MonoBehaviour
             {
                 if (@_ == null)
                 {
@@ -338,7 +340,7 @@ namespace XavHelpTo
                 }
                 else if (!Equals(@_, @this))
                 {
-                    Object.Destroy(@this);
+                    Object.Destroy(@this.gameObject); // @this.gameobject
                 }
             }
             /// <summary>

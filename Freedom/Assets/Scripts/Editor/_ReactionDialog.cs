@@ -8,6 +8,7 @@ using DialogInteract;
 public class _ReactionDialog : Editor
 {
     #region Variables
+    private const string EXAMPLE_TEXT = "At quaeque adversarium ius, sed at integre persius verterem. Sit summo tibique at, eam et fugit complectitur, vis te natum vivendum mandamus. Iudico quodsi cum ad, dicit everti sensibus in sea, ea eius paulo deterruisset pri. Pro id aliquam hendrerit";
     private static readonly string[] dialogType ={
         "Esperamos el tiempo sin que podamos hacer algo (exceptuando el skip).",
         "Esperamos el tiempo correspondiente y luego le damos a aceptar para que podamos continuar. siempre tendrá que completarse el texto como minimo.",
@@ -31,24 +32,8 @@ public class _ReactionDialog : Editor
    
     #endregion
     #region Methods
-
-
-
     /// <summary>
-    /// Shows the name
-    /// </summary>
-    /// <param name="r"></param>
-    private void Name(in ReactionDialog r){
-        if (r.message.Name.Length.Equals(0)) return; // 🛡
-        GUIStyle style = new GUIStyle(EditorStyles.label);
-        style.normal.textColor = Color.red;
-        style.fontSize = 18;
-        GUILayout.Label($"{r.message.Name}: ", style);
-
-    }
-
-    /// <summary>
-    /// Shows the translated emssage based on the <seealso cref="TranslateSystem"/>
+    /// Shows the translated message based on the <seealso cref="TranslateSystem"/>
     /// </summary>
     /// <param name="r"></param>
     private void NameAndMessage(in ReactionDialog r){
@@ -86,13 +71,16 @@ public class _ReactionDialog : Editor
         float time = (r.Length * Modal.ratioTimer);
         r2.finalTime = time > r2.waiTime ? time : r2.waiTime;
         GUILayout.Label($"Tiempo aprox: {r2.finalTime} s", style);
+        GUILayout.Space(20);
+        GUILayout.Label($"Longitud: {r.Length}/{EXAMPLE_TEXT.Length}", style);
     }
-
+    /// <summary>
+    /// Displays a message showing how much time its required
+    /// </summary>
     private void RefreshMsg(){
         GUIStyle style = new GUIStyle(EditorStyles.label);
         style.normal.textColor = Color.yellow;
         GUILayout.Label($"Se refresca cada {ReactionDialog.NAME_TIMER} segundos aprox...", style);
-
     }
     /// <summary>
     /// Set the msg for the
@@ -104,7 +92,6 @@ public class _ReactionDialog : Editor
         style.wordWrap = true;
         string message = $"{r.dialoginteraction}:   {dialogType[r.dialoginteraction.ToInt()]}";
         GUILayout.Label(message, style);
-
     }
     #endregion
 }

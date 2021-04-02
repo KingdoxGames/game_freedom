@@ -62,21 +62,21 @@ public class ReactionDialog : Reaction
         {
             yield return new WaitForFixedUpdate();
 
-            waiTime.TimerFlag(ref _passTimeFlag, ref _count);
+            bool flag = waiTime.TimerFlag(ref _passTimeFlag, ref _count);
 
             switch (dialoginteraction)
             {
                 case DialogInteraction.WAIT:
-                    _keep = !_passTimeFlag;
+                    _keep = !flag;
                     break;
-                case DialogInteraction.WAIT_AND_CONTINUE:
-                    bool condition = !Modal.IsLoading && _passTimeFlag; // si esta listo
-                    _keep = !(condition && Control.PressAccept);
-                    Modal.ShowContinueSign(condition);
+                case DialogInteraction.WAIT_AND_CONTINUE: //README -> si se te salta auto es por que esta cambiando de interaccion y posee un close, entonces la animacion le da un corto y la aplica doble :/ poner un wait y a volar
+                    bool isReady = !Modal.IsLoading && flag; 
+                    _keep = !(Control.PressAccept && isReady); 
+                    Modal.ShowContinueSign(isReady);
 
                     break;
                 case DialogInteraction.CAN_FILL_TEXT:
-                    _keep = CheckFillText(_passTimeFlag);
+                    _keep = CheckFillText(flag);
                     Modal.ShowContinueSign(!Modal.IsLoading);
                     yield return new WaitForEndOfFrame();
                     break;

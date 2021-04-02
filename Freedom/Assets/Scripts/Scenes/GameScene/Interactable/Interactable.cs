@@ -3,6 +3,7 @@ using UnityEngine;
 using XavHelpTo.Change;
 using XavHelpTo.Know;
 using XavHelpTo;
+using XavHelpTo.Look;
 #endregion
 public partial class Interactable : MonoBehaviour
 {
@@ -28,13 +29,18 @@ public partial class Interactable : MonoBehaviour
     #region Events
     private void Awake() => this.Component(out col,false);
     private void Start()
-    {   
+    {
+        if (!parent_reaction)
+        {
+            $"No se ha colocado parent en {name} asignar uno !, por defecto colocaremos  el mismo :/".Print("red");
+            parent_reaction = transform;
+        }
         if (startInteraction) Interact();
     }
     private void Update(){
 
         CheckRequirements();
-        if (!eff_near.IsNull()) eff_near.ActiveParticle(!isInteracting && isNear);
+        if (!eff_near.IsNull()) eff_near.ActiveParticle(IsInteractable);
         if (!col.IsNull()) col.enabled = isNear;
 
         if (nearInteract && IsInteractable) {
@@ -60,8 +66,8 @@ public partial class Interactable : MonoBehaviour
 
     /// <summary>
     /// returns true wether is interactable
-    /// </summary>
-    private bool IsInteractable => Control.playerCan.pause && !isInteracting && isNear && haveItems && haveExtra;
+    /// </summary> //Control.playerCan.pause &&
+    private bool IsInteractable =>  !isInteracting && isNear && haveItems && haveExtra;
 
     /// <summary>
     /// Shows if is interacting

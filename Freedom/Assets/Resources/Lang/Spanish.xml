@@ -3,6 +3,7 @@
     <string key="lang">Español</string>
     <string key="game">Freedom</string>
     <string key="test">Esto es un testeo 😎</string>
+    <string key="thx">Gracias por jugar :)</string>
 
     <_ key="_menu"><!--  MENU  --></_>
         <string key="menu_tomenu">Al menú</string>
@@ -66,6 +67,34 @@
             <item key="item_1_equip">Has recogido unas rocas</item>
         <_ key="item_2">Ramas</_>  
             <item key="item_2_equip">Has recogido unas ramas</item>
+        <_ key="item_3">Piedra afilada</_>
+            <item key="item_3_equip">Has recogido una piedra afilada</item>
+        <_ key="item_4">Metal afilado</_>
+            <item key="item_4_equip">Has recogido un metal muy afilado</item>
+
+
+    <_ key="ending"><!--  ENDINGS  --></_>
+        <_ key="ending_true">FINAL: SALVAS AL REINO<!--   FINAL VERDADERO   --></_>
+            <ending key="ending_true_title">Final Verdadero</ending>
+            <ending key="ending_true_text">Todo salio bien :)</ending>
+        <_ key="ending_extra_1">FINAL: TODOS ESCAPAN<!--  Escapan con Eva Doan y se liberan   --></_>
+            <ending key="ending_extra_1_title">Final Bueno..?</ending>
+            <ending key="ending_extra_1_text">Nol Ma, Vueltitas y Eva Doan logran Huir de la prisión,
+se fueron al sur como acordaron,
+donde vivieron despreocupadamente en otros reinos, poco despues
+llega la noticia de que el reino había sido destruido....
+</ending>
+        <_ key="ending_extra_3">FINAL: TODOS MUEREN<!--  Todos (Eva Doan, Vueltitas y Nol Ma) son asesinados mientras intentaban escapar   --></_>
+            <ending key="ending_extra_3_title">Final Malo</ending>
+            <ending key="ending_extra_3_text">A pesar de que Nol Ma y Vueltitas pretendían ayudar a Eva Doan
+nadie esperaba que ella misma los acusara...
+Los guardias arremetieron contra los prisioneros que intentaban escapar, fueron
+tantos golpes que estos dejaron de moverse, habían sido asesinados en el acto.
+</ending>
+        
+
+
+
 
 
 
@@ -184,8 +213,8 @@
         <_ key="3.3"><!--Part III--></_>
             <string key="3.3.1">Eva y la pareja comienzan a comer, mientras que de fondo se muestra como un prisionero se les acerca</string>
             <string key="3.3.2">Chicos tengo algo importante que decirles, en estos dias haremos una revuelta, ¡atentos!, corred la voz.</string>
-            <string key="3.3.3">¿ De verdad creen que no correrá sangre?</string>
-            <string key="3.3.4">Luego de hablar, el prisionero se mueve a su asiento tras pasar la voz, luego desde la dirección de la mazmorra vienen unos guardias a acercarse a Eva Doan</string>
+            <string key="3.3.3">¿De verdad creen que no correrá sangre?</string>
+            <string key="3.3.4">Luego de hablar, el prisionero se mueve a su asiento tras pasar la voz, cuando de repente vienen unos guardias</string>
             <string key="3.3.5">¿Que hice esta vez?</string>
             <string key="3.3.6">Eva Doan, ven con nosotros.</string>
             <string key="3.3.7">¿Qué hice esta vez...?</string>
@@ -203,9 +232,9 @@
             <string key="4.1.7">¿Qué información?</string>
             <string key="4.1.8">Dime algo que los guardias no sepamos y te sacaremos.</string>
             <string key="4.1.9🛑"> 🛑(Eva podrá decidir en comentarle que se irá la pareja de hombre lobos de la celda en la que esta, la revuelta de los prisioneros ó negarse a hablar), tras responder</string>
-                <option key="4.1.9🤔1">Acusar a los lobos</option>
-                <option key="4.1.9🤔2">Hablar de la revuelta</option>
-                <option key="4.1.9🤔3">Negarse a hablar</option>
+                <option key="4.1.9.opt_A">Acusar a los lobos</option>
+                <option key="4.1.9.opt_B">Hablar de la revuelta</option>
+                <option key="4.1.9.opt_C">Negarse a hablar</option>
             <string key="4.1.10">Jamas sacaríamos a una de ellos, guardias por favor llevenla a su celda.</string>
             <string key="4.1.11">Eva es enviada con los guardias a su celda, salen de la escena.</string>
         <_ key="4.2"><!--Part II--></_>
@@ -224,11 +253,12 @@
             <string key="4.3B.1">¡Hora de partir!</string>
             <string key="4.3B.2">Gracias chicos..</string>
             <string key="4.3B.3">Rapido, en esa pared</string>
-            <string key="4.3B.4">Nol empieza a cavar en la parede que estaba de lado contrario a la sala social y se van...</string>
+            <string key="4.3B.4">Nol empieza a cavar en la pared que estaba de lado contrario a la sala social y se van...</string>
             <string key="4.3B.5">Y... ¿a donde vamos ?</string>
             <string key="4.3B.6">Nosotros iremos al sur, ahí estaremos a salvo.</string>
             <string key="4.3B.7">Ven con nosotros, estará mejor que aquí.</string>
             <string key="4.3B.8">Ya no puedo volver, chicos, muchas gracias...</string>
+                <string key="4.3B.9_end🛑">🛑Mensaje en los Endings aceptados</string>
         <_ key="4.3C"><!--Part II Extra C--></_>
             <string key="4.3C.1">De la nada unos guardias salen y empiezan a asesinar a todos los que estén fuera de la celda</string>
 

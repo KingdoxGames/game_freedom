@@ -33,7 +33,7 @@ public partial class Modal : MonoBehaviour
     public CanvasGroup canvas_name;
     public CanvasGroup canvas_text;
     public CanvasGroup canvas_continueSign;
-    public CanvasGroup canvas_img_namechat;//TODO
+    public CanvasGroup canvas_img_namechat;
     
     #endregion
     #region Events

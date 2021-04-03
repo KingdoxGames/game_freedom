@@ -38,6 +38,21 @@ public class GameManager : MonoBehaviour
     #region Methods
 
 
+
+
+
+    /// <summary>
+    /// Sets the game in pause
+    /// </summary>
+    public static void SetPause(bool wantPause){
+        if (!Control.playerCan.pause && wantPause ) return; // 🛡
+
+        Control.playerCan = new PlayerCan(!wantPause);
+        SideModalManager._ChangeModal( wantPause ? 0 : -1);
+
+    }
+
+
     /// <summary>
     /// Displays in screen the EndGame screen
     /// Insert the translations based on the key

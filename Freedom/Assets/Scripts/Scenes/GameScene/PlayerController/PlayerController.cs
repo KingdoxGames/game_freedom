@@ -45,12 +45,6 @@ public partial class PlayerController : MonoBehaviour
     #endregion
     #region Methods
     /// <summary>
-    /// Change the value of <see cref="isPaused"/>
-    /// </summary>
-    public void SetIsPaused(bool condition) {
-        Control.playerCan = new PlayerCan(!condition);
-    }
-    /// <summary>
     /// updates the <see cref="axis_XY"/> wheter exist changes in <see cref="Control"/>
     /// </summary>
     private void CheckAxisInputs()
@@ -62,10 +56,9 @@ public partial class PlayerController : MonoBehaviour
     /// Detects if the player wants to open the pause modal
     /// </summary>
     private void CheckPause(){
-        if (Control.playerCan.pause && Control.PressBack)
-        {
-            SetIsPaused(true);
-            SideModalManager._ChangeModal(0);
+        if (Control.PressBack){
+
+            GameManager.SetPause(true);
         }
     }
     partial void CheckOrientation();

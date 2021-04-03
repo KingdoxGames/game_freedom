@@ -299,17 +299,17 @@ tantos golpes que estos dejaron de moverse, habían sido asesinados en el acto.
             <string key="6.1.2">¡Padre! debo ir a la taberna</string>
             <string key="6.1.3">Eva se dirige a la taberna para saber si su padre tuvo el mismo destino que los demas civiles.</string>
         <_ key="6.2"><!--Part II--></_>
-            <string key="6.2.1">Eva llega a la taberna y mira hacia sus alrededores</string>
+            <string key="6.2.1🛑">🛑Eva llega a la taberna y mira hacia sus alrededores</string>
             <string key="6.2.2">Tiene que estar escondido, ¡estoy seguro de eso!.</string>
-            <string key="6.2.3">Eva se pone a buscar por sus alrededores y no logra conseguir a nadie, luego de un tiempo se queda pensando</string>
+            <string key="6.2.3🛑">🛑Eva se pone a buscar por sus alrededores y no logra conseguir a nadie, luego de un tiempo se queda pensando</string>
             <string key="6.2.4">De seguro está en el dormitorio</string>
-            <string key="6.2.5">Eva se dirige al dormitorio a toda velocidad.</string>
+            <string key="6.2.5🛑">🛑Eva se dirige al dormitorio a toda velocidad.</string>
         <_ key="6.3"><!--Part III--></_>
             <string key="6.3.1">Eva tras llegar al dormitorio empieza a ver por todos lados</string>
             <string key="6.3.2">¡Papá! ¿dónde estas?</string>
-            <string key="6.3.3">Luego de un tiempo no suena que hubiese alguien</string>
+            <string key="6.3.3🛑">🛑Luego de un tiempo no suena que hubiese alguien</string>
             <string key="6.3.4">Fabri.....</string>
-            <string key="6.3.5">Luego de un momento, Eva empieza a salir del dormitorio, cuando de repente se empieza a mover una de las camas, saliendo Fabri debajo de una de estas. se dan un gran abrazo que dura 5 segundos</string>
+            <string key="6.3.5">Luego de un momento, Eva empieza a salir del dormitorio, cuando de repente se empieza a mover una de las camas, saliendo Fabri debajo de una de estas. Tras salir se dan un gran abrazo</string>
             <string key="6.3.6">Ohh Eva, ¡me alegra que estés bien !</string>
             <string key="6.3.7">¿Es que te has quedado sordo?</string>
             <string key="6.3.8">Es que con tanto ruido afuera, quise irme a dormir, la verdad afuera estaba horrible...</string>
@@ -329,10 +329,10 @@ tantos golpes que estos dejaron de moverse, habían sido asesinados en el acto.
             <string key="6.4.4">se escondió a tiempo, seguro habrán otros escondidos. Hay que tener cuidado, en el trono se encuentra el causante de todo esto</string>
             <string key="6.4.5">El rey, ¿no?</string>
             <string key="6.4.6">Al parecer es un brujo el que ha hecho todo esto.</string>
-            <string key="6.4.7">Eva y compañia se dirigen al Pasillo castillo.</string>
+            <string key="6.4.7">Eva y compañia se dirigen al Pasillo del castillo que dirige al trono</string>
             <string key="6.4.8🛑">(En caso de dialogar con alguno de los prisioneros te dirán el dialogo de "Extra A")</string>
         <_ key="6.4A"><!--Part IV Extra A--></_>
-            <string key="6.4A.1">[Prisioneros]: ¡Al trono!</string>
+            <string key="6.4A.1">¡Al trono!</string>
 
 
     <_ key="7"><!--Act 7 - El Final--></_>
@@ -356,7 +356,7 @@ tantos golpes que estos dejaron de moverse, habían sido asesinados en el acto.
             <string key="7.2.11">Depende de ustedes, yo los podría llevar a un mundo en donde los no-humano fuesemos vistos como iguales ¿me ayudarán?</string>
             <string key="7.2.12🛑">🛑Luego de un momento de silencio mirandose entre los prisioneros y el Brujo empiezan a correr hacia el</string>
             <string key="7.2.13">Insolentes</string>
-            <string key="7.2.14🛑">🛑El brujo lanza una barrera con la que empieza a protegerse y evitar que los prisioneros se le acerquen.</string>
+            <string key="7.2.14">El brujo lanza una barrera con la que empieza a protegerse y evitar que los prisioneros se le acerquen.</string>
             <string key="7.2.15">Debe haber una forma para acercarse</string>
             <string key="7.2.16🛑">🛑(Eva busca una lanza y un escudo para avanzar por la barrera).</string>
             <string key="7.2.17">¿Como te atreves? ¿una humana? son los seres más debiles</string>

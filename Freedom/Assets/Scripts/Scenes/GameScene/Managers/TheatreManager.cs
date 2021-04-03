@@ -41,6 +41,7 @@ public class TheatreManager : MonoBehaviour
     }
     private void Update()
     {
+    
         DisplayHud();
     }
     private void OnDrawGizmos(){

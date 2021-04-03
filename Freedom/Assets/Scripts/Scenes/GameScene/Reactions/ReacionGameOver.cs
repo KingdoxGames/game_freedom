@@ -14,7 +14,6 @@ public class ReacionGameOver : Reaction
     public string keyName;
 
     public bool acceptedEnding = false;
-
     #endregion
     #region Events
     public override void OnDrawGizmos(){

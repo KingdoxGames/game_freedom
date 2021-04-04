@@ -59,6 +59,12 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public static void _ShowEndGame(string key) => _.StartCoroutine(_.ShowEndGame(key));
     private IEnumerator ShowEndGame(string key){
+        // 0. actualizamos el estado
+
+        SavedData _saved = DataPass.SavedData;
+        _saved.reachEnd = true;
+        DataPass.SetData(_saved);
+        DataPass.SaveLoadFile(true);
 
         // 1. activamos el objeto
         canvas_endGame.gameObject.SetActive(true);
@@ -74,7 +80,8 @@ public class GameManager : MonoBehaviour
             canvas_endGame.alpha = canvas_endGame.alpha.UnitInTime(limit);
             yield return new WaitForEndOfFrame();
         }
-        "YOU WIN !".Print("magenta");
+
+        //"YOU WIN !".Print("magenta");
     }
 
     /// <summary>
@@ -104,14 +111,14 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void ActChange(float act) {
         SavedData saved = DataPass.SavedData;
-        saved.currentAct = act.Round();
+        saved.currentAct = act.ToInt();
         Debug_SaveData(saved);
     }
     /// <summary>
     /// Used to debug in CheatModal
     /// Change the part
     /// </summary>
-    public void PartChange(float part) => TheatreManager.SetPart(part.Round());
+    public void PartChange(float part) => TheatreManager.SetPart(part.ToInt());
     /// <summary>
     /// Used to debug in CheatModal
     /// Change and saves the Extra
@@ -119,19 +126,19 @@ public class GameManager : MonoBehaviour
     public void ExtraChange(float extra)
     {
         SavedData saved = DataPass.SavedData;
-        saved.currentExtra = extra.Round();
+        saved.currentExtra = extra.ToInt();
         Debug_SaveData(saved);
     }
     /// <summary>
     /// Used to debug in CheatModal
     /// Change  the item 1
     /// </summary>
-    public void Item1Change(float item1) => TheatreManager.Debug_ItemChange(0, item1.Round());
+    public void Item1Change(float item1) => TheatreManager.Debug_ItemChange(0, item1.ToInt());
     /// <summary>
     /// Used to debug in CheatModal
     /// Change  the item 2
     /// </summary>
-    public void Item2Change(float item2) => TheatreManager.Debug_ItemChange(1, item2.Round());
+    public void Item2Change(float item2) => TheatreManager.Debug_ItemChange(1, item2.ToInt());
 
     /// <summary>
     /// Shows the map and fade out the darker screen doing thir animation
@@ -140,7 +147,7 @@ public class GameManager : MonoBehaviour
     public void ToMap(float map){
         TheatreManager.TriggerScreen(ScreenTrigger.SHOW);
         Control.playerCan = new PlayerCan(true);
-        MapManager.ChangeMap((Maps)map.Round());
+        MapManager.ChangeMap((Maps)map.ToInt());
     }
 
     /// <summary>

@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿#region Access
 using UnityEngine;
-
+#endregion
 /// <summary>
 /// Where we have all the management of the inputs
 /// </summary>
@@ -15,10 +14,6 @@ public static class Control
 
     [Header("Can Player Do")]
     public static PlayerCan playerCan;
-    //public static bool canCheckAxis = true;
-    //public static bool canMove = true;
-    //public static bool canRotate = true;
-    //public static bool canPause = true;
 
     #endregion
     #region Method
@@ -66,7 +61,7 @@ public struct PlayerCan
     public bool checkAxis;
     public bool move;
     public bool rotate;
-    public bool pause; //TODO revisar el manejo de pausa para dentro de reacciones...
+    public bool pause;
 
     public PlayerCan(bool checkAxis,bool move,bool rotate,bool pause)
     {

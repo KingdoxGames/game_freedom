@@ -38,7 +38,7 @@ public class DataPass : MonoBehaviour
         BinaryFormatter _formatter = new BinaryFormatter();
         FileStream _stream = new FileStream(Path, wantSave ? FileMode.Create : FileMode.Open);
         DataStorage _dataStorage;
-       
+        
         //Dependiendo de si va a cargar o guardar hará algo o no
         if (wantSave)
         {
@@ -52,7 +52,6 @@ public class DataPass : MonoBehaviour
             _dataStorage = _formatter.Deserialize(_stream) as DataStorage;
             _stream.Close();
             SetData( _dataStorage.savedData);
-            //savedData = _dataStorage.savedData; TODO por qué esto estaba activado?
         }
     }
     /// <summary>
@@ -61,9 +60,10 @@ public class DataPass : MonoBehaviour
     public static void SetData( SavedData newSavedData) => _.savedData = newSavedData;
     /// <returns>The Loaded data in <see cref="DataPass"/></returns>
     public static SavedData SavedData => _.savedData;
+
     /// <returns>The path of the saved data</returns>
     private static string Path => Application.persistentDataPath + Data.savedPath;
-
+    
     [ContextMenu("Guardar los datos")]
     public void _Save() => SaveLoadFile(true);
     #endregion
@@ -110,8 +110,11 @@ public struct SavedData
     public int currentExtra;
 
     public bool reachEnd;
-    //TODO[Tooltip("Como mostraremos la pantalla de menu: 0 => enjaulado, 1 => celda con barrotes rotos y sin el jugador , 2 => celda rota ")]
-    //public int jailType;
+
+    [Tooltip("Qué tan sensible es el agarre?")]
+    public float dragSensibility; // 1-10, if 0 => 3f defualt
+    //Sensibility mouse drag?
+
 
     //Extra Debug ?
     [Space(10)]

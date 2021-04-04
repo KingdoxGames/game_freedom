@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using XavHelpTo.Get;
-using XavHelpTo.Look;
 using XavHelpTo.Change;
 using XavHelpTo.Know;
 using XavHelpTo.Set;

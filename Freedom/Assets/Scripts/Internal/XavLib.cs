@@ -394,10 +394,11 @@ namespace XavHelpTo
 
                 return c;
             }
-            public static void ColorParam(this Image img, ColorType i, float val = 1)
+            public static Image ColorParam(this Image img, ColorType i, float val = 1)
             {
                 
                 img.color = ColorParam(img.color, (int)i, val);
+                return img;
             }
 
 
@@ -508,11 +509,6 @@ namespace XavHelpTo
         /// </summary>
         public static class Change{
 
-
-                /// <summary>
-                /// Returns the rounded value
-                /// </summary>
-                public static int Round(this float val) => (int)val;
 
                 /// <summary>
                 /// Cambiamos a la escena indicada en numerico
@@ -672,6 +668,17 @@ namespace XavHelpTo
                 }
 
                 return finded;
+            }
+
+            /// <summary>
+            /// Counts how many slots of the same value exist in a array
+            /// </summary>
+            public static int CountOf<T>(this T[] collection, T valueToFind){
+                int qty = 0;
+                foreach (T c in collection){
+                    if (c.Equals(valueToFind)) qty++;
+                }
+                return qty;
             }
 
             /// <summary>

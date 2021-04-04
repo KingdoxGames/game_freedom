@@ -31,6 +31,7 @@ namespace Environment
 
         public const int OPTIONS_MAX_QTY = 3; // based in modal options
 
+        public const float DRAG_SENSIBILITY_MAX = 10f; 
         //Screen Trigger Keys
         public static readonly string[] SCREEN_TRIGGERS = { "Show", "Hide" };
 

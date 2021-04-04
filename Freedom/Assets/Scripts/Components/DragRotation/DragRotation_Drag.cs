@@ -2,15 +2,16 @@
 using UnityEngine;
 using XavHelpTo.Know;
 using XavHelpTo.Get;
+using Environment;
 #endregion
 public partial class DragRotation
 {
     #region Variable
-    private const float MAGNITUDE = 3f;
     private const int ROTATION = 360;
-    [Header("_Drag")]
-    [Range(10f, 20f)]
-    public float axis_limit = 15f;
+    public const float axis_limit = 20f; // 20 init
+    //[Header("_Drag")]
+    //[Range(1f, Data.DRAG_SENSIBILITY_MAX)]
+    //public static float sensibility = 3f; // default 3 private
     #endregion
     #region Partial Method
     /// <summary>
@@ -18,7 +19,7 @@ public partial class DragRotation
     /// </summary>
     partial void SetDrag(){
         if (!Control.HoldDrag) return;
-        axis_Y += (Control.Axis_Y * MAGNITUDE).Limit(axis_limit);
+        axis_Y += (Control.Axis_Y * DataPass.SavedData.dragSensibility).Limit(axis_limit);
         axis_Y = axis_Y.Limit(ROTATION).IsEqualOf(ROTATION, -ROTATION) ? 0 : axis_Y;
     }
     #endregion

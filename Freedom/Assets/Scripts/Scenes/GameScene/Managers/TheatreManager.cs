@@ -62,7 +62,7 @@ public class TheatreManager : MonoBehaviour
     private void RefreshEquippedImages(){
 
         for (int x = 0; x < Data.EQUIP_QTY; x++){
-            if (Know.IsOnBounds(currentItems[x], Data.ITEM_QTY)) {
+            if (Know.IsOnBounds(currentItems[x], Data.ITEM_QTY+1)) {
                 img_equippeds[x].sprite = Resources.Load($"{Data.PATH_SPRITES}Item_{currentItems[x]}",typeof(Sprite)) as Sprite;
             }else{
                 $"{nameof(TheatreManager)} {nameof(RefreshEquippedImages)} Error => item fuera de los limites => {img_equippeds[x]}".Print("red");

@@ -1,6 +1,7 @@
 ﻿#region Access
 using UnityEngine;
 using XavHelpTo.Know;
+using XavHelpTo.Look;
 using Environment;
 #endregion
 public partial class Interactable
@@ -8,7 +9,7 @@ public partial class Interactable
     #region Variables
     [Header("_Requirements")]
     [Range(0, 10f)]
-    public float distanceRequired = 0f; // where 0 == does not required
+    public float distanceRequired = 0f;// where 0 == does not required
     //[Space]
     public int[] itemsRequireds;
 
@@ -34,13 +35,38 @@ public partial class Interactable
         ;
 
         //si no hay requerimientos ó los requeridos se encuentran
-        haveItems = itemsRequireds.Length.Equals(0)
-            || itemsRequireds.Contains(TheatreManager.CurrentItems);
+        haveItems = HaveItems();
 
 
-        haveExtra = extraRequired.Equals(-1) || DataPass.SavedData.currentExtra.Equals(extraRequired);
 
+
+        haveExtra = HaveExtra;
     }
 
+    /// <summary>
+    /// Check if it have items
+    /// </summary>
+    private bool HaveItems(){
+        bool result = itemsRequireds.Length.Equals(0);
+
+        if (!result){
+
+            if (!itemsRequireds.CountOf(0).Equals(0)){ //si existe alguno vacío
+                //revisará si los slots actuales existen en los requeridos
+                result = TheatreManager.CurrentItems.Contains(itemsRequireds);
+            }else{
+                //revisará si los requeridos existen en los slots actuales
+                result = itemsRequireds.Contains(TheatreManager.CurrentItems);
+            }
+        }
+        return result;
+    }
+
+
+
+    /// <summary>
+    /// Check if exist an extra
+    /// </summary>
+    private bool HaveExtra => extraRequired.Equals(-1) || DataPass.SavedData.currentExtra.Equals(extraRequired);
     #endregion
 }
